@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FinSmart - Take Control of Your Finances</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">logo</div>
+
+          <!-- Desktop Navigation -->
+          <nav class="desktop-nav">
+            <a href="#features" class="nav-link">Features</a>
+            <a href="#testimonials" class="nav-link">Testimonials</a>
+            <a href="#pricing" class="nav-link">Pricing</a>
+            <a href="#security" class="nav-link">Security</a>
+          </nav>
+
+          <!-- Desktop Actions -->
+          <div class="desktop-actions">
+            <button class="login-btn">Log in</button>
+            <button class="signup-btn">Sign up</button>
+          </div>
+
+          <!-- Mobile Menu -->
+          <div class="mobile-header-actions">
+            <button class="hamburger-menu" id="hamburgerMenu">
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu-content">
+          <div class="mobile-menu-header">
+            <div class="logo">logo</div>
+            <button class="close-menu" id="closeMenu">×</button>
+          </div>
+
+          <nav class="mobile-nav">
+            <a href="#features" class="mobile-nav-link">Features</a>
+            <a href="#testimonials" class="mobile-nav-link">Testimonials</a>
+            <a href="#pricing" class="mobile-nav-link">Pricing</a>
+            <a href="#security" class="mobile-nav-link">Security</a>
+          </nav>
+
+          <div class="mobile-menu-actions">
+            <button class="mobile-login-btn">Log in</button>
+            <button class="mobile-signup-btn">Sign up</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>Take Control of Your Finances</h1>
+            <p>
+              Smart budgeting tools that visualize your spending patterns and
+              help you achieve your financial goals with personalized insights.
+            </p>
+            <div class="hero-buttons">
+              <button class="btn-primary">Start Free Trial</button>
+              <button class="btn-secondary">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polygon points="5,3 19,12 5,21 5,3"></polygon>
+                </svg>
+                Watch Demo
+              </button>
+            </div>
+            <p class="trial-note">
+              No credit card required. 30-day free trial.
+            </p>
+          </div>
+          <!-- <div class="hero-dashboard">
+            <div class="dashboard-card">
+              <div class="dashboard-header">
+                <span class="amount">4,285.01</span>
+                <span class="currency">USD</span>
+              </div>
+              <div class="profit-stats">
+                <span class="profit-label">Profit Stats</span>
+                <div class="profit-chart">
+                  <svg width="120" height="40" viewBox="0 0 120 40">
+                    <path
+                      d="M5,35 Q20,25 35,20 T65,15 T95,10 L115,8"
+                      stroke="#4ade80"
+                      stroke-width="2"
+                      fill="none"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="summary-section">
+                <span class="summary-label">Summary</span>
+                <div class="summary-items">
+                  <div class="summary-item">
+                    <span class="item-label">Income</span>
+                    <span class="item-value">$5,240</span>
+                  </div>
+                  <div class="summary-item">
+                    <span class="item-label">Expenses</span>
+                    <span class="item-value">$3,890</span>
+                  </div>
+                </div>
+              </div>
+              <div class="expense-report">
+                <span class="report-label">Expense Report</span>
+                <div class="expense-chart">
+                  <div class="chart-bar" style="height: 60%"></div>
+                  <div class="chart-bar" style="height: 40%"></div>
+                  <div class="chart-bar" style="height: 80%"></div>
+                  <div class="chart-bar" style="height: 30%"></div>
+                  <div class="chart-bar" style="height: 70%"></div>
+                  <div class="chart-bar" style="height: 50%"></div>
+                  <div class="chart-bar" style="height: 90%"></div>
+                  <div class="chart-bar" style="height: 45%"></div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+      <div class="container">
+        <div class="section-header">
+          <h2>Powerful Features to Manage Your Money</h2>
+          <p>
+            Visualize your spending, set smart goals, and make informed
+            financial decisions with our intuitive tools.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon spending">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"
+                />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+            </div>
+            <h3>Spending Visualization</h3>
+            <p>
+              See where your money goes with intuitive charts and graphs that
+              break down your spending by category.
+            </p>
+            <div class="spending-chart">
+              <div class="pie-chart">
+                <div class="pie-slice housing" style="--percentage: 35"></div>
+                <div class="pie-slice food" style="--percentage: 25"></div>
+                <div class="pie-slice transport" style="--percentage: 20"></div>
+                <div class="pie-slice shopping" style="--percentage: 20"></div>
+              </div>
+              <div class="chart-legend">
+                <div class="legend-item">
+                  <span class="legend-color housing"></span>
+                  <span>Housing</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-color food"></span>
+                  <span>Food</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-color transport"></span>
+                  <span>Transport</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-color shopping"></span>
+                  <span>Shopping</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon budget">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                />
+              </svg>
+            </div>
+            <h3>Budget Tracking</h3>
+            <p>
+              Create custom budgets for different categories and track your
+              progress in real-time with alerts.
+            </p>
+            <div class="budget-list">
+              <div class="budget-item">
+                <div class="budget-info">
+                  <span class="budget-name">Groceries</span>
+                  <span class="budget-amount">$320/$400</span>
+                </div>
+                <div class="budget-bar">
+                  <div class="budget-progress" style="width: 80%"></div>
+                </div>
+              </div>
+              <div class="budget-item">
+                <div class="budget-info">
+                  <span class="budget-name">Entertainment</span>
+                  <span class="budget-amount">$150/$200</span>
+                </div>
+                <div class="budget-bar">
+                  <div class="budget-progress" style="width: 75%"></div>
+                </div>
+              </div>
+              <div class="budget-item">
+                <div class="budget-info">
+                  <span class="budget-name">Transportation</span>
+                  <span class="budget-amount">$220/$250</span>
+                </div>
+                <div class="budget-bar">
+                  <div class="budget-progress" style="width: 88%"></div>
+                </div>
+              </div>
+              <div class="budget-item">
+                <div class="budget-info">
+                  <span class="budget-name">Dining Out</span>
+                  <span class="budget-amount">$180/$300</span>
+                </div>
+                <div class="budget-bar">
+                  <div class="budget-progress" style="width: 60%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon goals">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M9 11l3 3L22 4" />
+                <path
+                  d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c1.58 0 3.04.41 4.32 1.13"
+                />
+              </svg>
+            </div>
+            <h3>Goal Setting</h3>
+            <p>
+              Set financial goals and track your progress with personalized
+              recommendations to achieve them faster.
+            </p>
+            <div class="goals-list">
+              <div class="goal-item">
+                <div class="goal-header">
+                  <span class="goal-name">Emergency Fund</span>
+                  <span class="goal-percentage">68% complete</span>
+                </div>
+                <div class="goal-amount">$6,800 of $10,000 saved</div>
+                <div class="goal-bar">
+                  <div class="goal-progress" style="width: 68%"></div>
+                </div>
+              </div>
+              <div class="goal-item">
+                <div class="goal-header">
+                  <span class="goal-name">Vacation Fund</span>
+                  <span class="goal-percentage">45% complete</span>
+                </div>
+                <div class="goal-amount">$1,350 of $3,000 saved</div>
+                <div class="goal-bar">
+                  <div class="goal-progress" style="width: 45%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="features-cta">
+          <button class="btn-primary">Explore All Features</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <h2>Trusted by Thousands of Smart Savers</h2>
+          <p>
+            Join the community of users who have transformed their financial
+            habits and achieved their goals.
+          </p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">$42M+</div>
+            <div class="stat-label">Total savings by users</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">87%</div>
+            <div class="stat-label">Users improved savings</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">250K+</div>
+            <div class="stat-label">Active monthly users</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">4.8/5</div>
+            <div class="stat-label">Average user rating</div>
+          </div>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>
+              "This app completely changed how I manage my finances. I've saved
+              over $5,000 in just 6 months by following the personalized
+              recommendations."
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=50&h=50&fit=crop&crop=face"
+                alt="Jennifer Mitchell"
+              />
+              <div class="author-info">
+                <strong>Jennifer Mitchell</strong>
+                <span>Marketing Director</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>
+              "The visualization tools make it so easy to see where my money is
+              going. I finally feel in control of my spending and have clear
+              goals for the future."
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&h=50&fit=crop&crop=face"
+                alt="Robert Kiyosaki"
+              />
+              <div class="author-info">
+                <strong>Robert Kiyosaki</strong>
+                <span>Software Engineer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>
+              "As someone who always struggled with budgeting, this app has been
+              a game-changer. The interface is intuitive and the insights are
+              incredibly helpful."
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=50&h=50&fit=crop&crop=face"
+                alt="Sarah Livingston"
+              />
+              <div class="author-info">
+                <strong>Sarah Livingston</strong>
+                <span>Small Business Owner</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="trusted-by">
+          <p>Trusted by leading companies</p>
+          <div class="company-logos">
+            <div class="company-logo">Amazon</div>
+            <div class="company-logo">Microsoft</div>
+            <div class="company-logo">Netflix</div>
+            <div class="company-logo">Google</div>
+            <div class="company-logo">Slack</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Security Section -->
+    <section class="security" id="security">
+      <div class="container">
+        <div class="section-header">
+          <h2>Bank-Level Security</h2>
+          <p>
+            Your financial data is protected with the same security measures
+            used by leading financial institutions.
+          </p>
+        </div>
+
+        <div class="security-content">
+          <div class="security-visual">
+            <img class="security-img" src="image (38).png" alt="" />
+            <!-- <div class="security-shield">
+              <div class="shield-icon">
+                <svg
+                  width="60"
+                  height="60"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="M9 12l2 2 4-4" />
+                </svg>
+              </div>
+              <div class="circuit-pattern"></div>
+            </div> -->
+          </div>
+
+          <div class="security-features">
+            <div class="security-feature">
+              <div class="feature-icon-security">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                  <circle cx="12" cy="16" r="1" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+              </div>
+              <div class="feature-content">
+                <h4>256-bit Encryption</h4>
+                <p>
+                  All your financial data is encrypted using bank-level security
+                  standards to ensure maximum protection.
+                </p>
+              </div>
+            </div>
+
+            <div class="security-feature">
+              <div class="feature-icon-security">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M9 12l2 2 4-4" />
+                  <path
+                    d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c1.58 0 3.04.41 4.32 1.13"
+                  />
+                </svg>
+              </div>
+              <div class="feature-content">
+                <h4>Two-Factor Authentication</h4>
+                <p>
+                  Add an extra layer of security with two-factor authentication
+                  to prevent unauthorized access.
+                </p>
+              </div>
+            </div>
+
+            <div class="security-feature">
+              <div class="feature-icon-security">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  />
+                  <polyline points="14,2 14,8 20,8" />
+                  <line x1="16" y1="13" x2="8" y2="13" />
+                  <line x1="16" y1="17" x2="8" y2="17" />
+                  <polyline points="10,9 9,9 8,9" />
+                </svg>
+              </div>
+              <div class="feature-content">
+                <h4>Data Privacy</h4>
+                <p>
+                  We never sell your data to third parties. Your financial
+                  information remains private and secure.
+                </p>
+              </div>
+            </div>
+
+            <div class="security-feature">
+              <div class="feature-icon-security">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="22,12 18,12 15,21 9,3 6,12 2,12" />
+                </svg>
+              </div>
+              <div class="feature-content">
+                <h4>Compliance</h4>
+                <p>
+                  We comply with all financial regulations and industry
+                  standards to ensure your data is handled properly.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="security-badges">
+          <div class="security-badge">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <path d="M9 12l2 2 4-4" />
+            </svg>
+          </div>
+          <div class="security-badge">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5 12,2" />
+              <path d="M12 8v8" />
+              <path d="M8 12h8" />
+            </svg>
+          </div>
+          <div class="security-badge">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <circle cx="12" cy="16" r="1" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+          </div>
+          <div class="security-badge">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <div class="section-header">
+          <h2>Simple, Transparent Pricing</h2>
+          <p>Choose the plan that works best for your financial needs.</p>
+        </div>
+
+        <div class="pricing-toggle">
+          <button class="toggle-btn active" data-period="monthly">
+            Monthly
+          </button>
+          <button class="toggle-btn" data-period="annual">Annual</button>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <h3>Basic</h3>
+            <div class="price">
+              <span class="amount">$0</span>
+              <span class="period">/month</span>
+            </div>
+            <p class="plan-description">
+              Perfect for individuals just starting their financial journey.
+            </p>
+            <ul class="features-list">
+              <li>✓ Basic expense tracking</li>
+              <li>✓ Up to 3 budgets</li>
+              <li>✓ Monthly reports</li>
+              <li>✗ Goal setting</li>
+              <li>✗ Financial insights</li>
+            </ul>
+            <button class="plan-btn">Get Started</button>
+          </div>
+
+          <div class="pricing-card popular">
+            <div class="popular-badge">POPULAR</div>
+            <h3>Pro</h3>
+            <div class="price">
+              <span class="amount">$9.99</span>
+              <span class="period">/month</span>
+            </div>
+            <p class="plan-description">
+              For those serious about improving their financial health.
+            </p>
+            <ul class="features-list">
+              <li>✓ Advanced expense tracking</li>
+              <li>✓ Unlimited budgets</li>
+              <li>✓ Weekly reports</li>
+              <li>✓ Goal setting & tracking</li>
+              <li>✓ Basic financial insights</li>
+            </ul>
+            <button class="plan-btn primary">Start 30-Day Free Trial</button>
+          </div>
+
+          <div class="pricing-card">
+            <h3>Premium</h3>
+            <div class="price">
+              <span class="amount">$19.99</span>
+              <span class="period">/month</span>
+            </div>
+            <p class="plan-description">
+              For financial enthusiasts who want complete control.
+            </p>
+            <ul class="features-list">
+              <li>✓ Everything in Pro</li>
+              <li>✓ Investment tracking</li>
+              <li>✓ Daily reports & alerts</li>
+              <li>✓ Advanced financial insights</li>
+              <li>✓ Priority customer support</li>
+            </ul>
+            <button class="plan-btn">Start 30-Day Free Trial</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Start Your Financial Journey Today</h2>
+          <p>
+            Join thousands of users who have transformed their financial habits
+            and achieved their goals.
+          </p>
+          <div class="cta-buttons">
+            <button class="btn-primary">Start Free Trial</button>
+            <button class="btn-secondary">Watch Demo</button>
+          </div>
+          <p class="cta-note">No credit card required. 30-day free trial.</p>
+          <div class="guarantee">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <path d="M9 12l2 2 4-4" />
+            </svg>
+            30-day money-back guarantee
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">logo</div>
+            <p>
+              Smart budgeting tools to help you take control of your finances
+              and achieve your goals.
+            </p>
+            <div class="social-icons">
+              <a href="#" class="social-icon">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="social-icon">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="social-icon">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="social-icon">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Community</a></li>
+              <li><a href="#">Webinars</a></li>
+              <li><a href="#">Financial Guides</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Security</a></li>
+              <li><a href="#">Cookies</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 FinSmart. All rights reserved.</p>
+          <div class="footer-badges">
+            <span class="badge">SOC 2</span>
+            <span class="badge">GDPR</span>
+            <span class="badge">PCI DSS</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

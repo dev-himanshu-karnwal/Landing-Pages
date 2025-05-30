@@ -1,0 +1,1801 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logo - Smart CRM Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+            },
+            colors: {
+              primary: {
+                50: "#eff6ff",
+                100: "#dbeafe",
+                500: "#3b82f6",
+                600: "#2563eb",
+                700: "#1d4ed8",
+                900: "#1e3a8a",
+              },
+            },
+            animation: {
+              float: "float 6s ease-in-out infinite",
+              "fade-in": "fadeIn 0.6s ease-out",
+              "slide-up": "slideUp 0.6s ease-out",
+              "slide-in-right": "slideInRight 0.3s ease",
+              "slide-out-right": "slideOutRight 0.3s ease",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
+                "50%": { transform: "translateY(-20px) rotate(180deg)" },
+              },
+              fadeIn: {
+                "0%": { opacity: "0" },
+                "100%": { opacity: "1" },
+              },
+              slideUp: {
+                "0%": { opacity: "0", transform: "translateY(30px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              slideInRight: {
+                "0%": { transform: "translateX(100%)", opacity: "0" },
+                "100%": { transform: "translateX(0)", opacity: "1" },
+              },
+              slideOutRight: {
+                "0%": { transform: "translateX(0)", opacity: "1" },
+                "100%": { transform: "translateX(100%)", opacity: "0" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-inter bg-white text-gray-800 overflow-x-hidden">
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-200 z-50 transition-all duration-300"
+      id="navbar"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <!-- Logo -->
+          <a href="#" class="text-2xl font-bold text-primary-600">
+            <span class="logo-text">logo</span>
+          </a>
+
+          <!-- Desktop Menu -->
+          <div class="hidden lg:flex items-center space-x-8">
+            <!-- Product Dropdown -->
+            <div class="relative group">
+              <button
+                class="nav-link flex items-center space-x-1 text-gray-700 hover:text-primary-600 font-medium transition-colors duration-300"
+                id="productDropdown"
+              >
+                <span>Product</span>
+                <i
+                  class="fas fa-chevron-down text-xs transition-transform duration-300 group-hover:rotate-180"
+                ></i>
+              </button>
+              <div
+                class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0"
+              >
+                <div class="py-2">
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors"
+                    >Features</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors"
+                    >Integrations</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors"
+                    >API</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <a
+              href="#features"
+              class="nav-link text-gray-700 hover:text-primary-600 font-medium transition-colors duration-300"
+              >Features</a
+            >
+            <a
+              href="#pricing"
+              class="nav-link text-gray-700 hover:text-primary-600 font-medium transition-colors duration-300"
+              >Pricing</a
+            >
+
+            <!-- Resources Dropdown -->
+            <div class="relative group">
+              <button
+                class="nav-link flex items-center space-x-1 text-gray-700 hover:text-primary-600 font-medium transition-colors duration-300"
+                id="resourcesDropdown"
+              >
+                <span>Resources</span>
+                <i
+                  class="fas fa-chevron-down text-xs transition-transform duration-300 group-hover:rotate-180"
+                ></i>
+              </button>
+              <div
+                class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0"
+              >
+                <div class="py-2">
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors"
+                    >Blog</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors"
+                    >Help Center</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors"
+                    >Documentation</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Desktop Actions -->
+          <div class="hidden lg:flex items-center space-x-2">
+            <button
+              class="text-gray-700 hover:text-primary-600 font-medium px-4 py-2 transition-colors"
+            >
+              Login
+            </button>
+            <button
+              class="bg-primary-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-primary-700 transition-all duration-300 transform hover:-translate-y-0.5"
+            >
+              Sign Up Free
+            </button>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button
+            class="lg:hidden text-gray-700 hover:text-primary-600 transition-colors"
+            id="mobileMenuBtn"
+          >
+            <i class="fas fa-bars text-xl" id="hamburgerIcon"></i>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="lg:hidden hidden" id="mobileMenu">
+          <div class="py-4 border-t border-gray-200">
+            <!-- Mobile Product Dropdown -->
+            <div class="mb-2">
+              <button
+                class="flex items-center justify-between w-full px-4 py-2 text-gray-700 hover:text-primary-600 font-medium transition-colors"
+                id="mobileProductBtn"
+              >
+                <span>Product</span>
+                <i
+                  class="fas fa-chevron-down text-xs transition-transform duration-300"
+                  id="mobileProductIcon"
+                ></i>
+              </button>
+              <div class="hidden pl-8 py-2 space-y-1" id="mobileProductMenu">
+                <a
+                  href="#"
+                  class="block py-2 text-gray-600 hover:text-primary-600 transition-colors"
+                  >Features</a
+                >
+                <a
+                  href="#"
+                  class="block py-2 text-gray-600 hover:text-primary-600 transition-colors"
+                  >Integrations</a
+                >
+                <a
+                  href="#"
+                  class="block py-2 text-gray-600 hover:text-primary-600 transition-colors"
+                  >API</a
+                >
+              </div>
+            </div>
+
+            <a
+              href="#features"
+              class="block px-4 py-2 text-gray-700 hover:text-primary-600 font-medium transition-colors"
+              >Features</a
+            >
+            <a
+              href="#pricing"
+              class="block px-4 py-2 text-gray-700 hover:text-primary-600 font-medium transition-colors"
+              >Pricing</a
+            >
+
+            <!-- Mobile Resources Dropdown -->
+            <div class="mb-2">
+              <button
+                class="flex items-center justify-between w-full px-4 py-2 text-gray-700 hover:text-primary-600 font-medium transition-colors"
+                id="mobileResourcesBtn"
+              >
+                <span>Resources</span>
+                <i
+                  class="fas fa-chevron-down text-xs transition-transform duration-300"
+                  id="mobileResourcesIcon"
+                ></i>
+              </button>
+              <div class="hidden pl-8 py-2 space-y-1" id="mobileResourcesMenu">
+                <a
+                  href="#"
+                  class="block py-2 text-gray-600 hover:text-primary-600 transition-colors"
+                  >Blog</a
+                >
+                <a
+                  href="#"
+                  class="block py-2 text-gray-600 hover:text-primary-600 transition-colors"
+                  >Help Center</a
+                >
+                <a
+                  href="#"
+                  class="block py-2 text-gray-600 hover:text-primary-600 transition-colors"
+                  >Documentation</a
+                >
+              </div>
+            </div>
+
+            <!-- Mobile Actions -->
+            <div class="px-4 py-4 space-y-2 border-t border-gray-200 mt-4">
+              <button
+                class="w-full text-left text-gray-700 hover:text-primary-600 font-medium py-2 transition-colors"
+              >
+                Login
+              </button>
+              <button
+                class="w-full bg-primary-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-700 transition-colors"
+              >
+                Sign Up Free
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="min-h-screen bg-gradient-to-br from-blue-600 via-purple-600 to-purple-700 relative overflow-hidden flex items-center pt-20"
+    >
+      <!-- Floating Elements -->
+      <div class="absolute inset-0">
+        <div
+          class="absolute top-20 right-20 w-48 h-48 bg-white/10 rounded-full animate-float"
+        ></div>
+        <div
+          class="absolute bottom-32 left-10 w-32 h-32 bg-white/10 rounded-full animate-float"
+          style="animation-delay: 2s"
+        ></div>
+        <div
+          class="absolute top-1/2 right-1/3 w-24 h-24 bg-white/10 rounded-full animate-float"
+          style="animation-delay: 4s"
+        ></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Hero Content -->
+          <div class="text-white">
+            <!-- Badge -->
+            <div
+              class="inline-flex items-center bg-white/20 border border-white/30 rounded-full px-4 py-2 mb-8 backdrop-blur-sm"
+            >
+              <span
+                class="bg-primary-600 text-white px-3 py-1 rounded-full text-xs font-semibold mr-3"
+                >New Feature</span
+              >
+              <span class="text-sm font-medium">AI-Powered Sales Insights</span>
+            </div>
+
+            <h1
+              class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+            >
+              Supercharge Your Sales with Smart CRM
+            </h1>
+
+            <p class="text-xl mb-8 opacity-90 leading-relaxed">
+              Experience the next generation of sales automation. Track, manage,
+              and close deals with AI-powered insights and intelligent
+              workflows.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 mb-12">
+              <button
+                class="bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center"
+              >
+                Get Started Free
+                <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+              <button
+                class="border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-all duration-300 flex items-center justify-center"
+              >
+                <i class="fas fa-play mr-2"></i>
+                Watch Demo
+              </button>
+            </div>
+
+            <!-- Trusted Companies -->
+            <div>
+              <p class="text-xs font-semibold tracking-wider mb-4 opacity-70">
+                TRUSTED BY INDUSTRY LEADERS
+              </p>
+              <div class="flex flex-wrap items-center gap-8 opacity-70">
+                <div class="flex items-center gap-2">
+                  <i class="fab fa-microsoft text-xl"></i>
+                  <span>Microsoft</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fab fa-amazon text-xl"></i>
+                  <span>Amazon</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="font-bold">Netflix</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fab fa-google text-xl"></i>
+                  <span>Google</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Visual -->
+          <div class="relative">
+            <div
+              class="bg-white rounded-2xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-1a5eTnW4di0VZKrKZLpTY04inX1dwt.png"
+                alt="CRM Dashboard"
+                class="w-full h-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pipeline Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Content -->
+          <div class="lg:order-1">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Visualize Your Sales Pipeline
+            </h2>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+              Our intuitive dashboard gives you a bird's-eye view of your entire
+              sales process. Track deals, monitor team performance, and identify
+              opportunities - all in real-time.
+            </p>
+
+            <!-- Features -->
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-hand-paper text-blue-600 text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold text-gray-900 mb-2">
+                    Drag & Drop Deal Management
+                  </h4>
+                  <p class="text-gray-600">
+                    Move deals through your pipeline with simple drag-and-drop
+                    functionality. Customize stages to match your sales process.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-chart-line text-green-600 text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold text-gray-900 mb-2">
+                    Real-time Analytics
+                  </h4>
+                  <p class="text-gray-600">
+                    Get instant insights into your sales performance with
+                    customizable reports and dashboards.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-bell text-purple-600 text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold text-gray-900 mb-2">
+                    Smart Notifications
+                  </h4>
+                  <p class="text-gray-600">
+                    Never miss a follow-up with intelligent reminders and alerts
+                    based on customer interactions.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dashboard Visual -->
+          <div class="lg:order-2">
+            <div
+              class="bg-white rounded-2xl shadow-xl overflow-hidden max-w-lg mx-auto transform perspective-1000 rotate-y-5 hover:rotate-y-0 transition-transform duration-500"
+            >
+              <!-- Dashboard Header -->
+              <div
+                class="bg-gray-800 text-white px-6 py-4 flex items-center gap-3"
+              >
+                <div class="flex gap-2">
+                  <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                  <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                  <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                </div>
+                <h3 class="text-sm font-semibold">Sales Pipeline Dashboard</h3>
+              </div>
+
+              <!-- Dashboard Content -->
+              <div class="p-6">
+                <!-- Metrics -->
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div class="bg-gray-50 rounded-lg p-4">
+                    <div class="text-xs text-gray-500 mb-1">Total Deals</div>
+                    <div class="text-2xl font-bold text-gray-900">127</div>
+                    <div class="text-xs text-green-600 flex items-center">
+                      <i class="fas fa-arrow-up mr-1"></i>12% vs last month
+                    </div>
+                  </div>
+                  <div class="bg-gray-50 rounded-lg p-4">
+                    <div class="text-xs text-gray-500 mb-1">Won</div>
+                    <div class="text-2xl font-bold text-gray-900">42</div>
+                    <div class="text-xs text-green-600 flex items-center">
+                      <i class="fas fa-arrow-up mr-1"></i>8% vs last month
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Pipeline Stages -->
+                <div>
+                  <h4 class="text-sm font-semibold text-gray-900 mb-4">
+                    Pipeline Stages
+                  </h4>
+                  <div class="grid grid-cols-3 gap-3">
+                    <!-- Lead Stage -->
+                    <div class="bg-gray-50 rounded-lg p-3">
+                      <div class="flex justify-between items-center mb-3">
+                        <span class="text-xs font-medium text-gray-600"
+                          >Lead</span
+                        >
+                        <span
+                          class="bg-blue-600 text-white text-xs px-2 py-1 rounded-full"
+                          >24</span
+                        >
+                      </div>
+                      <div class="space-y-2">
+                        <div class="bg-white rounded p-2 border">
+                          <div class="text-xs font-medium text-gray-900">
+                            Acme Corp
+                          </div>
+                          <div class="text-xs text-gray-500">$12,500</div>
+                        </div>
+                        <div class="bg-white rounded p-2 border">
+                          <div class="text-xs font-medium text-gray-900">
+                            TechStart
+                          </div>
+                          <div class="text-xs text-gray-500">$8,750</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Qualified Stage -->
+                    <div class="bg-gray-50 rounded-lg p-3">
+                      <div class="flex justify-between items-center mb-3">
+                        <span class="text-xs font-medium text-gray-600"
+                          >Qualified</span
+                        >
+                        <span
+                          class="bg-blue-600 text-white text-xs px-2 py-1 rounded-full"
+                          >18</span
+                        >
+                      </div>
+                      <div class="space-y-2">
+                        <div class="bg-white rounded p-2 border">
+                          <div class="text-xs font-medium text-gray-900">
+                            Nexus Sol
+                          </div>
+                          <div class="text-xs text-gray-500">$24,000</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Proposal Stage -->
+                    <div class="bg-gray-50 rounded-lg p-3">
+                      <div class="flex justify-between items-center mb-3">
+                        <span class="text-xs font-medium text-gray-600"
+                          >Proposal</span
+                        >
+                        <span
+                          class="bg-blue-600 text-white text-xs px-2 py-1 rounded-full"
+                          >12</span
+                        >
+                      </div>
+                      <div class="space-y-2">
+                        <div class="bg-white rounded p-2 border">
+                          <div class="text-xs font-medium text-gray-900">
+                            Quantum
+                          </div>
+                          <div class="text-xs text-gray-500">$32,000</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Powerful Features for Modern Sales Teams
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Everything you need to streamline your sales process, engage
+            prospects, and close more deals.
+          </p>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Email Tracking -->
+          <div
+            class="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fas fa-envelope text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">
+              Email Tracking
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Know exactly when prospects open your emails, click links, or view
+              attachments. Get real-time notifications to follow up at the
+              perfect moment.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-center text-gray-700">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                Real-time open notifications
+              </li>
+              <li class="flex items-center text-gray-700">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                Link click tracking
+              </li>
+              <li class="flex items-center text-gray-700">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                Attachment viewing insights
+              </li>
+            </ul>
+          </div>
+
+          <!-- Pipeline Management -->
+          <div
+            class="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-pink-500 to-red-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fas fa-project-diagram text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">
+              Pipeline Management
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Visualize your entire sales process with customizable pipelines.
+              Move deals through stages with drag-and-drop simplicity.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-center text-gray-700">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                Customizable pipeline stages
+              </li>
+              <li class="flex items-center text-gray-700">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                Drag-and-drop deal management
+              </li>
+              <li class="flex items-center text-gray-700">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                Win probability forecasting
+              </li>
+            </ul>
+          </div>
+
+          <!-- Task Automation -->
+          <div
+            class="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fas fa-robot text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">
+              Task Automation
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Eliminate manual work with powerful automation. Set up workflows
+              that trigger actions based on customer behavior or deal progress.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-center text-gray-700">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                Automated follow-up sequences
+              </li>
+              <li class="flex items-center text-gray-700">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                Task creation based on triggers
+              </li>
+              <li class="flex items-center text-gray-700">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                Custom workflow builder
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Management -->
+          <div
+            class="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fas fa-users text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">
+              Contact Management
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Keep all your prospect and customer information organized in one
+              place. Track interactions and maintain a complete communication
+              history.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-center text-gray-700">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                360° contact view
+              </li>
+              <li class="flex items-center text-gray-700">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                Interaction timeline
+              </li>
+              <li class="flex items-center text-gray-700">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                Custom contact fields
+              </li>
+            </ul>
+          </div>
+
+          <!-- Analytics Dashboard -->
+          <div
+            class="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fas fa-chart-bar text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">
+              Analytics Dashboard
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Make data-driven decisions with powerful analytics. Track
+              performance metrics and identify opportunities for improvement.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-center text-gray-700">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                Customizable reports
+              </li>
+              <li class="flex items-center text-gray-700">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                Sales forecasting
+              </li>
+              <li class="flex items-center text-gray-700">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                Team performance metrics
+              </li>
+            </ul>
+          </div>
+
+          <!-- Integration Hub -->
+          <div
+            class="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fas fa-plug text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">
+              Integration Hub
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Connect with your favorite tools and services. Integrate with
+              email, calendar, marketing automation, and more.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-center text-gray-700">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                Gmail & Outlook integration
+              </li>
+              <li class="flex items-center text-gray-700">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                Calendar syncing
+              </li>
+              <li class="flex items-center text-gray-700">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                API access for custom integrations
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Success Stories Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Success Stories from Our Customers
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            See how leading companies have transformed their sales process with
+            our CRM platform.
+          </p>
+        </div>
+
+        <!-- Testimonials Grid -->
+        <div class="grid lg:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div
+            class="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+          >
+            <!-- Company Header -->
+            <div class="flex items-center gap-4 mb-6">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center"
+              >
+                <i class="fas fa-building text-white text-xl"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-900">
+                  TechVision Solutions
+                </h4>
+                <p class="text-gray-600">Enterprise Software</p>
+                <div class="flex text-yellow-400 mt-1">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+
+            <blockquote class="text-gray-700 mb-6 italic">
+              "We've increased our sales productivity by 37% and shortened our
+              sales cycle by nearly 3 weeks since implementing this CRM. The
+              email tracking and automation features have been game-changers for
+              our team."
+            </blockquote>
+
+            <!-- Author -->
+            <div class="flex items-center gap-3 mb-6">
+              <div
+                class="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center text-white font-semibold"
+              >
+                MR
+              </div>
+              <div>
+                <div class="font-semibold text-gray-900">
+                  Michael Richardson
+                </div>
+                <div class="text-gray-600 text-sm">VP of Sales</div>
+              </div>
+            </div>
+
+            <!-- Metrics -->
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span class="text-gray-600">Sales Productivity</span>
+                  <span class="font-semibold text-gray-900">+37%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div
+                    class="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full transition-all duration-1000"
+                    style="width: 37%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span class="text-gray-600">Sales Cycle Reduction</span>
+                  <span class="font-semibold text-gray-900">21 days</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div
+                    class="bg-gradient-to-r from-green-500 to-teal-600 h-2 rounded-full transition-all duration-1000"
+                    style="width: 60%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <a
+              href="#"
+              class="text-primary-600 hover:text-primary-700 font-medium text-sm mt-4 inline-block"
+              >Read full case study</a
+            >
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div
+            class="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+          >
+            <!-- Company Header -->
+            <div class="flex items-center gap-4 mb-6">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-pink-500 to-red-600 rounded-xl flex items-center justify-center"
+              >
+                <i class="fas fa-shopping-cart text-white text-xl"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-900">
+                  Elevate Retail Group
+                </h4>
+                <p class="text-gray-600">E-commerce</p>
+                <div class="flex text-yellow-400 mt-1">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+
+            <blockquote class="text-gray-700 mb-6 italic">
+              "The pipeline management tools have transformed how we track and
+              close deals. We've seen a 52% increase in our conversion rate and
+              our team loves the intuitive interface."
+            </blockquote>
+
+            <!-- Author -->
+            <div class="flex items-center gap-3 mb-6">
+              <div
+                class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center text-white font-semibold"
+              >
+                JM
+              </div>
+              <div>
+                <div class="font-semibold text-gray-900">Jennifer Martinez</div>
+                <div class="text-gray-600 text-sm">Sales Director</div>
+              </div>
+            </div>
+
+            <!-- Metrics -->
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span class="text-gray-600">Conversion Rate</span>
+                  <span class="font-semibold text-gray-900">+52%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div
+                    class="bg-gradient-to-r from-pink-500 to-red-600 h-2 rounded-full transition-all duration-1000"
+                    style="width: 52%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span class="text-gray-600">Team Adoption</span>
+                  <span class="font-semibold text-gray-900">98%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div
+                    class="bg-gradient-to-r from-green-500 to-teal-600 h-2 rounded-full transition-all duration-1000"
+                    style="width: 98%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <a
+              href="#"
+              class="text-primary-600 hover:text-primary-700 font-medium text-sm mt-4 inline-block"
+              >Read full case study</a
+            >
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div
+            class="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+          >
+            <!-- Company Header -->
+            <div class="flex items-center gap-4 mb-6">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center"
+              >
+                <i class="fas fa-university text-white text-xl"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-900">
+                  Pinnacle Financial Services
+                </h4>
+                <p class="text-gray-600">Financial Services</p>
+                <div class="flex text-yellow-400 mt-1">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+
+            <blockquote class="text-gray-700 mb-6 italic">
+              "The email tracking and task automation features have been
+              invaluable for our advisors. We've increased our client engagement
+              by 40% and reduced administrative work by nearly 15 hours per
+              week."
+            </blockquote>
+
+            <!-- Author -->
+            <div class="flex items-center gap-3 mb-6">
+              <div
+                class="w-12 h-12 bg-cyan-600 rounded-full flex items-center justify-center text-white font-semibold"
+              >
+                DT
+              </div>
+              <div>
+                <div class="font-semibold text-gray-900">David Thompson</div>
+                <div class="text-gray-600 text-sm">Managing Director</div>
+              </div>
+            </div>
+
+            <!-- Metrics -->
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span class="text-gray-600">Client Engagement</span>
+                  <span class="font-semibold text-gray-900">+40%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div
+                    class="bg-gradient-to-r from-cyan-500 to-blue-600 h-2 rounded-full transition-all duration-1000"
+                    style="width: 40%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span class="text-gray-600">Time Saved Weekly</span>
+                  <span class="font-semibold text-gray-900">15 hours</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div
+                    class="bg-gradient-to-r from-green-500 to-teal-600 h-2 rounded-full transition-all duration-1000"
+                    style="width: 75%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <a
+              href="#"
+              class="text-primary-600 hover:text-primary-700 font-medium text-sm mt-4 inline-block"
+              >Read full case study</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section
+      class="py-20 bg-gradient-to-br from-primary-600 to-primary-700 text-white"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- CTA Content -->
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+              Ready to Transform Your Sales Process?
+            </h2>
+            <p class="text-xl mb-8 opacity-90">
+              Schedule a personalized demo with our product specialists and see
+              how our CRM can help your team close more deals.
+            </p>
+
+            <!-- Features -->
+            <div class="space-y-6 mb-8">
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-clock text-white text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold mb-2">
+                    30-Minute Personalized Demo
+                  </h4>
+                  <p class="opacity-80">
+                    See how our platform can be tailored to your specific sales
+                    process
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-clipboard-list text-white text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold mb-2">
+                    Custom Implementation Plan
+                  </h4>
+                  <p class="opacity-80">
+                    Get a roadmap for successful adoption across your team
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-headset text-white text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold mb-2">Dedicated Support</h4>
+                  <p class="opacity-80">
+                    Our customer success team will ensure your team gets maximum
+                    value
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Proof -->
+            <div class="flex items-center gap-4">
+              <div class="flex -space-x-2">
+                <div
+                  class="w-10 h-10 bg-yellow-500 rounded-full border-2 border-white"
+                ></div>
+                <div
+                  class="w-10 h-10 bg-green-500 rounded-full border-2 border-white"
+                ></div>
+                <div
+                  class="w-10 h-10 bg-blue-500 rounded-full border-2 border-white"
+                ></div>
+                <div
+                  class="w-10 h-10 bg-purple-500 rounded-full border-2 border-white"
+                ></div>
+              </div>
+              <p class="text-sm opacity-80">
+                Join 2,500+ sales professionals who have transformed their
+                process
+              </p>
+            </div>
+          </div>
+
+          <!-- Demo Form -->
+          <div class="bg-white rounded-2xl p-8 shadow-2xl">
+            <form id="demoForm" class="space-y-6">
+              <h3 class="text-2xl font-bold text-gray-900 text-center mb-6">
+                Book Your Demo
+              </h3>
+
+              <div>
+                <label
+                  for="fullName"
+                  class="block text-sm font-medium text-gray-700 mb-2"
+                  >Full Name</label
+                >
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  placeholder="John Smith"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="workEmail"
+                  class="block text-sm font-medium text-gray-700 mb-2"
+                  >Work Email</label
+                >
+                <input
+                  type="email"
+                  id="workEmail"
+                  name="workEmail"
+                  placeholder="john@company.com"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="companyName"
+                  class="block text-sm font-medium text-gray-700 mb-2"
+                  >Company Name</label
+                >
+                <input
+                  type="text"
+                  id="companyName"
+                  name="companyName"
+                  placeholder="Acme Inc"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="companySize"
+                  class="block text-sm font-medium text-gray-700 mb-2"
+                  >Company Size</label
+                >
+                <select
+                  id="companySize"
+                  name="companySize"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                >
+                  <option class="text-gray-600" value="">
+                    Select company size
+                  </option>
+                  <option class="text-gray-600" value="1-10">
+                    1-10 employees
+                  </option>
+                  <option class="text-gray-600" value="11-50">
+                    11-50 employees
+                  </option>
+                  <option class="text-gray-600" value="51-200">
+                    51-200 employees
+                  </option>
+                  <option class="text-gray-600" value="201-1000">
+                    201-1000 employees
+                  </option>
+                  <option class="text-gray-600" value="1000+">
+                    1000+ employees
+                  </option>
+                </select>
+              </div>
+
+              <div>
+                <label
+                  for="demoTime"
+                  class="block text-sm font-medium text-gray-700 mb-2"
+                  >Preferred Demo Time</label
+                >
+                <select
+                  id="demoTime"
+                  name="demoTime"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                >
+                  <option class="text-gray-600" value="">
+                    Select preferred time
+                  </option>
+                  <option class="text-gray-600" value="morning">
+                    Morning (9AM - 12PM)
+                  </option>
+                  <option class="text-gray-600" value="afternoon">
+                    Afternoon (12PM - 5PM)
+                  </option>
+                  <option class="text-gray-600" value="evening">
+                    Evening (5PM - 8PM)
+                  </option>
+                </select>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  id="consent"
+                  name="consent"
+                  required
+                  class="mt-1 w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
+                />
+                <label for="consent" class="text-sm text-gray-600">
+                  I agree to receive communications about products, services,
+                  and events
+                </label>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full bg-primary-600 text-white py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors transform hover:-translate-y-0.5"
+              >
+                Book Your Demo
+              </button>
+
+              <div class="flex justify-center gap-6 text-xs text-gray-500">
+                <span class="flex items-center gap-1">
+                  <i class="fas fa-lock"></i>
+                  Secure & Confidential
+                </span>
+                <span class="flex items-center gap-1">
+                  <i class="fas fa-calendar"></i>
+                  Flexible Scheduling
+                </span>
+                <span class="flex items-center gap-1">
+                  <i class="fas fa-clock"></i>
+                  30-Minute Session
+                </span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
+          <!-- Brand -->
+          <div class="lg:col-span-2">
+            <h4 class="text-2xl font-bold mb-4">logo</h4>
+            <p class="text-gray-400 mb-6 leading-relaxed">
+              The all-in-one CRM platform designed to help sales teams track
+              emails, manage pipelines, and automate tasks to close more deals,
+              faster.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary-600 transition-colors"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary-600 transition-colors"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary-600 transition-colors"
+              >
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary-600 transition-colors"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product -->
+          <div>
+            <h5 class="text-lg font-semibold mb-4">Product</h5>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Pricing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Security</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Enterprise</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Customer Stories</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Resources -->
+          <div>
+            <h5 class="text-lg font-semibold mb-4">Resources</h5>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Guides & Tutorials</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Help Center</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >API Documentation</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Community</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div>
+            <h5 class="text-lg font-semibold mb-4">Company</h5>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Partners</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Press</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div
+          class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-400 mb-4 md:mb-0">
+            &copy; 2024 logo. All rights reserved.
+          </p>
+          <div class="flex space-x-6 text-sm">
+            <span class="flex items-center gap-2 text-gray-400">
+              <i class="fas fa-shield-alt"></i>
+              SOC 2 Compliant
+            </span>
+            <span class="flex items-center gap-2 text-gray-400">
+              <i class="fas fa-lock"></i>
+              GDPR Ready
+            </span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Navigation functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const hamburgerIcon = document.getElementById("hamburgerIcon");
+
+        mobileMenuBtn.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+
+          // Toggle hamburger icon
+          if (mobileMenu.classList.contains("hidden")) {
+            hamburgerIcon.className = "fas fa-bars text-xl";
+          } else {
+            hamburgerIcon.className = "fas fa-times text-xl";
+          }
+        });
+
+        // Mobile dropdown toggles
+        const mobileProductBtn = document.getElementById("mobileProductBtn");
+        const mobileProductMenu = document.getElementById("mobileProductMenu");
+        const mobileProductIcon = document.getElementById("mobileProductIcon");
+
+        mobileProductBtn.addEventListener("click", function () {
+          mobileProductMenu.classList.toggle("hidden");
+          mobileProductIcon.classList.toggle("rotate-180");
+        });
+
+        const mobileResourcesBtn =
+          document.getElementById("mobileResourcesBtn");
+        const mobileResourcesMenu = document.getElementById(
+          "mobileResourcesMenu"
+        );
+        const mobileResourcesIcon = document.getElementById(
+          "mobileResourcesIcon"
+        );
+
+        mobileResourcesBtn.addEventListener("click", function () {
+          mobileResourcesMenu.classList.toggle("hidden");
+          mobileResourcesIcon.classList.toggle("rotate-180");
+        });
+
+        // Close mobile menu when clicking on links
+        const mobileLinks = mobileMenu.querySelectorAll("a");
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            mobileMenu.classList.add("hidden");
+            hamburgerIcon.className = "fas fa-bars text-xl";
+          });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById("navbar");
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 50) {
+            navbar.classList.add("bg-white/98", "shadow-lg");
+            navbar.classList.remove("bg-white/95");
+          } else {
+            navbar.classList.add("bg-white/95");
+            navbar.classList.remove("bg-white/98", "shadow-lg");
+          }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          });
+        });
+
+        // Form handling
+        const demoForm = document.getElementById("demoForm");
+        if (demoForm) {
+          demoForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(demoForm);
+            const data = Object.fromEntries(formData);
+
+            if (validateForm(data)) {
+              submitForm(data);
+            }
+          });
+
+          // Real-time validation
+          const inputs = demoForm.querySelectorAll("input, select");
+          inputs.forEach((input) => {
+            input.addEventListener("blur", function () {
+              validateField(this);
+            });
+
+            input.addEventListener("input", function () {
+              clearFieldError(this);
+            });
+          });
+        }
+
+        // Scroll animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate-slide-up");
+            }
+          });
+        }, observerOptions);
+
+        // Observe elements for animation
+        const animatedElements = document.querySelectorAll(
+          ".bg-white.border, .bg-white.rounded-xl"
+        );
+        animatedElements.forEach((el) => {
+          observer.observe(el);
+        });
+
+        // Progress bar animations
+        const progressBars = document.querySelectorAll(".bg-gradient-to-r");
+        const progressObserver = new IntersectionObserver(
+          function (entries) {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const progressBar = entry.target;
+                const width = progressBar.style.width;
+                progressBar.style.width = "0%";
+                setTimeout(() => {
+                  progressBar.style.width = width;
+                }, 500);
+                progressObserver.unobserve(progressBar);
+              }
+            });
+          },
+          { threshold: 0.5 }
+        );
+
+        progressBars.forEach((bar) => {
+          if (bar.style.width) {
+            progressObserver.observe(bar);
+          }
+        });
+      });
+
+      // Form validation functions
+      function validateForm(data) {
+        const requiredFields = [
+          "fullName",
+          "workEmail",
+          "companyName",
+          "companySize",
+          "demoTime",
+        ];
+        let isValid = true;
+
+        requiredFields.forEach((field) => {
+          const input = document.getElementById(field);
+          if (!data[field] || data[field].trim() === "") {
+            showFieldError(input, "This field is required");
+            isValid = false;
+          }
+        });
+
+        // Email validation
+        if (data.workEmail && !isValidEmail(data.workEmail)) {
+          showFieldError(
+            document.getElementById("workEmail"),
+            "Please enter a valid email address"
+          );
+          isValid = false;
+        }
+
+        // Consent validation
+        if (!document.getElementById("consent").checked) {
+          showFieldError(
+            document.getElementById("consent"),
+            "Please agree to receive communications"
+          );
+          isValid = false;
+        }
+
+        return isValid;
+      }
+
+      function validateField(input) {
+        const value = input.value.trim();
+
+        if (input.hasAttribute("required") && !value) {
+          showFieldError(input, "This field is required");
+          return false;
+        }
+
+        if (input.type === "email" && value && !isValidEmail(value)) {
+          showFieldError(input, "Please enter a valid email address");
+          return false;
+        }
+
+        clearFieldError(input);
+        return true;
+      }
+
+      function showFieldError(input, message) {
+        clearFieldError(input);
+
+        input.classList.add("border-red-500");
+        input.style.borderColor = "#ef4444";
+
+        const errorDiv = document.createElement("div");
+        errorDiv.className = "error-message text-red-500 text-sm mt-1";
+        errorDiv.textContent = message;
+
+        input.parentNode.appendChild(errorDiv);
+      }
+
+      function clearFieldError(input) {
+        input.classList.remove("border-red-500");
+        input.style.borderColor = "";
+
+        const errorDiv = input.parentNode.querySelector(".error-message");
+        if (errorDiv) {
+          errorDiv.remove();
+        }
+      }
+
+      function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      }
+
+      function submitForm(data) {
+        const submitBtn = document.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+
+        // Show loading state
+        submitBtn.textContent = "Booking Demo...";
+        submitBtn.disabled = true;
+        submitBtn.classList.add("opacity-75");
+
+        // Simulate API call
+        setTimeout(() => {
+          // Show success message
+          showSuccessMessage();
+
+          // Reset form
+          document.getElementById("demoForm").reset();
+
+          // Reset button
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+          submitBtn.classList.remove("opacity-75");
+        }, 2000);
+      }
+
+      function showSuccessMessage() {
+        const successHTML = `
+                <div class="fixed top-24 right-4 bg-green-500 text-white p-4 rounded-lg shadow-lg z-50 max-w-sm animate-slide-in-right" id="successToast">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-check-circle text-xl"></i>
+                        <div>
+                            <strong>Demo Booked Successfully!</strong>
+                            <p class="text-sm opacity-90 mt-1">We'll contact you within 24 hours to schedule your personalized demo.</p>
+                        </div>
+                        <button onclick="document.getElementById('successToast').remove()" class="text-white hover:text-gray-200 ml-auto">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+
+        document.body.insertAdjacentHTML("beforeend", successHTML);
+
+        // Auto remove after 5 seconds
+        setTimeout(() => {
+          const toast = document.getElementById("successToast");
+          if (toast) {
+            toast.classList.add("animate-slide-out-right");
+            setTimeout(() => toast.remove(), 300);
+          }
+        }, 5000);
+      }
+
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", function (e) {
+        const mobileMenu = document.getElementById("mobileMenu");
+        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+
+        if (
+          !mobileMenu.contains(e.target) &&
+          !mobileMenuBtn.contains(e.target)
+        ) {
+          mobileMenu.classList.add("hidden");
+          document.getElementById("hamburgerIcon").className =
+            "fas fa-bars text-xl";
+        }
+      });
+
+      // Resize handler
+      window.addEventListener("resize", function () {
+        const mobileMenu = document.getElementById("mobileMenu");
+        if (
+          window.innerWidth >= 1024 &&
+          !mobileMenu.classList.contains("hidden")
+        ) {
+          mobileMenu.classList.add("hidden");
+          document.getElementById("hamburgerIcon").className =
+            "fas fa-bars text-xl";
+        }
+      });
+    </script>
+  </body>
+</html>

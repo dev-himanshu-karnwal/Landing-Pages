@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products - MediCare Plus</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-top">
+        <div class="container">
+          <div class="contact-info">
+            <a href="tel:+1234567890"
+              ><i class="fas fa-phone-alt"></i> +123 456 7890</a
+            >
+            <a href="mailto:info@medicareplus.com"
+              ><i class="fas fa-envelope"></i> info@medicareplus.com</a
+            >
+          </div>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <nav class="navbar">
+        <div class="container">
+          <div class="logo">
+            <a href="index.html">
+              <span class="logo-icon"
+                ><i class="fas fa-clinic-medical"></i
+              ></span>
+              <span class="logo-text"
+                >MediCare<span class="plus">Plus</span></span
+              >
+            </a>
+          </div>
+          <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+          </div>
+          <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li class="active"><a href="products.html">Products</a></li>
+            <li><a href="blog.html">Health Tips</a></li>
+            <li><a href="prescription.html">Upload Prescription</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <section class="page-header">
+      <div class="container">
+        <h1>Our Products</h1>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a> / <span>Products</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="products-section">
+      <div class="container">
+        <div class="products-container">
+          <div class="products-sidebar">
+            <div class="sidebar-widget">
+              <h3>Categories</h3>
+              <ul class="category-list">
+                <li class="active">
+                  <a href="#" data-category="all">All Products</a>
+                </li>
+                <li><a href="#" data-category="medicines">Medicines</a></li>
+                <li>
+                  <a href="#" data-category="vitamins"
+                    >Vitamins & Supplements</a
+                  >
+                </li>
+                <li>
+                  <a href="#" data-category="personal-care">Personal Care</a>
+                </li>
+                <li><a href="#" data-category="baby-care">Baby Care</a></li>
+                <li><a href="#" data-category="devices">Medical Devices</a></li>
+                <li>
+                  <a href="#" data-category="ayurvedic">Ayurvedic Products</a>
+                </li>
+              </ul>
+            </div>
+            <div class="sidebar-widget">
+              <h3>Filter by Price</h3>
+              <div class="price-filter">
+                <div class="price-range">
+                  <input
+                    type="range"
+                    min="0"
+                    max="2000"
+                    value="2000"
+                    class="price-slider"
+                    id="price-slider"
+                  />
+                </div>
+                <div class="price-inputs">
+                  <div class="price-input">
+                    <label for="min-price">Min</label>
+                    <input
+                      type="number"
+                      id="min-price"
+                      value="0"
+                      min="0"
+                      max="2000"
+                    />
+                  </div>
+                  <div class="price-input">
+                    <label for="max-price">Max</label>
+                    <input
+                      type="number"
+                      id="max-price"
+                      value="2000"
+                      min="0"
+                      max="2000"
+                    />
+                  </div>
+                </div>
+                <button class="btn btn-filter">Apply Filter</button>
+              </div>
+            </div>
+            <div class="sidebar-widget">
+              <h3>Popular Tags</h3>
+              <div class="tag-cloud">
+                <a href="#" class="tag">Antibiotics</a>
+                <a href="#" class="tag">Pain Relief</a>
+                <a href="#" class="tag">Fever</a>
+                <a href="#" class="tag">Cough & Cold</a>
+                <a href="#" class="tag">Diabetes</a>
+                <a href="#" class="tag">Skin Care</a>
+                <a href="#" class="tag">Immunity</a>
+                <a href="#" class="tag">Ayurvedic</a>
+              </div>
+            </div>
+          </div>
+          <div class="products-content">
+            <div class="products-toolbar">
+              <div class="products-search">
+                <input
+                  type="text"
+                  placeholder="Search products..."
+                  id="product-search"
+                />
+                <button><i class="fas fa-search"></i></button>
+              </div>
+              <div class="products-sort">
+                <label for="sort-by">Sort by:</label>
+                <select id="sort-by">
+                  <option value="popularity">Popularity</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="newest">Newest First</option>
+                </select>
+              </div>
+              <div class="products-view">
+                <button class="view-btn grid-view active">
+                  <i class="fas fa-th-large"></i>
+                </button>
+                <button class="view-btn list-view">
+                  <i class="fas fa-list"></i>
+                </button>
+              </div>
+            </div>
+            <div class="products-grid">
+              <!-- Product 1 -->
+              <div
+                class="product-card"
+                data-category="medicines"
+                data-price="499"
+              >
+                <div class="product-badge">New</div>
+                <div class="product-image">
+                  <img src="images/product1.png" alt="Multivitamin Complex" />
+                  <div class="product-actions">
+                    <button class="action-btn">
+                      <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-shopping-cart"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="product-info">
+                  <h3>Multivitamin Complex</h3>
+                  <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>(4.5)</span>
+                  </div>
+                  <div class="product-price">
+                    <span class="price">₹499</span>
+                    <span class="original-price">₹599</span>
+                  </div>
+                  <p class="product-description">
+                    A complete multivitamin formula with essential nutrients for
+                    daily health support.
+                  </p>
+                  <button class="btn-add-cart">Add to Cart</button>
+                </div>
+              </div>
+
+              <!-- Product 2 -->
+              <div
+                class="product-card"
+                data-category="medicines"
+                data-price="299"
+              >
+                <div class="product-badge bestseller">Bestseller</div>
+                <div class="product-image">
+                  <img src="images/product2.png" alt="Pain Relief Gel" />
+                  <div class="product-actions">
+                    <button class="action-btn">
+                      <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-shopping-cart"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="product-info">
+                  <h3>Pain Relief Gel</h3>
+                  <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>(5.0)</span>
+                  </div>
+                  <div class="product-price">
+                    <span class="price">₹299</span>
+                    <span class="original-price">₹349</span>
+                  </div>
+                  <p class="product-description">
+                    Fast-acting gel for relief from muscle and joint pain.
+                    Non-greasy formula.
+                  </p>
+                  <button class="btn-add-cart">Add to Cart</button>
+                </div>
+              </div>
+
+              <!-- Product 3 -->
+              <div
+                class="product-card"
+                data-category="devices"
+                data-price="199"
+              >
+                <div class="product-image">
+                  <img src="images/product3.png" alt="Digital Thermometer" />
+                  <div class="product-actions">
+                    <button class="action-btn">
+                      <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-shopping-cart"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="product-info">
+                  <h3>Digital Thermometer</h3>
+                  <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span>(4.0)</span>
+                  </div>
+                  <div class="product-price">
+                    <span class="price">₹199</span>
+                    <span class="original-price">₹249</span>
+                  </div>
+                  <p class="product-description">
+                    Accurate digital thermometer with quick reading and fever
+                    alert function.
+                  </p>
+                  <button class="btn-add-cart">Add to Cart</button>
+                </div>
+              </div>
+
+              <!-- Product 4 -->
+              <div
+                class="product-card"
+                data-category="vitamins"
+                data-price="399"
+              >
+                <div class="product-badge">Sale</div>
+                <div class="product-image">
+                  <img src="images/product4.png" alt="Immunity Booster" />
+                  <div class="product-actions">
+                    <button class="action-btn">
+                      <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-shopping-cart"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="product-info">
+                  <h3>Immunity Booster</h3>
+                  <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>(4.7)</span>
+                  </div>
+                  <div class="product-price">
+                    <span class="price">₹399</span>
+                    <span class="original-price">₹599</span>
+                  </div>
+                  <p class="product-description">
+                    Natural immunity booster with Vitamin C, Zinc, and herbal
+                    extracts.
+                  </p>
+                  <button class="btn-add-cart">Add to Cart</button>
+                </div>
+              </div>
+
+              <!-- Product 5 -->
+              <div
+                class="product-card"
+                data-category="personal-care"
+                data-price="149"
+              >
+                <div class="product-image">
+                  <img src="images/product5.png" alt="Hand Sanitizer" />
+                  <div class="product-actions">
+                    <button class="action-btn">
+                      <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-shopping-cart"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="product-info">
+                  <h3>Hand Sanitizer</h3>
+                  <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>(4.9)</span>
+                  </div>
+                  <div class="product-price">
+                    <span class="price">₹149</span>
+                    <span class="original-price">₹199</span>
+                  </div>
+                  <p class="product-description">
+                    Alcohol-based hand sanitizer that kills 99.9% of germs.
+                    Non-sticky formula.
+                  </p>
+                  <button class="btn-add-cart">Add to Cart</button>
+                </div>
+              </div>
+
+              <!-- Product 6 -->
+              <div
+                class="product-card"
+                data-category="medicines"
+                data-price="249"
+              >
+                <div class="product-image">
+                  <img src="images/product6.png" alt="Cough Syrup" />
+                  <div class="product-actions">
+                    <button class="action-btn">
+                      <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-shopping-cart"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="product-info">
+                  <h3>Cough Syrup</h3>
+                  <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span>(4.0)</span>
+                  </div>
+                  <div class="product-price">
+                    <span class="price">₹249</span>
+                    <span class="original-price">₹299</span>
+                  </div>
+                  <p class="product-description">
+                    Effective relief from cough and cold symptoms. Suitable for
+                    adults and children above 6 years.
+                  </p>
+                  <button class="btn-add-cart">Add to Cart</button>
+                </div>
+              </div>
+
+              <!-- Product 7 -->
+              <div
+                class="product-card"
+                data-category="baby-care"
+                data-price="349"
+              >
+                <div class="product-image">
+                  <img src="images/product7.png" alt="Baby Care Kit" />
+                  <div class="product-actions">
+                    <button class="action-btn">
+                      <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-shopping-cart"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="product-info">
+                  <h3>Baby Care Kit</h3>
+                  <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>(4.6)</span>
+                  </div>
+                  <div class="product-price">
+                    <span class="price">₹349</span>
+                    <span class="original-price">₹399</span>
+                  </div>
+                  <p class="product-description">
+                    Complete baby care kit with baby oil, powder, lotion, and
+                    soap. Gentle on baby's skin.
+                  </p>
+                  <button class="btn-add-cart">Add to Cart</button>
+                </div>
+              </div>
+
+              <!-- Product 8 -->
+              <div
+                class="product-card"
+                data-category="ayurvedic"
+                data-price="599"
+              >
+                <div class="product-badge">Premium</div>
+                <div class="product-image">
+                  <img src="images/product8.png" alt="Ayurvedic Health Tonic" />
+                  <div class="product-actions">
+                    <button class="action-btn">
+                      <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-shopping-cart"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="product-info">
+                  <h3>Ayurvedic Health Tonic</h3>
+                  <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>(4.8)</span>
+                  </div>
+                  <div class="product-price">
+                    <span class="price">₹599</span>
+                    <span class="original-price">₹699</span>
+                  </div>
+                  <p class="product-description">
+                    Traditional Ayurvedic tonic for overall health and vitality.
+                    Made with natural herbs.
+                  </p>
+                  <button class="btn-add-cart">Add to Cart</button>
+                </div>
+              </div>
+
+              <!-- Product 9 -->
+              <div
+                class="product-card"
+                data-category="devices"
+                data-price="1499"
+              >
+                <div class="product-image">
+                  <img src="images/product9.png" alt="Blood Pressure Monitor" />
+                  <div class="product-actions">
+                    <button class="action-btn">
+                      <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-shopping-cart"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="product-info">
+                  <h3>Blood Pressure Monitor</h3>
+                  <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>(4.5)</span>
+                  </div>
+                  <div class="product-price">
+                    <span class="price">₹1499</span>
+                    <span class="original-price">₹1799</span>
+                  </div>
+                  <p class="product-description">
+                    Digital blood pressure monitor with accurate readings and
+                    memory function. Easy to use at home.
+                  </p>
+                  <button class="btn-add-cart">Add to Cart</button>
+                </div>
+              </div>
+
+              <!-- Product 10 -->
+              <div
+                class="product-card"
+                data-category="personal-care"
+                data-price="199"
+              >
+                <div class="product-image">
+                  <img src="images/product10.png" alt="Sunscreen Lotion" />
+                  <div class="product-actions">
+                    <button class="action-btn">
+                      <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-shopping-cart"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="product-info">
+                  <h3>Sunscreen Lotion SPF 50</h3>
+                  <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span>(4.0)</span>
+                  </div>
+                  <div class="product-price">
+                    <span class="price">₹199</span>
+                    <span class="original-price">₹249</span>
+                  </div>
+                  <p class="product-description">
+                    High protection sunscreen with SPF 50. Water-resistant and
+                    non-greasy formula.
+                  </p>
+                  <button class="btn-add-cart">Add to Cart</button>
+                </div>
+              </div>
+
+              <!-- Product 11 -->
+              <div
+                class="product-card"
+                data-category="vitamins"
+                data-price="449"
+              >
+                <div class="product-image">
+                  <img src="images/product11.png" alt="Calcium Supplements" />
+                  <div class="product-actions">
+                    <button class="action-btn">
+                      <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-shopping-cart"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="product-info">
+                  <h3>Calcium Supplements</h3>
+                  <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>(4.3)</span>
+                  </div>
+                  <div class="product-price">
+                    <span class="price">₹449</span>
+                    <span class="original-price">₹499</span>
+                  </div>
+                  <p class="product-description">
+                    Calcium supplements with Vitamin D3 for better absorption.
+                    Supports bone health.
+                  </p>
+                  <button class="btn-add-cart">Add to Cart</button>
+                </div>
+              </div>
+
+              <!-- Product 12 -->
+              <div
+                class="product-card"
+                data-category="medicines"
+                data-price="129"
+              >
+                <div class="product-image">
+                  <img src="images/product12.png" alt="First Aid Kit" />
+                  <div class="product-actions">
+                    <button class="action-btn">
+                      <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-shopping-cart"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="product-info">
+                  <h3>First Aid Kit</h3>
+                  <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>(4.9)</span>
+                  </div>
+                  <div class="product-price">
+                    <span class="price">₹129</span>
+                    <span class="original-price">₹149</span>
+                  </div>
+                  <p class="product-description">
+                    Compact first aid kit with essenti
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

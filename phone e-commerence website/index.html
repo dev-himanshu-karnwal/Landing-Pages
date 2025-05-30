@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Marketplace - Buy & Sell Phones with Confidence</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <span>logo</span>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <nav class="nav desktop-nav">
+            <a href="#" class="nav-link">Browse</a>
+            <a href="#" class="nav-link">Sell</a>
+            <a href="#" class="nav-link">Compare</a>
+            <a href="#" class="nav-link">Blog</a>
+          </nav>
+
+          <!-- Desktop Header Actions -->
+          <div class="header-actions desktop-actions">
+            <button class="login-btn">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+              Login
+            </button>
+            <button class="register-btn">Register</button>
+            <div class="cart-icon">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z"
+                />
+                <path
+                  d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z"
+                />
+                <path
+                  d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6"
+                />
+              </svg>
+              <span class="cart-count">2</span>
+            </div>
+          </div>
+
+          <!-- Mobile Hamburger Menu -->
+          <div class="mobile-header-actions">
+            <div class="cart-icon mobile-cart">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z"
+                />
+                <path
+                  d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z"
+                />
+                <path
+                  d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6"
+                />
+              </svg>
+              <span class="cart-count">2</span>
+            </div>
+            <button class="hamburger-menu" id="hamburgerMenu">
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu-content">
+          <div class="mobile-menu-header">
+            <div class="logo">logo</div>
+            <button class="close-menu" id="closeMenu">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+
+          <nav class="mobile-nav">
+            <a href="#" class="mobile-nav-link">Browse</a>
+            <a href="#" class="mobile-nav-link">Sell</a>
+            <a href="#" class="mobile-nav-link">Compare</a>
+            <a href="#" class="mobile-nav-link">Blog</a>
+          </nav>
+
+          <div class="mobile-menu-actions">
+            <button class="mobile-login-btn">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+              Login
+            </button>
+            <button class="mobile-register-btn">Register</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>Buy & Sell Phones with Confidence</h1>
+            <p>
+              The most trusted marketplace for new and pre-owned smartphones.
+              Verified sellers, secure payments, and hassle-free transactions.
+            </p>
+            <div class="hero-buttons">
+              <button class="btn-primary">Browse Phones</button>
+              <button class="btn-secondary">Sell Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+      <div class="container">
+        <div class="search-bar">
+          <div class="search-input-wrapper">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.35-4.35" />
+            </svg>
+            <input
+              type="text"
+              placeholder="Search for phones..."
+              class="search-input"
+            />
+          </div>
+          <div class="filters">
+            <select class="filter-select">
+              <option>Brand</option>
+              <option>Apple</option>
+              <option>Samsung</option>
+              <option>Google</option>
+            </select>
+            <select class="filter-select">
+              <option>Price</option>
+              <option>Under $500</option>
+              <option>$500-$1000</option>
+              <option>Over $1000</option>
+            </select>
+            <select class="filter-select">
+              <option>Condition</option>
+              <option>New</option>
+              <option>Like New</option>
+              <option>Good</option>
+            </select>
+            <select class="filter-select">
+              <option>Location</option>
+              <option>New York</option>
+              <option>California</option>
+              <option>Texas</option>
+            </select>
+            <button class="filter-btn">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polygon points="22,3 2,3 10,12.46 10,19 14,21 14,12.46" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <div class="container">
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon blue">
+              <svg
+                class="edit"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M9 12l2 2 4-4" />
+                <circle cx="12" cy="12" r="10" />
+              </svg>
+            </div>
+            <h3>Verified Sellers</h3>
+            <p>All sellers are verified for your safety and security</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon green">
+              <svg
+                class="edit-1"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <h3>Free Delivery</h3>
+            <p>Free shipping on all orders over $99</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon yellow">
+              <svg
+                class="edit-2"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <h3>Warranty Coverage</h3>
+            <p>All devices come with at least 30-day warranty</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon red">
+              <svg
+                class="edit-3"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="8.5" cy="7" r="4" />
+                <path d="M20 8v6M23 11h-6" />
+              </svg>
+            </div>
+            <h3>Easy Exchange</h3>
+            <p>7-day return policy with hassle-free exchange</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Deals -->
+    <section class="featured-deals">
+      <div class="container">
+        <h2>Featured Deals</h2>
+        <div class="deal-tabs">
+          <button class="tab-btn active">New Phones</button>
+          <button class="tab-btn">Pre-owned</button>
+        </div>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=300&h=300&fit=crop"
+                alt="iPhone 14 Pro Max"
+              />
+              <span class="product-badge new">New</span>
+            </div>
+            <div class="product-info">
+              <h3>iPhone 14 Pro Max</h3>
+              <div class="product-price">
+                <span class="current-price">$999</span>
+                <span class="original-price">$1099</span>
+              </div>
+              <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=300&h=300&fit=crop"
+                alt="Galaxy S23 Ultra"
+              />
+              <span class="product-badge new">New</span>
+            </div>
+            <div class="product-info">
+              <h3>Galaxy S23 Ultra</h3>
+              <div class="product-price">
+                <span class="current-price">$899</span>
+                <span class="original-price">$1199</span>
+              </div>
+              <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300&h=300&fit=crop"
+                alt="Google Pixel 7 Pro"
+              />
+              <span class="product-badge new">New</span>
+            </div>
+            <div class="product-info">
+              <h3>Google Pixel 7 Pro</h3>
+              <div class="product-price">
+                <span class="current-price">$749</span>
+              </div>
+              <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=300&h=300&fit=crop"
+                alt="OnePlus 11"
+              />
+              <span class="product-badge new">New</span>
+            </div>
+            <div class="product-info">
+              <h3>OnePlus 11</h3>
+              <div class="product-price">
+                <span class="current-price">$699</span>
+                <span class="original-price">$799</span>
+              </div>
+              <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sell Your Phone -->
+    <section class="sell-section">
+      <div class="container">
+        <h2>Sell Your Phone in 3 Easy Steps</h2>
+        <p class="sell-description">
+          Get the best price for your device with our simple selling process. No
+          hidden fees, instant quotes, and fast payment.
+        </p>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>List Your Device</h3>
+            <p>
+              Take a few photos, answer some questions about your phone's
+              condition, and set your price.
+            </p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Get Offers</h3>
+            <p>
+              Receive offers from verified buyers. Accept the best one that
+              meets your price expectations.
+            </p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Get Paid</h3>
+            <p>
+              Ship your device or meet locally. Get paid securely through our
+              platform once delivered.
+            </p>
+          </div>
+        </div>
+        <button class="btn-white">Start Selling Now</button>
+      </div>
+    </section>
+
+    <!-- Compare Section -->
+    <section class="compare-section">
+      <div class="container">
+        <h2>Compare Before You Buy</h2>
+        <div class="compare-grid">
+          <div class="compare-card">
+            <div class="phone">
+              <div class="compare-header">
+                <h3>iPhone 14 Pro</h3>
+                <p class="edit-text">Apple</p>
+              </div>
+              <div class="compare-price">$899</div>
+            </div>
+            <div class="compare-image">
+              <img
+                src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=200&h=200&fit=crop"
+                alt="iPhone 14 Pro"
+              />
+            </div>
+            <div class="compare-specs">
+              <div class="spec-row">
+                <span>Display</span>
+                <span>6.1" OLED</span>
+              </div>
+              <div class="spec-row">
+                <span>Processor</span>
+                <span>A16 Bionic</span>
+              </div>
+              <div class="spec-row">
+                <span>Camera</span>
+                <span>48MP Triple</span>
+              </div>
+              <div class="spec-row">
+                <span>Battery</span>
+                <span>3200 mAh</span>
+              </div>
+            </div>
+          </div>
+          <div class="vs-divider">VS</div>
+          <div class="compare-card">
+            <div class="phone">
+              <div class="compare-header">
+                <h3>Galaxy S23</h3>
+                <p class="edit-text">Samsung</p>
+              </div>
+              <div class="compare-price">$799</div>
+            </div>
+            <div class="compare-image">
+              <img
+                src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=200&h=200&fit=crop"
+                alt="Galaxy S23"
+              />
+            </div>
+            <div class="compare-specs">
+              <div class="spec-row">
+                <span>Display</span>
+                <span>6.1" AMOLED</span>
+              </div>
+              <div class="spec-row">
+                <span>Processor</span>
+                <span>Snapdragon 8 Gen 2</span>
+              </div>
+              <div class="spec-row">
+                <span>Camera</span>
+                <span>50MP Triple</span>
+              </div>
+              <div class="spec-row">
+                <span>Battery</span>
+                <span>3900 mAh</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="btn-outline">Compare More Models</button>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="container">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="stars">
+              <span>★★★★★</span>
+            </div>
+            <p>
+              "I sold my iPhone in just 2 days and got $50 more than what the
+              carrier offered me. The process was super smooth and payment was
+              instant!"
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face"
+                alt="Emily Robertson"
+              />
+              <div>
+                <strong>Emily Robertson</strong>
+                <span>San Francisco, CA</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">
+              <span>★★★★☆</span>
+            </div>
+            <p>
+              "Bought a pre-owned Pixel 6 that looked and worked like new. Saved
+              over $200 compared to retail and it came with a 90-day warranty.
+              Highly recommend!"
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face"
+                alt="Marcus Chen"
+              />
+              <div>
+                <strong>Marcus Chen</strong>
+                <span>Chicago, IL</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">
+              <span>★★★★★</span>
+            </div>
+            <p>
+              "The comparison tool helped me decide between the latest models.
+              Ended up with the perfect phone for my needs and budget. Customer
+              service was excellent too!"
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&h=50&fit=crop&crop=face"
+                alt="James Wilson"
+              />
+              <div>
+                <strong>James Wilson</strong>
+                <span>Austin, TX</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mobile App -->
+    <section class="mobile-app">
+      <div class="container">
+        <div class="app-content">
+          <div class="app-text">
+            <h2>Download Our Mobile App</h2>
+            <p>
+              Get exclusive deals, faster checkout, and real-time notifications
+              for your orders. Our mobile app makes buying and selling phones
+              even easier.
+            </p>
+            <div class="app-features">
+              <div class="feature-item">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M9 12l2 2 4-4" />
+                  <circle cx="12" cy="12" r="10" />
+                </svg>
+                <span>Exclusive app-only deals and discounts</span>
+              </div>
+              <div class="feature-item">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M9 12l2 2 4-4" />
+                  <circle cx="12" cy="12" r="10" />
+                </svg>
+                <span>Faster listing process with camera integration</span>
+              </div>
+              <div class="feature-item">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M9 12l2 2 4-4" />
+                  <circle cx="12" cy="12" r="10" />
+                </svg>
+                <span>Real-time notifications for offers and messages</span>
+              </div>
+              <div class="feature-item">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M9 12l2 2 4-4" />
+                  <circle cx="12" cy="12" r="10" />
+                </svg>
+                <span>Secure in-app payment system</span>
+              </div>
+            </div>
+            <div class="app-buttons">
+              <a href="#" class="app-store-btn">
+                <img
+                  src="image (29).png"
+                  alt="Apple logo"
+                  class="app-store-icon"
+                />
+                <span class="btn-text">
+                  <small>Download on the</small>
+                  <strong>App Store</strong>
+                </span>
+              </a>
+              <a href="#" class="google-play-btn">
+                <img
+                  src="image (28).png"
+                  alt="Google Play Logo"
+                  class="play-icon"
+                />
+                <span class="btn-text">
+                  <small>Get it on</small>
+                  <strong>Google Play</strong>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="app-image">
+            <img src="image (27).png" alt="Mobile App Screenshot" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Payment & Partners -->
+    <section class="payment-partners">
+      <div class="container">
+        <div class="payment-section">
+          <h3>Trusted Payment Methods</h3>
+          <div class="payment-icons">
+            <div class="payment-icon"><img src="image (30).png" alt="" /></div>
+            <div class="payment-icon"><img src="image (31).png" alt="" /></div>
+            <div class="payment-icon"><img src="image (32).png" alt="" /></div>
+            <div class="payment-icon"><img src="image (33).png" alt="" /></div>
+            <div class="payment-icon"><img src="image (34).png" alt="" /></div>
+          </div>
+        </div>
+        <div class="partners-section">
+          <h3>Warranty Partners</h3>
+          <div class="partner-badges">
+            <span class="partner-badge">SquareTrade</span>
+            <span class="partner-badge">Asurion</span>
+            <span class="partner-badge">AppleCare</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+      <div class="container">
+        <div class="blog-header">
+          <h2>Latest from Our Blog</h2>
+          <a href="#" class="view-all">View All Posts</a>
+        </div>
+        <div class="blog-grid">
+          <article class="blog-card">
+            <img
+              src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=250&fit=crop"
+              alt="Blog post"
+            />
+            <div class="blog-content">
+              <span class="blog-date">May 15, 2024</span>
+              <h3>Top 5 Smartphones of 2025 - Our Expert Review</h3>
+              <p>
+                We've tested the latest flagship phones to help you decide which
+                one is worth your money.
+              </p>
+              <a href="#" class="read-more">Read More</a>
+            </div>
+          </article>
+          <article class="blog-card">
+            <img
+              src="https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=400&h=250&fit=crop"
+              alt="Blog post"
+            />
+            <div class="blog-content">
+              <span class="blog-date">May 10, 2024</span>
+              <h3>How to Get the Best Price When Selling Your Phone</h3>
+              <p>
+                Follow these tips to maximize the resale value of your
+                smartphone and get more cash.
+              </p>
+              <a href="#" class="read-more">Read More</a>
+            </div>
+          </article>
+          <article class="blog-card">
+            <img
+              src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400&h=250&fit=crop"
+              alt="Blog post"
+            />
+            <div class="blog-content">
+              <span class="blog-date">May 6, 2024</span>
+              <h3>7 Ways to Extend Your Phone's Battery Life</h3>
+              <p>
+                Simple tricks to make your smartphone battery last longer
+                throughout the day.
+              </p>
+              <a href="#" class="read-more">Read More</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+      <div class="container">
+        <h2>Stay Updated</h2>
+        <p>
+          Subscribe to our newsletter for exclusive deals, new arrivals, and
+          tech tips
+        </p>
+        <form class="newsletter-form">
+          <input
+            type="email"
+            placeholder="Your email address"
+            class="newsletter-input"
+          />
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <span>logo</span>
+            </div>
+            <p>
+              The most trusted marketplace for buying and selling mobile phones.
+              Verified sellers, secure payments, and hassle-free transactions.
+            </p>
+            <div class="social-icons">
+              <a href="#" class="social-icon">📘</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">📺</a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#">Browse Phones</a></li>
+              <li><a href="#">Sell Your Phone</a></li>
+              <li><a href="#">Compare Models</a></li>
+              <li><a href="#">Latest Deals</a></li>
+              <li><a href="#">Blog & News</a></li>
+              <li><a href="#">Download App</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Customer Support</h4>
+            <ul>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Shipping Policy</a></li>
+              <li><a href="#">Return Policy</a></li>
+              <li><a href="#">Warranty Information</a></li>
+              <li><a href="#">Help Center</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Contact Info</h4>
+            <div class="contact-info">
+              <p>📍 123 Tech Street, San Francisco, CA 94107, USA</p>
+              <p>📞 +1 (555) 123-4567</p>
+              <p>✉️ support@phonemarket.com</p>
+              <p>🕒 Mon-Fri: 9AM - 8PM</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 PhoneMarket. All rights reserved.</p>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+            <a href="#">Accessibility</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

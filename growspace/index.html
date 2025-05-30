@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GrowthSpace - We Simplify Growth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "orange-primary": "#FF8C00",
+              "orange-light": "#FFA500",
+              "gray-light": "#F8F9FA",
+              "gray-text": "#6B7280",
+            },
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-white font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <nav
+        class="container mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <div class="flex items-center">
+          <div
+            class="w-8 h-8 bg-orange-primary rounded-lg flex items-center justify-center mr-3"
+          >
+            <span class="text-white font-bold text-sm">G</span>
+          </div>
+          <span class="text-xl font-bold text-gray-800">GrowthSpace</span>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex space-x-8">
+          <a href="#" class="text-orange-primary font-medium">Home</a>
+          <a
+            href="#services"
+            class="text-gray-600 hover:text-orange-primary transition-colors"
+            >Services</a
+          >
+          <a
+            href="#about"
+            class="text-gray-600 hover:text-orange-primary transition-colors"
+            >About</a
+          >
+          <a
+            href="#contact"
+            class="text-gray-600 hover:text-orange-primary transition-colors"
+            >Contact</a
+          >
+        </div>
+
+        <div class="hidden md:flex">
+          <button
+            class="bg-orange-primary hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-medium transition-colors"
+          >
+            Register
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden" id="mobile-menu-btn">
+          <i class="fas fa-bars text-gray-600 text-xl"></i>
+        </button>
+      </nav>
+
+      <!-- Mobile Menu -->
+      <div class="md:hidden hidden" id="mobile-menu">
+        <div class="px-4 py-2 space-y-2 bg-white border-t shadow-md">
+          <a href="#" class="block py-2 text-orange-primary font-medium"
+            >Home</a
+          >
+          <a
+            href="#services"
+            class="block py-2 text-gray-600 hover:text-orange-primary"
+            >Services</a
+          >
+          <a
+            href="#about"
+            class="block py-2 text-gray-600 hover:text-orange-primary"
+            >About</a
+          >
+          <a
+            href="#contact"
+            class="block py-2 text-gray-600 hover:text-orange-primary"
+            >Contact</a
+          >
+          <button
+            class="bg-orange-primary hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-medium w-full mt-2"
+          >
+            Register
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      class="bg-gray-light min-h-[80vh] md:min-h-screen flex items-center relative overflow-hidden py-12 md:py-0"
+    >
+      <!-- Background decorative circles -->
+      <div
+        class="absolute top-20 right-10 w-48 md:w-96 h-48 md:h-96 rounded-full opacity-70"
+      ></div>
+      <div
+        class="absolute bottom-20 right-20 w-32 md:w-64 h-32 md:h-64 bg-orange-50 rounded-full opacity-70"
+      ></div>
+
+      <div class="container mx-auto px-4 py-10 md:py-20 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div class="space-y-6 md:space-y-8 text-center lg:text-left">
+            <div
+              class="inline-block bg-orange-100 text-orange-primary px-4 py-2 rounded-full text-sm font-medium"
+            >
+              lightGrowth.ai
+            </div>
+
+            <div class="space-y-2 md:space-y-4">
+              <h1
+                class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
+              >
+                We <span class="text-orange-primary">simplify</span> growth
+              </h1>
+              <h2
+                class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
+              >
+                In <span class="text-orange-primary">growth</span>space.
+              </h2>
+            </div>
+
+            <p
+              class="text-base md:text-lg text-gray-600 leading-relaxed max-w-md mx-auto lg:mx-0"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed
+              velit eget sapien imperdiet interdum.
+            </p>
+
+            <div
+              class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            >
+              <button
+                class="bg-orange-primary hover:bg-orange-600 text-white px-6 md:px-8 py-2 md:py-3 rounded-lg font-semibold transition-colors"
+              >
+                Get Started
+              </button>
+              <button
+                class="border border-orange-primary text-orange-primary hover:bg-orange-primary hover:text-white px-6 md:px-8 py-2 md:py-3 rounded-lg font-semibold transition-colors"
+              >
+                Services
+              </button>
+            </div>
+
+            <div class="pt-6 md:pt-8">
+              <p class="text-orange-primary font-medium text-sm mb-4">
+                Our Partners
+              </p>
+              <div
+                class="flex flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-8 opacity-60"
+              >
+                <span class="text-xl md:text-2xl font-bold text-gray-400"
+                  >dribbble</span
+                >
+                <span class="text-xl md:text-2xl font-bold text-gray-400"
+                  >yahoo!</span
+                >
+                <span class="text-xl md:text-2xl font-bold text-gray-400"
+                  >Google</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="relative flex justify-center mt-8 lg:mt-0">
+            <div class="relative">
+              <div
+                class="absolute inset-0 w-full h-full bg-gradient-to-br from-orange-100 to-orange-50 rounded-full transform scale-110 -z-10"
+              ></div>
+              <img
+                src="95405ae9caafa5b5da4079b3b72b058c49a99529.png"
+                alt="Astronaut"
+                class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto relative z-10"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section
+      id="services"
+      class="bg-white py-12 md:py-20 relative overflow-hidden"
+    >
+      <!-- Background decorative circles -->
+      <div
+        class="absolute top-10 left-10 w-40 md:w-80 h-40 md:h-80 bg-orange-50 rounded-full opacity-70"
+      ></div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
+          <div
+            class="relative flex justify-center lg:justify-start order-2 lg:order-1"
+          >
+            <div class="relative">
+              <div
+                class="absolute inset-0 w-full h-full bg-gradient-to-br from-orange-100 to-orange-50 rounded-full transform scale-110 -z-10"
+              ></div>
+              <img
+                src="image (55).png"
+                alt="Astronaut Services"
+                class="w-full max-w-xs sm:max-w-sm md:max-w-md h-auto relative z-10"
+              />
+            </div>
+          </div>
+
+          <div
+            class="space-y-6 md:space-y-8 text-center lg:text-left order-1 lg:order-2"
+          >
+            <div
+              class="inline-block bg-orange-100 text-orange-primary px-4 py-2 rounded-full text-sm font-medium"
+            >
+              OUR SERVICES
+            </div>
+
+            <div class="space-y-2 md:space-y-4">
+              <h2
+                class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight"
+              >
+                We extend our <span class="text-orange-primary">services</span>
+              </h2>
+              <h3
+                class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight"
+              >
+                to the <span class="text-orange-primary">wide</span> variety.
+              </h3>
+            </div>
+
+            <p
+              class="text-base md:text-lg text-gray-600 leading-relaxed max-w-md mx-auto lg:mx-0"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed
+              velit eget sapien imperdiet interdum.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div
+                class="border border-orange-200 rounded-lg p-4 md:p-6 hover:border-orange-primary transition-colors group"
+              >
+                <div
+                  class="w-10 h-10 md:w-12 md:h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-primary transition-colors mx-auto lg:mx-0"
+                >
+                  <i
+                    class="fas fa-lightbulb text-orange-primary group-hover:text-white text-lg md:text-xl"
+                  ></i>
+                </div>
+                <h4 class="font-semibold text-gray-900 mb-1">Idea</h4>
+                <p class="text-orange-primary font-medium">Creation</p>
+              </div>
+
+              <div
+                class="border border-orange-200 rounded-lg p-4 md:p-6 hover:border-orange-primary transition-colors group"
+              >
+                <div
+                  class="w-10 h-10 md:w-12 md:h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-primary transition-colors mx-auto lg:mx-0"
+                >
+                  <i
+                    class="fas fa-search text-orange-primary group-hover:text-white text-lg md:text-xl"
+                  ></i>
+                </div>
+                <h4 class="font-semibold text-gray-900 mb-1">Market</h4>
+                <p class="text-orange-primary font-medium">Analysis</p>
+              </div>
+
+              <div
+                class="border border-orange-200 rounded-lg p-4 md:p-6 hover:border-orange-primary transition-colors group"
+              >
+                <div
+                  class="w-10 h-10 md:w-12 md:h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-primary transition-colors mx-auto lg:mx-0"
+                >
+                  <i
+                    class="fas fa-users text-orange-primary group-hover:text-white text-lg md:text-xl"
+                  ></i>
+                </div>
+                <h4 class="font-semibold text-gray-900 mb-1">Audience</h4>
+                <p class="text-orange-primary font-medium">Identify</p>
+              </div>
+
+              <div
+                class="border border-orange-200 rounded-lg p-4 md:p-6 hover:border-orange-primary transition-colors group"
+              >
+                <div
+                  class="w-10 h-10 md:w-12 md:h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-primary transition-colors mx-auto lg:mx-0"
+                >
+                  <i
+                    class="fas fa-chart-bar text-orange-primary group-hover:text-white text-lg md:text-xl"
+                  ></i>
+                </div>
+                <h4 class="font-semibold text-gray-900 mb-1">Brand</h4>
+                <p class="text-orange-primary font-medium">Identify</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Global Reach Section -->
+    <section
+      id="about"
+      class="bg-gray-light py-12 md:py-20 relative overflow-hidden"
+    >
+      <!-- Background decorative circles -->
+      <div
+        class="absolute bottom-10 right-10 w-48 md:w-96 h-48 md:h-96 bg-orange-100 rounded-full opacity-70"
+      ></div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
+          <div class="space-y-6 md:space-y-8 text-center lg:text-left">
+            <div
+              class="inline-block bg-orange-100 text-orange-primary px-4 py-2 rounded-full text-sm font-medium"
+            >
+              OUR REACH
+            </div>
+
+            <div class="space-y-2 md:space-y-4">
+              <h2
+                class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight"
+              >
+                We are <span class="text-orange-primary">present</span>
+              </h2>
+              <h3
+                class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight"
+              >
+                all over the
+              </h3>
+              <h4
+                class="text-3xl sm:text-4xl md:text-5xl font-bold text-orange-primary leading-tight"
+              >
+                world.
+              </h4>
+            </div>
+
+            <p
+              class="text-base md:text-lg text-gray-600 leading-relaxed max-w-md mx-auto lg:mx-0"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed
+              velit eget sapien imperdiet interdum. Lorem ipsum dolor sit amet,
+              consectetur
+            </p>
+          </div>
+
+          <div class="relative flex justify-center lg:justify-end mt-8 lg:mt-0">
+            <div class="relative">
+              <div
+                class="absolute inset-0 w-full h-full bg-gradient-to-br from-orange-100 to-orange-50 rounded-full transform scale-110 -z-10"
+              ></div>
+              <img
+                src="a718fa96e9554c991301ceeb28650c5c94ba1347.png"
+                alt="Astronaut Global"
+                class="w-full max-w-xs sm:max-w-sm md:max-w-md h-auto relative z-10"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="bg-white py-12 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-10 md:mb-16">
+          <div
+            class="inline-block bg-orange-100 text-orange-primary px-4 py-2 rounded-full text-sm font-medium mb-4 md:mb-6"
+          >
+            TESTIMONIALS
+          </div>
+          <h2
+            class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+          >
+            What <span class="text-orange-primary">people</span> say about us
+          </h2>
+          <p class="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed
+            velit eget sapien imperdiet
+          </p>
+        </div>
+
+        <div
+          class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto"
+        >
+          <div
+            class="border border-orange-200 rounded-lg p-6 md:p-8 hover:border-orange-primary transition-colors"
+          >
+            <div class="relative">
+              <div
+                class="text-orange-primary text-3xl md:text-4xl font-serif absolute -top-2 left-6"
+              >
+                ❝
+              </div>
+              <p
+                class="text-gray-600 mb-6 leading-relaxed text-center pt-4 pl-6"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed
+                velit eget sapien imperdiet interdum. Lorem ipsum dolor sit
+                amet, consectetur
+              </p>
+            </div>
+            <div class="text-center">
+              <h4 class="font-semibold text-orange-primary">Gurvj</h4>
+              <p class="text-sm text-gray-500">CEO - Setu Creative</p>
+            </div>
+          </div>
+
+          <div
+            class="border border-orange-200 rounded-lg p-6 md:p-8 hover:border-orange-primary transition-colors"
+          >
+            <div class="relative">
+              <div
+                class="text-orange-primary text-3xl md:text-4xl font-serif absolute -top-2 left-6"
+              >
+                ❝
+              </div>
+              <p
+                class="text-gray-600 mb-6 leading-relaxed text-center pt-4 pl-6"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed
+                velit eget sapien imperdiet interdum. Lorem ipsum dolor sit
+                amet, consectetur
+              </p>
+            </div>
+            <div class="text-center">
+              <h4 class="font-semibold text-orange-primary">Gurvj</h4>
+              <p class="text-sm text-gray-500">CEO - Setu Creative</p>
+            </div>
+          </div>
+
+          <div
+            class="border border-orange-200 rounded-lg p-6 md:p-8 hover:border-orange-primary transition-colors"
+          >
+            <div class="relative">
+              <div
+                class="text-orange-primary text-3xl md:text-4xl font-serif absolute -top-2 left-6"
+              >
+                ❝
+              </div>
+              <p
+                class="text-gray-600 mb-6 leading-relaxed text-center pt-4 pl-6"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed
+                velit eget sapien imperdiet interdum. Lorem ipsum dolor sit
+                amet, consectetur
+              </p>
+            </div>
+            <div class="text-center">
+              <h4 class="font-semibold text-orange-primary">Gurvj</h4>
+              <p class="text-sm text-gray-500">CEO - Setu Creative</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial dots -->
+        <div class="flex justify-center mt-8 space-x-2">
+          <div class="w-3 h-3 bg-orange-primary rounded-full"></div>
+          <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+          <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      id="contact"
+      class="bg-white py-12 md:py-16 border-t border-gray-200"
+    >
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="space-y-4 col-span-2 md:col-span-1">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-8 h-8 bg-orange-primary rounded-lg flex items-center justify-center mr-3"
+              >
+                <span class="text-white font-bold text-sm">G</span>
+              </div>
+              <span class="text-xl font-bold text-gray-800">GrowthSpace</span>
+            </div>
+            <p class="text-gray-600 text-sm">where growth begins...</p>
+
+            <div class="space-y-2">
+              <h4 class="font-semibold text-gray-800">Address</h4>
+              <p class="text-gray-600 text-sm">
+                13/305 Yamunagar,<br />
+                Haryana, India
+              </p>
+            </div>
+
+            <div class="space-y-2">
+              <h4 class="font-semibold text-gray-800">Contact Details:</h4>
+              <p class="text-gray-600 text-sm">+91-98-9999</p>
+              <p class="text-gray-600 text-sm">+91-98-9999</p>
+              <p class="text-gray-600 text-sm">maxdanish@gmail.com</p>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4 text-gray-800">Services</h4>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li>
+                <a href="#" class="hover:text-orange-primary transition-colors"
+                  >SEO</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-orange-primary transition-colors"
+                  >Content Marketing</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-orange-primary transition-colors"
+                  >Email Marketing</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-orange-primary transition-colors"
+                  >Brand Marketing</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-orange-primary transition-colors"
+                  >Influencer Marketing</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4 text-gray-800">Product</h4>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li>
+                <a href="#" class="hover:text-orange-primary transition-colors"
+                  >SEO Optimizer</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-orange-primary transition-colors"
+                  >Content Reach Check</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-orange-primary transition-colors"
+                  >Brand Identity Builder</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-orange-primary transition-colors"
+                  >Emails/Ads Marketing</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-orange-primary transition-colors"
+                  >Connect With Influencer</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4 text-gray-800">Legal</h4>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li>
+                <a href="#" class="hover:text-orange-primary transition-colors"
+                  >Contact</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-orange-primary transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-orange-primary transition-colors"
+                  >Terms & Conditions</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-200 mt-10 md:mt-12 pt-6 md:pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-600 text-sm">&copy; 2025, GrowthSpace Inc</p>
+            <div class="flex space-x-4 mt-4 md:mt-0">
+              <a
+                href="#"
+                class="w-10 h-10 bg-orange-primary rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors"
+              >
+                <i class="fab fa-linkedin text-white"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-orange-primary rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors"
+              >
+                <i class="fab fa-instagram text-white"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-orange-primary rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors"
+              >
+                <i class="fab fa-facebook text-white"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll("#mobile-menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Testimonial carousel (simple version)
+      let currentTestimonial = 0;
+      const testimonialDots = document.querySelectorAll("footer + div > div");
+
+      function updateTestimonialDots() {
+        const dots = document.querySelectorAll(
+          ".flex.justify-center.mt-8.space-x-2 > div"
+        );
+        dots.forEach((dot, index) => {
+          if (index === currentTestimonial) {
+            dot.classList.remove("bg-gray-300");
+            dot.classList.add("bg-orange-primary");
+          } else {
+            dot.classList.remove("bg-orange-primary");
+            dot.classList.add("bg-gray-300");
+          }
+        });
+      }
+
+      // Auto-rotate testimonials every 5 seconds
+      setInterval(() => {
+        currentTestimonial = (currentTestimonial + 1) % 3;
+        updateTestimonialDots();
+      }, 5000);
+
+      // Scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-fade-in");
+          }
+        });
+      }, observerOptions);
+
+      // Observe all sections for animations
+      document.querySelectorAll("section").forEach((section) => {
+        observer.observe(section);
+      });
+    </script>
+
+    <style>
+      .animate-fade-in {
+        animation: fadeIn 0.8s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Custom hover effects */
+      .service-card:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-3px);
+        transition: transform 0.3s ease;
+      }
+    </style>
+  </body>
+</html>

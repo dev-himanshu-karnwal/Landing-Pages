@@ -1,0 +1,3030 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VitaHealth - Premium Healthcare Solutions</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <style>
+      :root {
+        --primary-color: #6a3093;
+        --primary-gradient: linear-gradient(to right, #6a3093, #a044ff);
+        --secondary-color: #e6b31e;
+        --dark-color: #2d2d2d;
+        --light-color: #f9f9f9;
+        --text-color: #4a4a4a;
+        --white-color: #ffffff;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.7;
+        color: var(--text-color);
+        background-color: var(--light-color);
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        color: var(--dark-color);
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.8;
+      }
+
+      .btn-primary {
+        background: var(--primary-gradient);
+        border: none;
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(106, 48, 147, 0.3);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(106, 48, 147, 0.4);
+      }
+
+      .btn-secondary {
+        background-color: var(--secondary-color);
+        border: none;
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(230, 179, 30, 0.3);
+        color: var(--dark-color);
+      }
+
+      .btn-secondary:hover {
+        background-color: #d4a41b;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(230, 179, 30, 0.4);
+        color: var(--dark-color);
+      }
+
+      .btn-outline-primary {
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+        padding: 10px 28px;
+        border-radius: 50px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        background: transparent;
+      }
+
+      .btn-outline-primary:hover {
+        background: var(--primary-gradient);
+        color: white;
+        border-color: transparent;
+      }
+
+      /* Header Styles */
+      .top-bar {
+        background: var(--primary-gradient);
+        color: white;
+        padding: 10px 0;
+        font-size: 14px;
+      }
+
+      .top-bar a {
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+
+      .top-bar a:hover {
+        color: var(--secondary-color);
+      }
+
+      /* FIXED NAVBAR STYLES */
+      .navbar {
+        background-color: var(--white-color);
+        padding: 15px 0;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar.scrolled {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        padding: 12px 0;
+      }
+
+      .navbar-brand {
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        font-size: 28px;
+        color: var(--primary-color);
+        text-decoration: none;
+      }
+
+      .navbar-brand:hover {
+        color: var(--primary-color);
+      }
+
+      .navbar-brand span {
+        color: var(--secondary-color);
+      }
+
+      .navbar-nav {
+        align-items: center;
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: var(--dark-color) !important;
+        margin: 0 15px;
+        padding: 10px 0 !important;
+        position: relative;
+        transition: all 0.3s;
+        font-size: 16px;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: var(--primary-color) !important;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary-gradient);
+        transition: width 0.3s;
+      }
+
+      .nav-link:hover::after,
+      .nav-link.active::after {
+        width: 100%;
+      }
+
+      /* Desktop navbar button styling */
+      .navbar .btn-outline-primary {
+        margin-left: 20px;
+        padding: 10px 25px;
+        font-size: 14px;
+        font-weight: 600;
+        border-radius: 25px;
+      }
+
+      .navbar-toggler {
+        border: none;
+        padding: 0;
+        outline: none;
+        box-shadow: none;
+      }
+
+      .navbar-toggler:focus {
+        box-shadow: none;
+      }
+
+      .navbar-toggler-icon {
+        width: 24px;
+        height: 17px;
+        background-image: none;
+        position: relative;
+        border-bottom: 1px solid var(--dark-color);
+        transition: all 300ms linear;
+      }
+
+      .navbar-toggler-icon:after,
+      .navbar-toggler-icon:before {
+        width: 24px;
+        position: absolute;
+        height: 1px;
+        background-color: var(--dark-color);
+        top: 0;
+        left: 0;
+        content: "";
+        z-index: 2;
+        transition: all 300ms linear;
+      }
+
+      .navbar-toggler-icon:after {
+        top: 8px;
+      }
+
+      .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+        transform: rotate(45deg);
+        background-color: var(--dark-color);
+        height: 1px;
+      }
+
+      .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+        transform: translateY(8px) rotate(-45deg);
+        background-color: var(--dark-color);
+        height: 1px;
+      }
+
+      .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+        border-color: transparent;
+      }
+
+      /* Hero Section */
+      .hero {
+        position: relative;
+        height: 100vh;
+        min-height: 700px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        background-color: #f5f0ff;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero h1 {
+        font-size: 60px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .hero p {
+        font-size: 18px;
+        margin-bottom: 30px;
+        max-width: 600px;
+      }
+
+      .hero-image {
+        position: relative;
+      }
+
+      .hero-image img {
+        max-width: 100%;
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .hero-shape {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+      }
+
+      .hero-shape svg {
+        width: 100%;
+        height: auto;
+      }
+
+      .hero-stats {
+        background-color: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+      }
+
+      .stat-item {
+        text-align: center;
+      }
+
+      .stat-number {
+        font-size: 36px;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .stat-text {
+        font-size: 16px;
+        color: var(--text-color);
+      }
+
+      /* Features Section */
+      .features {
+        padding: 100px 0;
+        background-color: white;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-title h2 {
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title h2:after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--primary-gradient);
+      }
+
+      .section-title p {
+        max-width: 700px;
+        margin: 0 auto;
+        color: var(--text-color);
+      }
+
+      .feature-box {
+        background-color: white;
+        border-radius: 15px;
+        padding: 40px 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        height: 100%;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+      }
+
+      .feature-box:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: var(--primary-gradient);
+        transition: all 0.5s ease;
+        z-index: -1;
+        opacity: 0;
+      }
+
+      .feature-box:hover:before {
+        height: 100%;
+        opacity: 1;
+      }
+
+      .feature-box:hover {
+        transform: translateY(-10px);
+      }
+
+      .feature-box:hover .feature-icon,
+      .feature-box:hover h4,
+      .feature-box:hover p {
+        color: white;
+      }
+
+      .feature-icon {
+        font-size: 50px;
+        color: var(--primary-color);
+        margin-bottom: 25px;
+        transition: all 0.3s ease;
+      }
+
+      .feature-box h4 {
+        font-size: 22px;
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+
+      .feature-box p {
+        margin-bottom: 0;
+        transition: all 0.3s ease;
+      }
+
+      /* About Section */
+      .about {
+        padding: 100px 0;
+        background-color: #f5f0ff;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .about-shape {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        background-color: var(--primary-color);
+        clip-path: polygon(100% 0, 100% 100%, 0 100%, 100% 0);
+        opacity: 0.05;
+      }
+
+      .about-content h2 {
+        font-size: 40px;
+        margin-bottom: 25px;
+      }
+
+      .about-content p {
+        margin-bottom: 20px;
+      }
+
+      .about-list {
+        list-style: none;
+        padding: 0;
+        margin: 30px 0;
+      }
+
+      .about-list li {
+        padding-left: 30px;
+        position: relative;
+        margin-bottom: 15px;
+      }
+
+      .about-list li:before {
+        content: "\f00c";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--primary-color);
+      }
+
+      .about-image {
+        position: relative;
+        z-index: 1;
+      }
+
+      .about-image img {
+        border-radius: 15px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .about-experience {
+        position: absolute;
+        bottom: 30px;
+        left: -30px;
+        background: var(--primary-gradient);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(106, 48, 147, 0.3);
+        text-align: center;
+      }
+
+      .about-experience h3 {
+        font-size: 48px;
+        color: white;
+        margin: 0;
+        line-height: 1;
+      }
+
+      .about-experience p {
+        margin: 0;
+        font-size: 16px;
+      }
+
+      /* Services Section */
+      .services {
+        padding: 100px 0;
+        background-color: white;
+      }
+
+      .service-card {
+        background-color: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        margin-bottom: 30px;
+        position: relative;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .service-header {
+        padding: 30px;
+        background: var(--primary-gradient);
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-icon {
+        font-size: 60px;
+        margin-bottom: 20px;
+        display: inline-block;
+      }
+
+      .service-header h4 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: white;
+      }
+
+      .service-header p {
+        margin-bottom: 0;
+        opacity: 0.9;
+      }
+
+      .service-body {
+        padding: 30px;
+      }
+
+      .service-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .service-list li {
+        padding: 10px 0;
+        border-bottom: 1px dashed #eee;
+        display: flex;
+        align-items: center;
+      }
+
+      .service-list li:last-child {
+        border-bottom: none;
+      }
+
+      .service-list li i {
+        color: var(--primary-color);
+        margin-right: 10px;
+      }
+
+      /* Products Section */
+      .products {
+        padding: 100px 0;
+        background-color: #f5f0ff;
+      }
+
+      .product-card {
+        background-color: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        margin-bottom: 30px;
+        position: relative;
+      }
+
+      .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .product-badge {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: var(--secondary-color);
+        color: var(--dark-color);
+        padding: 5px 15px;
+        border-radius: 30px;
+        font-size: 12px;
+        font-weight: 600;
+        z-index: 1;
+      }
+
+      .product-image {
+        position: relative;
+        overflow: hidden;
+        height: 250px;
+      }
+
+      .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.5s ease;
+      }
+
+      .product-card:hover .product-image img {
+        transform: scale(1.1);
+      }
+
+      .product-wishlist {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      .product-card:hover .product-wishlist {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .product-wishlist i {
+        color: #ff5e5e;
+        font-size: 18px;
+      }
+
+      .product-info {
+        padding: 25px;
+      }
+
+      .product-category {
+        font-size: 14px;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .product-title {
+        font-size: 20px;
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+
+      .product-rating {
+        margin-bottom: 15px;
+        color: #ffc107;
+      }
+
+      .product-price {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+      }
+
+      .product-price del {
+        font-size: 16px;
+        color: #aaa;
+        margin-right: 10px;
+        font-weight: 400;
+      }
+
+      .product-actions {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      /* FIXED TABLET PRODUCT BUTTONS */
+      .product-actions .btn {
+        flex: 1;
+        padding: 10px 15px;
+        font-size: 14px;
+        font-weight: 500;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+      }
+
+      .product-actions .btn-sm {
+        padding: 8px 12px;
+        font-size: 13px;
+      }
+
+      /* Testimonials Section */
+      .testimonials {
+        padding: 100px 0;
+        background-color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .testimonial-shape {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40%;
+        height: 100%;
+        background-color: var(--primary-color);
+        clip-path: polygon(0 0, 0 100%, 100% 100%, 0 0);
+        opacity: 0.05;
+      }
+
+      .testimonial-card {
+        background-color: white;
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        margin: 20px 15px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .testimonial-card:before {
+        content: "\f10d";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 30px;
+        color: #f0e6ff;
+        z-index: -1;
+      }
+
+      .testimonial-content {
+        font-style: italic;
+        margin-bottom: 25px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+      }
+
+      .testimonial-author img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 20px;
+        border: 3px solid var(--primary-color);
+      }
+
+      .author-info h5 {
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+
+      .author-info p {
+        font-size: 14px;
+        color: var(--primary-color);
+        margin: 0;
+      }
+
+      .testimonial-rating {
+        color: #ffc107;
+        margin-top: 10px;
+      }
+
+      /* Team Section */
+      .team {
+        padding: 100px 0;
+        background-color: #f5f0ff;
+      }
+
+      .team-card {
+        background-color: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        margin-bottom: 30px;
+      }
+
+      .team-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .team-image {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .team-image img {
+        width: 100%;
+        transition: all 0.5s ease;
+      }
+
+      .team-card:hover .team-image img {
+        transform: scale(1.1);
+      }
+
+      .team-social {
+        position: absolute;
+        bottom: -50px;
+        left: 0;
+        right: 0;
+        background: var(--primary-gradient);
+        padding: 15px 0;
+        transition: all 0.3s ease;
+        display: flex;
+        justify-content: center;
+      }
+
+      .team-card:hover .team-social {
+        bottom: 0;
+      }
+
+      .team-social a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        color: white;
+        margin: 0 5px;
+        transition: all 0.3s ease;
+      }
+
+      .team-social a:hover {
+        background-color: white;
+        color: var(--primary-color);
+      }
+
+      .team-info {
+        padding: 25px;
+        text-align: center;
+      }
+
+      .team-info h4 {
+        font-size: 22px;
+        margin-bottom: 5px;
+      }
+
+      .team-info p {
+        color: var(--primary-color);
+        margin-bottom: 0;
+      }
+
+      /* Blog Section */
+      .blog {
+        padding: 100px 0;
+        background-color: white;
+      }
+
+      .blog-card {
+        background-color: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        margin-bottom: 30px;
+        height: 100%;
+      }
+
+      .blog-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .blog-image {
+        position: relative;
+        overflow: hidden;
+        height: 250px;
+      }
+
+      .blog-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.5s ease;
+      }
+
+      .blog-card:hover .blog-image img {
+        transform: scale(1.1);
+      }
+
+      .blog-date {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        background-color: var(--primary-color);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .blog-info {
+        padding: 25px;
+      }
+
+      .blog-category {
+        font-size: 14px;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .blog-title {
+        font-size: 22px;
+        margin-bottom: 15px;
+        font-weight: 600;
+        line-height: 1.4;
+      }
+
+      .blog-title a {
+        color: var(--dark-color);
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+
+      .blog-title a:hover {
+        color: var(--primary-color);
+      }
+
+      .blog-text {
+        margin-bottom: 20px;
+      }
+
+      .blog-author {
+        display: flex;
+        align-items: center;
+      }
+
+      .blog-author img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 15px;
+      }
+
+      .blog-author span {
+        font-size: 14px;
+        color: var(--text-color);
+      }
+
+      /* Contact Section */
+      .contact {
+        padding: 100px 0;
+        background-color: #f5f0ff;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact-info {
+        background-color: white;
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        height: 100%;
+      }
+
+      .contact-info h3 {
+        font-size: 28px;
+        margin-bottom: 25px;
+      }
+
+      .contact-item {
+        display: flex;
+        margin-bottom: 30px;
+      }
+
+      .contact-icon {
+        width: 60px;
+        height: 60px;
+        background: var(--primary-gradient);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        flex-shrink: 0;
+      }
+
+      .contact-icon i {
+        font-size: 24px;
+        color: white;
+      }
+
+      .contact-text h5 {
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+
+      .contact-text p {
+        margin-bottom: 0;
+      }
+
+      .contact-social {
+        margin-top: 30px;
+      }
+
+      .contact-social a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: var(--primary-gradient);
+        border-radius: 50%;
+        color: white;
+        margin-right: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .contact-social a:hover {
+        transform: translateY(-5px);
+      }
+
+      .contact-form {
+        background-color: white;
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+
+      .contact-form h3 {
+        font-size: 28px;
+        margin-bottom: 25px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-control {
+        height: 55px;
+        border-radius: 30px;
+        padding: 10px 25px;
+        font-size: 16px;
+        border: 1px solid #eee;
+        transition: all 0.3s;
+      }
+
+      .form-control:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 0.25rem rgba(106, 48, 147, 0.1);
+      }
+
+      textarea.form-control {
+        height: 150px;
+        border-radius: 20px;
+        padding: 20px 25px;
+      }
+
+      /* Newsletter Section */
+      .newsletter {
+        padding: 80px 0;
+        background: var(--primary-gradient);
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .newsletter-shape {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background-image: url("https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+        background-size: cover;
+        background-position: center;
+        opacity: 0.1;
+      }
+
+      .newsletter h2 {
+        font-size: 36px;
+        color: white;
+        margin-bottom: 20px;
+      }
+
+      .newsletter p {
+        margin-bottom: 30px;
+        opacity: 0.9;
+      }
+
+      .newsletter-form {
+        position: relative;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .newsletter-form input {
+        height: 60px;
+        border-radius: 30px;
+        padding: 10px 170px 10px 25px;
+        width: 100%;
+        border: none;
+        font-size: 16px;
+      }
+
+      .newsletter-form button {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        height: 50px;
+        border-radius: 25px;
+        padding: 0 30px;
+        background-color: var(--secondary-color);
+        color: var(--dark-color);
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .newsletter-form button:hover {
+        background-color: #d4a41b;
+      }
+
+      /* Footer */
+      .footer {
+        background-color: #2d2d2d;
+        color: #aaa;
+        padding: 80px 0 0;
+      }
+
+      .footer-logo {
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        font-size: 28px;
+        color: white;
+        margin-bottom: 20px;
+        display: inline-block;
+      }
+
+      .footer-logo span {
+        color: var(--secondary-color);
+      }
+
+      .footer-text {
+        margin-bottom: 25px;
+      }
+
+      .footer-social {
+        margin-bottom: 30px;
+      }
+
+      .footer-social a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        margin-right: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .footer-social a:hover {
+        background-color: var(--primary-color);
+      }
+
+      .footer h4 {
+        color: white;
+        font-size: 20px;
+        margin-bottom: 25px;
+        position: relative;
+        padding-bottom: 15px;
+      }
+
+      .footer h4:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background: var(--primary-gradient);
+      }
+
+      .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .footer-links li {
+        margin-bottom: 15px;
+      }
+
+      .footer-links a {
+        color: #aaa;
+        text-decoration: none;
+        transition: all 0.3s;
+        display: block;
+      }
+
+      .footer-links a:hover {
+        color: white;
+        padding-left: 10px;
+      }
+
+      .footer-contact li {
+        margin-bottom: 15px;
+        display: flex;
+      }
+
+      .footer-contact i {
+        color: var(--primary-color);
+        margin-right: 15px;
+        margin-top: 5px;
+      }
+
+      .footer-bottom {
+        background-color: #222;
+        padding: 20px 0;
+        margin-top: 60px;
+      }
+
+      .footer-bottom p {
+        margin: 0;
+        text-align: center;
+      }
+
+      /* Back to Top */
+      .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: var(--primary-gradient);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 99;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+        box-shadow: 0 5px 15px rgba(106, 48, 147, 0.3);
+      }
+
+      .back-to-top.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .back-to-top:hover {
+        transform: translateY(-5px);
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 1199px) {
+        .hero h1 {
+          font-size: 50px;
+        }
+
+        .nav-link {
+          margin: 0 10px;
+        }
+      }
+
+      @media (max-width: 991px) {
+        .hero {
+          height: auto;
+          padding: 100px 0;
+        }
+
+        .hero h1 {
+          font-size: 40px;
+        }
+
+        .hero-image {
+          margin-top: 50px;
+        }
+
+        .about-experience {
+          position: relative;
+          bottom: auto;
+          left: auto;
+          margin-top: 30px;
+          display: inline-block;
+        }
+
+        .newsletter-form input {
+          padding-right: 25px;
+        }
+
+        .newsletter-form button {
+          position: relative;
+          top: auto;
+          right: auto;
+          width: 100%;
+          margin-top: 15px;
+        }
+
+        /* Mobile navbar adjustments */
+        .navbar-collapse {
+          margin-top: 15px;
+          padding-top: 15px;
+          border-top: 1px solid #eee;
+        }
+
+        .nav-link {
+          margin: 5px 0;
+          padding: 10px 0 !important;
+        }
+
+        .navbar .btn-outline-primary {
+          margin-left: 0;
+          margin-top: 15px;
+          width: 100%;
+        }
+      }
+
+      /* TABLET SPECIFIC STYLES */
+      @media (min-width: 768px) and (max-width: 1024px) {
+        .product-actions {
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        .product-actions .btn {
+          width: 100%;
+          padding: 12px 20px;
+          font-size: 14px;
+          font-weight: 600;
+          border-radius: 25px;
+        }
+
+        .product-actions .btn-primary {
+          background: var(--primary-gradient);
+          border: none;
+          color: white;
+          box-shadow: 0 4px 12px rgba(106, 48, 147, 0.3);
+        }
+
+        .product-actions .btn-outline-primary {
+          border: 2px solid var(--primary-color);
+          color: var(--primary-color);
+          background: transparent;
+        }
+
+        .product-actions .btn-outline-primary:hover {
+          background: var(--primary-gradient);
+          color: white;
+          border-color: transparent;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .section-title h2 {
+          font-size: 32px;
+        }
+
+        .hero h1 {
+          font-size: 36px;
+        }
+
+        .hero-stats {
+          margin-top: 30px;
+        }
+
+        .stat-item {
+          margin-bottom: 20px;
+        }
+
+        .about-content h2 {
+          font-size: 32px;
+        }
+
+        .contact-info,
+        .contact-form {
+          margin-bottom: 30px;
+        }
+
+        .product-actions {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .product-actions .btn {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 575px) {
+        .hero h1 {
+          font-size: 30px;
+        }
+
+        .section-title h2 {
+          font-size: 28px;
+        }
+
+        .about-content h2 {
+          font-size: 28px;
+        }
+
+        .service-header {
+          padding: 20px;
+        }
+
+        .service-body {
+          padding: 20px;
+        }
+
+        .testimonial-card {
+          padding: 30px 20px;
+        }
+
+        .contact-info,
+        .contact-form {
+          padding: 30px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <span class="me-3"
+              ><i class="fas fa-map-marker-alt me-2"></i> 123 Wellness Avenue,
+              Health District, NY 10001</span
+            >
+            <span class="me-3"
+              ><i class="fas fa-phone-alt me-2"></i> +1 (800) VITA-HEALTH</span
+            >
+            <span
+              ><i class="fas fa-envelope me-2"></i> info@vitahealth.com</span
+            >
+          </div>
+          <div class="col-md-4 text-end d-none d-md-block">
+            <span class="me-3"
+              ><i class="fas fa-clock me-2"></i> Mon-Sat: 8AM-10PM</span
+            >
+            <a href="#" class="ms-3"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="ms-3"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="ms-3"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Vita<span>Health</span></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#products">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#team">Our Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#blog">Health Tips</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+          <div class="ms-lg-4 mt-3 mt-lg-0">
+            <a href="#upload" class="btn btn-outline-primary"
+              >Upload Prescription</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <div
+            class="col-lg-6 hero-content"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          >
+            <h1>
+              Your Health Is Our
+              <span style="color: var(--primary-color)">Priority</span>
+            </h1>
+            <p>
+              VitaHealth provides premium healthcare solutions with a focus on
+              quality, accessibility, and personalized care. Experience the
+              difference with our expert team and premium products.
+            </p>
+            <div class="d-flex flex-wrap">
+              <a href="#products" class="btn btn-primary me-3 mb-2"
+                >Explore Products</a
+              >
+              <a href="#contact" class="btn btn-outline-primary mb-2"
+                >Contact Us</a
+              >
+            </div>
+          </div>
+          <div
+            class="col-lg-6 hero-image"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
+            <img
+              src="792b6c_5c1f096674c7498dbeaed97ecc9294f3~mv2.avif"
+              alt="Pharmacy Team"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+
+        <div
+          class="row hero-stats"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="400"
+        >
+          <div class="col-md-3 col-6 stat-item">
+            <span class="stat-number">25+</span>
+            <span class="stat-text">Years Experience</span>
+          </div>
+          <div class="col-md-3 col-6 stat-item">
+            <span class="stat-number">50+</span>
+            <span class="stat-text">Expert Staff</span>
+          </div>
+          <div class="col-md-3 col-6 stat-item">
+            <span class="stat-number">10K+</span>
+            <span class="stat-text">Happy Customers</span>
+          </div>
+          <div class="col-md-3 col-6 stat-item">
+            <span class="stat-number">15+</span>
+            <span class="stat-text">Awards Won</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-shape">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path
+            fill="#ffffff"
+            fill-opacity="1"
+            d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,224C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
+          <h2>Why Choose Us</h2>
+          <p>
+            At VitaHealth, we are committed to providing exceptional healthcare
+            services and products that improve your quality of life. Here's why
+            customers trust us for their healthcare needs.
+          </p>
+        </div>
+
+        <div class="row">
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="100"
+          >
+            <div class="feature-box">
+              <div class="feature-icon">
+                <i class="fas fa-pills"></i>
+              </div>
+              <h4>Quality Medicines</h4>
+              <p>
+                We source our medicines from reputable manufacturers to ensure
+                you receive only the highest quality products for your health
+                needs.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
+            <div class="feature-box">
+              <div class="feature-icon">
+                <i class="fas fa-truck"></i>
+              </div>
+              <h4>Fast Delivery</h4>
+              <p>
+                Our efficient delivery system ensures your medications reach
+                your doorstep quickly, often within the same day for urgent
+                needs.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="300"
+          >
+            <div class="feature-box">
+              <div class="feature-icon">
+                <i class="fas fa-user-md"></i>
+              </div>
+              <h4>Expert Consultation</h4>
+              <p>
+                Our team of qualified pharmacists and healthcare professionals
+                provide personalized advice and guidance.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="400"
+          >
+            <div class="feature-box">
+              <div class="feature-icon">
+                <i class="fas fa-headset"></i>
+              </div>
+              <h4>24/7 Support</h4>
+              <p>
+                Our customer support team is available round the clock to
+                address your queries and provide assistance whenever you need
+                it.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="about-shape"></div>
+      <div class="container">
+        <div class="row align-items-center">
+          <div
+            class="col-lg-6 mb-5 mb-lg-0"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          >
+            <div class="about-image">
+              <img
+                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                alt="About VitaHealth"
+                class="img-fluid"
+              />
+              <div class="about-experience">
+                <h3>25</h3>
+                <p>Years of Excellence</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-6"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
+            <div class="about-content">
+              <h2>We Care About Your Health</h2>
+              <p class="lead">
+                VitaHealth has been a trusted name in healthcare since 1998,
+                providing quality medicines and exceptional service to our
+                community.
+              </p>
+              <p>
+                Our journey began with a simple mission: to make quality
+                healthcare accessible to everyone. Over the years, we have
+                expanded our services and product range, but our commitment to
+                your health and well-being remains unchanged.
+              </p>
+              <p>
+                Today, VitaHealth is not just a pharmacy but a comprehensive
+                healthcare solution provider with multiple locations across the
+                country. Our team of experienced pharmacists and healthcare
+                professionals work tirelessly to ensure you receive the best
+                care possible.
+              </p>
+
+              <ul class="about-list">
+                <li>Certified and experienced healthcare professionals</li>
+                <li>Wide range of quality medicines and healthcare products</li>
+                <li>
+                  Personalized healthcare advice and medication management
+                </li>
+                <li>State-of-the-art facilities and modern equipment</li>
+                <li>Commitment to community health and wellness</li>
+              </ul>
+
+              <a href="#services" class="btn btn-primary"
+                >Discover Our Services</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
+          <h2>Our Services</h2>
+          <p>
+            We offer a comprehensive range of healthcare services designed to
+            meet your needs and improve your quality of life. Our expert team is
+            dedicated to providing personalized care and support.
+          </p>
+        </div>
+
+        <div class="row">
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="100"
+          >
+            <div class="service-card">
+              <div class="service-header">
+                <div class="service-icon">
+                  <i class="fas fa-prescription-bottle-alt"></i>
+                </div>
+                <h4>Prescription Services</h4>
+                <p>
+                  Fast and accurate prescription filling by expert pharmacists
+                </p>
+              </div>
+              <div class="service-body">
+                <ul class="service-list">
+                  <li>
+                    <i class="fas fa-check-circle"></i> Quick prescription
+                    filling
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Medication review and
+                    counseling
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Automatic refill
+                    reminders
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Insurance processing
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Prescription transfer
+                    service
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
+            <div class="service-card">
+              <div class="service-header">
+                <div class="service-icon">
+                  <i class="fas fa-truck-medical"></i>
+                </div>
+                <h4>Home Delivery</h4>
+                <p>Get your medications delivered right to your doorstep</p>
+              </div>
+              <div class="service-body">
+                <ul class="service-list">
+                  <li>
+                    <i class="fas fa-check-circle"></i> Same-day delivery option
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Contactless delivery
+                    available
+                  </li>
+                  <li><i class="fas fa-check-circle"></i> Secure packaging</li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Real-time tracking
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Temperature-controlled
+                    transport
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="300"
+          >
+            <div class="service-card">
+              <div class="service-header">
+                <div class="service-icon">
+                  <i class="fas fa-user-md"></i>
+                </div>
+                <h4>Health Consultation</h4>
+                <p>Professional advice from qualified healthcare experts</p>
+              </div>
+              <div class="service-body">
+                <ul class="service-list">
+                  <li>
+                    <i class="fas fa-check-circle"></i> One-on-one consultations
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Medication therapy
+                    management
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Chronic disease
+                    management
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Nutritional counseling
+                  </li>
+                  <li><i class="fas fa-check-circle"></i> Wellness planning</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="400"
+          >
+            <div class="service-card">
+              <div class="service-header">
+                <div class="service-icon">
+                  <i class="fas fa-heartbeat"></i>
+                </div>
+                <h4>Health Checkups</h4>
+                <p>Regular monitoring of vital health parameters</p>
+              </div>
+              <div class="service-body">
+                <ul class="service-list">
+                  <li>
+                    <i class="fas fa-check-circle"></i> Blood pressure
+                    monitoring
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Blood glucose testing
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Cholesterol screening
+                  </li>
+                  <li><i class="fas fa-check-circle"></i> BMI assessment</li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Health risk assessment
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="500"
+          >
+            <div class="service-card">
+              <div class="service-header">
+                <div class="service-icon">
+                  <i class="fas fa-syringe"></i>
+                </div>
+                <h4>Vaccination Services</h4>
+                <p>Protection against preventable diseases</p>
+              </div>
+              <div class="service-body">
+                <ul class="service-list">
+                  <li><i class="fas fa-check-circle"></i> Flu shots</li>
+                  <li><i class="fas fa-check-circle"></i> Travel vaccines</li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Childhood immunizations
+                  </li>
+                  <li><i class="fas fa-check-circle"></i> COVID-19 vaccines</li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Vaccine record
+                    management
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="600"
+          >
+            <div class="service-card">
+              <div class="service-header">
+                <div class="service-icon">
+                  <i class="fas fa-calendar-check"></i>
+                </div>
+                <h4>Medication Management</h4>
+                <p>Helping you stay on track with your medications</p>
+              </div>
+              <div class="service-body">
+                <ul class="service-list">
+                  <li>
+                    <i class="fas fa-check-circle"></i> Medication
+                    synchronization
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Pill packaging services
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Medication reminder
+                    systems
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Drug interaction checks
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Medication adherence
+                    programs
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
+          <h2>Featured Products</h2>
+          <p>
+            Discover our selection of premium healthcare products designed to
+            support your health and wellness journey. We offer only the highest
+            quality items from trusted manufacturers.
+          </p>
+        </div>
+
+        <div class="row">
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="100"
+          >
+            <div class="product-card">
+              <span class="product-badge">Best Seller</span>
+              <div class="product-image">
+                <img
+                  src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                  alt="Vitamin C Complex"
+                />
+                <div class="product-wishlist">
+                  <i class="far fa-heart"></i>
+                </div>
+              </div>
+              <div class="product-info">
+                <span class="product-category">Vitamins & Supplements</span>
+                <h5 class="product-title">Premium Vitamin C Complex</h5>
+                <div class="product-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                  <span class="ms-2">(120 reviews)</span>
+                </div>
+                <div class="product-price"><del>$29.99</del> $24.99</div>
+                <div class="product-actions">
+                  <a href="#" class="btn btn-primary btn-sm">Add to Cart</a>
+                  <a href="#" class="btn btn-outline-primary btn-sm">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                  alt="Pain Relief Gel"
+                />
+                <div class="product-wishlist">
+                  <i class="far fa-heart"></i>
+                </div>
+              </div>
+              <div class="product-info">
+                <span class="product-category">Pain Relief</span>
+                <h5 class="product-title">Advanced Pain Relief Gel</h5>
+                <div class="product-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <span class="ms-2">(85 reviews)</span>
+                </div>
+                <div class="product-price">$15.99</div>
+                <div class="product-actions">
+                  <a href="#" class="btn btn-primary btn-sm">Add to Cart</a>
+                  <a href="#" class="btn btn-outline-primary btn-sm">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="300"
+          >
+            <div class="product-card">
+              <span class="product-badge">New</span>
+              <div class="product-image">
+                <img
+                  src="https://images.unsplash.com/photo-1550572017-edd951b55104?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                  alt="First Aid Kit"
+                />
+                <div class="product-wishlist">
+                  <i class="far fa-heart"></i>
+                </div>
+              </div>
+              <div class="product-info">
+                <span class="product-category">First Aid</span>
+                <h5 class="product-title">Comprehensive First Aid Kit</h5>
+                <div class="product-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <span class="ms-2">(210 reviews)</span>
+                </div>
+                <div class="product-price"><del>$45.99</del> $35.99</div>
+                <div class="product-actions">
+                  <a href="#" class="btn btn-primary btn-sm">Add to Cart</a>
+                  <a href="#" class="btn btn-outline-primary btn-sm">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="400"
+          >
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80"
+                  alt="Multivitamin"
+                />
+                <div class="product-wishlist">
+                  <i class="far fa-heart"></i>
+                </div>
+              </div>
+              <div class="product-info">
+                <span class="product-category">Vitamins & Supplements</span>
+                <h5 class="product-title">Complete Daily Multivitamin</h5>
+                <div class="product-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                  <span class="ms-2">(175 reviews)</span>
+                </div>
+                <div class="product-price">$19.99</div>
+                <div class="product-actions">
+                  <a href="#" class="btn btn-primary btn-sm">Add to Cart</a>
+                  <a href="#" class="btn btn-outline-primary btn-sm">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="text-center mt-4"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="500"
+        >
+          <a href="#" class="btn btn-outline-primary">View All Products</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+      <div class="testimonial-shape"></div>
+      <div class="container">
+        <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
+          <h2>What Our Customers Say</h2>
+          <p>
+            Don't just take our word for it. Here's what our valued customers
+            have to say about their experience with VitaHealth and our services.
+          </p>
+        </div>
+
+        <div class="row">
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="100"
+          >
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                "VitaHealth has been my go-to pharmacy for years. Their staff is
+                knowledgeable and always ready to help. The home delivery
+                service is a lifesaver, especially during busy weeks!"
+              </div>
+              <div class="testimonial-author">
+                <img
+                  src="https://randomuser.me/api/portraits/women/32.jpg"
+                  alt="Sarah Johnson"
+                />
+                <div class="author-info">
+                  <h5>Sarah Johnson</h5>
+                  <p>Regular Customer</p>
+                  <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                "I appreciate the health consultation services they provide. The
+                pharmacist took time to explain my medication and possible side
+                effects. Very professional and caring approach!"
+              </div>
+              <div class="testimonial-author">
+                <img
+                  src="https://randomuser.me/api/portraits/men/45.jpg"
+                  alt="Michael Brown"
+                />
+                <div class="author-info">
+                  <h5>Michael Brown</h5>
+                  <p>New Customer</p>
+                  <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="300"
+          >
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                "The online prescription upload feature is so convenient. I
+                received my medications within 24 hours. Excellent service,
+                competitive prices, and friendly staff. Highly recommended!"
+              </div>
+              <div class="testimonial-author">
+                <img
+                  src="https://randomuser.me/api/portraits/women/68.jpg"
+                  alt="Emily Davis"
+                />
+                <div class="author-info">
+                  <h5>Emily Davis</h5>
+                  <p>Regular Customer</p>
+                  <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
+          <h2>Meet Our Expert Team</h2>
+          <p>
+            Our team of qualified healthcare professionals is dedicated to
+            providing you with the best care and service. Get to know the faces
+            behind VitaHealth.
+          </p>
+        </div>
+
+        <div class="row">
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="100"
+          >
+            <div class="team-card">
+              <div class="team-image">
+                <img
+                  src="https://randomuser.me/api/portraits/men/32.jpg"
+                  alt="Dr. James Wilson"
+                />
+                <div class="team-social">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+              <div class="team-info">
+                <h4>Dr. James Wilson</h4>
+                <p>Chief Pharmacist</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
+            <div class="team-card">
+              <div class="team-image">
+                <img
+                  src="https://randomuser.me/api/portraits/women/44.jpg"
+                  alt="Dr. Sarah Johnson"
+                />
+                <div class="team-social">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+              <div class="team-info">
+                <h4>Dr. Sarah Johnson</h4>
+                <p>Nutritionist</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="300"
+          >
+            <div class="team-card">
+              <div class="team-image">
+                <img
+                  src="https://randomuser.me/api/portraits/men/67.jpg"
+                  alt="Dr. Michael Brown"
+                />
+                <div class="team-social">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+              <div class="team-info">
+                <h4>Dr. Michael Brown</h4>
+                <p>Health Consultant</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="400"
+          >
+            <div class="team-card">
+              <div class="team-image">
+                <img
+                  src="https://randomuser.me/api/portraits/women/63.jpg"
+                  alt="Dr. Emily Davis"
+                />
+                <div class="team-social">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+              <div class="team-info">
+                <h4>Dr. Emily Davis</h4>
+                <p>Wellness Specialist</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
+          <h2>Health Tips & Articles</h2>
+          <p>
+            Stay informed with the latest health tips, wellness advice, and
+            medical information from our experts. Knowledge is the first step
+            towards better health.
+          </p>
+        </div>
+
+        <div class="row">
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="100"
+          >
+            <div class="blog-card">
+              <div class="blog-image">
+                <img
+                  src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                  alt="Healthy Eating"
+                />
+                <div class="blog-date">May 15, 2023</div>
+              </div>
+              <div class="blog-info">
+                <span class="blog-category">Nutrition</span>
+                <h5 class="blog-title">
+                  <a href="#">10 Superfoods to Boost Your Immune System</a>
+                </h5>
+                <p class="blog-text">
+                  Discover the power of superfoods that can naturally enhance
+                  your immune system and protect you from common illnesses.
+                </p>
+                <div class="blog-author">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/44.jpg"
+                    alt="Dr. Sarah Johnson"
+                  />
+                  <span>By Dr. Sarah Johnson</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
+            <div class="blog-card">
+              <div class="blog-image">
+                <img
+                  src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                  alt="Mental Health"
+                />
+                <div class="blog-date">June 2, 2023</div>
+              </div>
+              <div class="blog-info">
+                <span class="blog-category">Mental Health</span>
+                <h5 class="blog-title">
+                  <a href="#"
+                    >Effective Strategies for Managing Stress in Daily Life</a
+                  >
+                </h5>
+                <p class="blog-text">
+                  Learn practical techniques to manage stress and improve your
+                  mental wellbeing in today's fast-paced world.
+                </p>
+                <div class="blog-author">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/67.jpg"
+                    alt="Dr. Michael Brown"
+                  />
+                  <span>By Dr. Michael Brown</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="300"
+          >
+            <div class="blog-card">
+              <div class="blog-image">
+                <img
+                  src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                  alt="Exercise"
+                />
+                <div class="blog-date">June 10, 2023</div>
+              </div>
+              <div class="blog-info">
+                <span class="blog-category">Fitness</span>
+                <h5 class="blog-title">
+                  <a href="#">The Science Behind Exercise and Longevity</a>
+                </h5>
+                <p class="blog-text">
+                  Explore how regular physical activity can improve your health,
+                  boost your mood, and extend your lifespan.
+                </p>
+                <div class="blog-author">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/63.jpg"
+                    alt="Dr. Emily Davis"
+                  />
+                  <span>By Dr. Emily Davis</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="text-center mt-4"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="400"
+        >
+          <a href="#" class="btn btn-outline-primary">View All Articles</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upload Prescription Section -->
+    <section id="upload" class="contact bg-white">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
+          <h2>Upload Your Prescription</h2>
+          <p>
+            Save time by uploading your prescription online. Our pharmacists
+            will process your order quickly and deliver your medications right
+            to your doorstep.
+          </p>
+        </div>
+
+        <div class="row">
+          <div
+            class="col-lg-8 mx-auto"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="100"
+          >
+            <div class="contact-form">
+              <form>
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <label for="name">Full Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      placeholder="Your Name"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      placeholder="Your Email"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col-md-6 form-group">
+                    <label for="phone">Phone Number</label>
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="phone"
+                      placeholder="Your Phone"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="prescription">Upload Prescription</label>
+                    <input
+                      type="file"
+                      class="form-control"
+                      id="prescription"
+                      required
+                    />
+                    <small class="form-text text-muted"
+                      >Accepted formats: JPG, PNG, PDF (Max size: 5MB)</small
+                    >
+                  </div>
+                </div>
+                <div class="form-group mt-3">
+                  <label for="address">Delivery Address</label>
+                  <textarea
+                    class="form-control"
+                    id="address"
+                    rows="3"
+                    placeholder="Your Complete Address"
+                    required
+                  ></textarea>
+                </div>
+                <div class="form-group mt-3">
+                  <label for="notes">Additional Notes</label>
+                  <textarea
+                    class="form-control"
+                    id="notes"
+                    rows="3"
+                    placeholder="Any special instructions or notes"
+                  ></textarea>
+                </div>
+                <div class="form-check mt-3">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="terms"
+                    required
+                  />
+                  <label class="form-check-label" for="terms">
+                    I agree to the <a href="#">terms and conditions</a> and
+                    <a href="#">privacy policy</a>
+                  </label>
+                </div>
+                <div class="text-center mt-4">
+                  <button type="submit" class="btn btn-primary">
+                    Submit Prescription
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
+          <h2>Get In Touch</h2>
+          <p>
+            Have questions or need assistance? Our team is here to help. Contact
+            us through any of the following methods or visit our pharmacy in
+            person.
+          </p>
+        </div>
+
+        <div class="row">
+          <div
+            class="col-lg-5 mb-4 mb-lg-0"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="100"
+          >
+            <div class="contact-info">
+              <h3>Contact Information</h3>
+
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-text">
+                  <h5>Our Location</h5>
+                  <p>
+                    123 Wellness Avenue, Health District<br />New York, NY 10001
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="contact-text">
+                  <h5>Call Us</h5>
+                  <p>+1 (800) VITA-HEALTH<br />+1 (212) 555-7890</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-text">
+                  <h5>Email Us</h5>
+                  <p>info@vitahealth.com<br />support@vitahealth.com</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="contact-text">
+                  <h5>Working Hours</h5>
+                  <p>
+                    Monday-Saturday: 8:00 AM - 10:00 PM<br />Sunday: 9:00 AM -
+                    6:00 PM
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-7"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
+            <div class="contact-form">
+              <h3>Send Us a Message</h3>
+              <form>
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Your Name"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="Your Email"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-group mt-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Subject"
+                    required
+                  />
+                </div>
+                <div class="form-group mt-3">
+                  <textarea
+                    class="form-control"
+                    rows="5"
+                    placeholder="Your Message"
+                    required
+                  ></textarea>
+                </div>
+                <div class="text-center mt-4">
+                  <button type="submit" class="btn btn-primary">
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="row mt-5"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="300"
+        >
+          <div class="col-12">
+            <div
+              style="
+                width: 100%;
+                height: 450px;
+                border-radius: 15px;
+                overflow: hidden;
+              "
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215573036935!2d-73.98784492426285!3d40.748440471397615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b30eac9f%3A0xaca05ca48ab0c3fa!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1687887247918!5m2!1sen!2sus"
+                width="100%"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+      <div class="newsletter-shape"></div>
+      <div class="container">
+        <div class="row align-items-center">
+          <div
+            class="col-lg-6 mb-4 mb-lg-0"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          >
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>
+              Stay updated with the latest health tips, product launches, and
+              exclusive offers. Join our community today!
+            </p>
+          </div>
+          <div
+            class="col-lg-6"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
+            <div class="newsletter-form">
+              <input type="email" placeholder="Enter your email address" />
+              <button type="submit">Subscribe</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-5">
+            <a href="#" class="footer-logo">Vita<span>Health</span></a>
+            <p class="footer-text">
+              VitaHealth is a premier pharmacy and healthcare provider committed
+              to improving the health and wellness of our community through
+              quality products and exceptional service.
+            </p>
+            <div class="footer-social">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 mb-5">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#products">Products</a></li>
+              <li><a href="#team">Our Team</a></li>
+              <li><a href="#blog">Health Tips</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-5">
+            <h4>Our Services</h4>
+            <ul class="footer-links">
+              <li><a href="#">Prescription Services</a></li>
+              <li><a href="#">Home Delivery</a></li>
+              <li><a href="#">Health Consultation</a></li>
+              <li><a href="#">Health Checkups</a></li>
+              <li><a href="#">Vaccination Services</a></li>
+              <li><a href="#">Medication Management</a></li>
+              <li><a href="#">Online Prescription Upload</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-5">
+            <h4>Contact Us</h4>
+            <ul class="footer-contact">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span
+                  >123 Wellness Avenue, Health District<br />New York, NY
+                  10001</span
+                >
+              </li>
+              <li>
+                <i class="fas fa-phone-alt"></i>
+                <span>+1 (800) VITA-HEALTH<br />+1 (212) 555-7890</span>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <span>info@vitahealth.com<br />support@vitahealth.com</span>
+              </li>
+              <li>
+                <i class="fas fa-clock"></i>
+                <span
+                  >Monday-Saturday: 8:00 AM - 10:00 PM<br />Sunday: 9:00 AM -
+                  6:00 PM</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p>
+            &copy; 2023 VitaHealth. All Rights Reserved. | Designed with
+            <i class="fas fa-heart text-danger"></i> for better healthcare
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JavaScript -->
+    <script>
+      // Initialize AOS Animation
+      AOS.init();
+
+      // Navbar Scroll Effect
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // Back to Top Button
+      window.addEventListener("scroll", function () {
+        const backToTop = document.querySelector(".back-to-top");
+        if (window.scrollY > 300) {
+          backToTop.classList.add("active");
+        } else {
+          backToTop.classList.remove("active");
+        }
+      });
+
+      // Smooth Scrolling for Navigation Links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+
+            // Update active nav link
+            document.querySelectorAll(".nav-link").forEach((link) => {
+              link.classList.remove("active");
+            });
+            this.classList.add("active");
+          }
+        });
+      });
+
+      // Update active nav link on scroll
+      window.addEventListener("scroll", function () {
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+
+          if (pageYOffset >= sectionTop - 100) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+          } else if (
+            current === undefined &&
+            link.getAttribute("href") === "#home"
+          ) {
+            link.classList.add("active");
+          }
+        });
+      });
+
+      // Form Validation
+      const forms = document.querySelectorAll("form");
+      forms.forEach((form) => {
+        form.addEventListener("submit", function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          } else {
+            event.preventDefault();
+            alert("Form submitted successfully! We will get back to you soon.");
+            form.reset();
+          }
+
+          form.classList.add("was-validated");
+        });
+      });
+    </script>
+  </body>
+</html>

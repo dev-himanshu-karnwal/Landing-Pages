@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mental Wellness Journey</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">Logo</div>
+        <div class="nav-links">
+          <ul>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">AI Companion</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">About Us</a></li>
+          </ul>
+        </div>
+        <div class="nav-buttons">
+          <button class="btn-secondary">Sign In</button>
+          <button class="btn-primary">Get Started</button>
+        </div>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="fade-in">Your Daily Journey to Mental Wellness</h1>
+          <p class="fade-in">
+            Find peace, track your progress, and grow stronger each day with
+            personalized support that adapts to your unique needs.
+          </p>
+          <div class="hero-buttons fade-in">
+            <button class="btn-primary">Start Your Healing Journey</button>
+            <button class="btn-text">Learn More</button>
+          </div>
+          <div class="hero-features fade-in">
+            <div class="feature">
+              <i class="fas fa-lock"></i>
+              <span>Private & secure by design</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-shield-alt"></i>
+              <span>End-to-end encryption</span>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="hero-image fade-in">
+          <img src="image.png" alt="Mental wellness illustration" />
+        </div> -->
+      </div>
+    </section>
+
+    <!-- Emotional Journey Section -->
+    <section class="emotional-journey">
+      <div class="container">
+        <h2 class="section-title fade-in">Track Your Emotional Journey</h2>
+        <p class="section-description fade-in">
+          Simple daily check-ins help you understand your patterns and progress
+          over time.
+        </p>
+
+        <div class="visualize-progress">
+          <h2 class="section-title fade-in">Visualize Your Progress</h2>
+          <div class="progress-content">
+            <div class="mood-tracker slide-in-left">
+              <h3>How are you feeling today?</h3>
+              <div class="mood-options">
+                <div class="mood-option" data-mood="down">
+                  <div class="mood-icon mood-down">
+                    <i class="fas fa-frown"></i>
+                  </div>
+                  <span>Down</span>
+                </div>
+                <div class="mood-option" data-mood="neutral">
+                  <div class="mood-icon mood-neutral">
+                    <i class="fas fa-meh"></i>
+                  </div>
+                  <span>Neutral</span>
+                </div>
+                <div class="mood-option" data-mood="good">
+                  <div class="mood-icon mood-good">
+                    <i class="fas fa-smile"></i>
+                  </div>
+                  <span>Good</span>
+                </div>
+                <div class="mood-option" data-mood="great">
+                  <div class="mood-icon mood-great">
+                    <i class="fas fa-smile-beam"></i>
+                  </div>
+                  <span>Great</span>
+                </div>
+                <div class="mood-option" data-mood="amazing">
+                  <div class="mood-icon mood-amazing">
+                    <i class="fas fa-laugh-beam"></i>
+                  </div>
+                  <span>Amazing</span>
+                </div>
+              </div>
+              <div class="note-input">
+                <p>Add a note (optional)</p>
+                <textarea placeholder="What's on your mind today?"></textarea>
+              </div>
+              <button class="btn-primary">Save Today's Check-in</button>
+            </div>
+            <div class="mood-chart slide-in-right">
+              <div class="chart-header">
+                <h3>Weekly Mood Overview</h3>
+              </div>
+              <div class="chart-container">
+                <canvas id="moodChart"></canvas>
+              </div>
+              <div class="stat-highlight">
+                <i class="fas fa-chart-line"></i>
+                <p>78% of users report improved self-awareness after 2 weeks</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="tools">
+      <div class="container">
+        <h2 class="section-title fade-in">Tools for Your Mental Wellbeing</h2>
+        <p class="section-description fade-in">
+          Discover a comprehensive suite of features designed to support your
+          mental health journey.
+        </p>
+
+        <div class="tools-grid">
+          <div class="tool-card fade-in">
+            <div class="tool-icon blue">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3>Mindfulness Exercises</h3>
+            <p>
+              Guided meditations, breathing techniques, and mindfulness
+              practices tailored to your current emotional state.
+            </p>
+            <a href="#" class="tool-link"
+              >Explore exercises <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+
+          <div class="tool-card fade-in">
+            <div class="tool-icon purple">
+              <i class="fas fa-book"></i>
+            </div>
+            <h3>Anonymous Journaling</h3>
+            <p>
+              Express your thoughts freely in a private, secure space. Our AI
+              provides gentle prompts when you need inspiration.
+            </p>
+            <a href="#" class="tool-link"
+              >Start writing <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+
+          <div class="tool-card fade-in">
+            <div class="tool-icon teal">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3>AI Mental Health Companion</h3>
+            <p>
+              A supportive AI companion that listens without judgment and offers
+              evidence-based coping strategies.
+            </p>
+            <a href="#" class="tool-link"
+              >Meet your companion <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+
+          <div class="tool-card fade-in">
+            <div class="tool-icon blue-light">
+              <i class="fas fa-calendar-check"></i>
+            </div>
+            <h3>Habit Building</h3>
+            <p>
+              Create personalized routines that support your mental health
+              goals. Track your progress and celebrate small wins along the way.
+            </p>
+            <a href="#" class="tool-link"
+              >Build habits <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+
+          <div class="tool-card fade-in">
+            <div class="tool-icon pink">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3>Self-Care Activities</h3>
+            <p>
+              Discover activities tailored to your interests that promote
+              relaxation, joy, and emotional balance in your daily life.
+            </p>
+            <a href="#" class="tool-link"
+              >Explore activities <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Companion Section -->
+    <section class="ai-companion">
+      <div class="container">
+        <h2 class="section-title fade-in">Your AI Mental Health Companion</h2>
+        <p class="section-description fade-in">
+          A supportive presence available 24/7, designed with input from mental
+          health professionals.
+        </p>
+
+        <div class="companion-demo">
+          <div class="chat-container slide-in-left">
+            <div class="chat-header">
+              <div class="assistant-info">
+                <div class="assistant-avatar">
+                  <i class="fas fa-brain"></i>
+                </div>
+                <div class="assistant-name">
+                  <h4>Mindful Assistant</h4>
+                  <p>Always here to listen</p>
+                </div>
+              </div>
+            </div>
+            <div class="chat-messages">
+              <div class="message assistant">
+                <p>
+                  Hi there! How are you feeling today? I'm here to listen and
+                  support you.
+                </p>
+              </div>
+              <div class="message user">
+                <p>
+                  I've been feeling overwhelmed with work lately and having
+                  trouble sleeping.
+                </p>
+              </div>
+              <div class="message assistant">
+                <p>
+                  I understand how difficult that can be. Would you like to try
+                  a quick breathing exercise to help reduce stress, or would you
+                  prefer to talk more about what's been keeping you up at night?
+                </p>
+              </div>
+            </div>
+            <div class="chat-input">
+              <input type="text" placeholder="Type your message..." />
+              <button class="send-btn">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="companion-features slide-in-right">
+            <h3>How Our AI Companion Helps</h3>
+            <div class="feature-item">
+              <div class="feature-icon blue">
+                <i class="fas fa-heart"></i>
+              </div>
+              <div class="feature-text">
+                <h4>Emotional Support</h4>
+                <p>
+                  A judgment-free space to express your feelings and receive
+                  empathetic responses.
+                </p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon green">
+                <i class="fas fa-brain"></i>
+              </div>
+              <div class="feature-text">
+                <h4>Evidence-Based Techniques</h4>
+                <p>
+                  Access to CBT, mindfulness, and other proven methods to manage
+                  anxiety and stress.
+                </p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon purple">
+                <i class="fas fa-lock"></i>
+              </div>
+              <div class="feature-text">
+                <h4>Privacy Focused</h4>
+                <p>
+                  Your conversations are private and secure, with optional
+                  anonymized data to improve your experience.
+                </p>
+              </div>
+            </div>
+            <button class="btn-primary">Try a Demo Chat</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+      <div class="container">
+        <h2 class="section-title fade-in">Stories from Our Community</h2>
+        <p class="section-description fade-in">
+          Real experiences from people on their mental wellness journey.
+        </p>
+
+        <div class="testimonials-container">
+          <div class="testimonial-card fade-in">
+            <div class="quote-icon">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="testimonial-text">
+              This app has been a lifeline during my anxiety flare-ups. The
+              daily check-ins help me notice patterns I never saw before, and
+              the AI companion is there when I need someone to talk to at 3 AM.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar blue">
+                <span>R</span>
+              </div>
+              <div class="author-info">
+                <h4>Rebecca Thompson</h4>
+                <p>Member for 6 months</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card fade-in">
+            <div class="quote-icon">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="testimonial-text">
+              As someone who was skeptical about mental health apps, I'm amazed
+              by how much this has helped me. The journaling prompts get me
+              writing when I'm stuck, and the mindfulness exercises actually
+              work for me.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar green">
+                <span>M</span>
+              </div>
+              <div class="author-info">
+                <h4>Michael Donovan</h4>
+                <p>Member for 3 months</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card fade-in">
+            <div class="quote-icon">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="testimonial-text">
+              I appreciate that this app doesn't try to replace therapy but
+              complements it perfectly. My therapist is impressed with the
+              insights I've gained from tracking my moods and journaling between
+              sessions.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar purple">
+                <span>S</span>
+              </div>
+              <div class="author-info">
+                <h4>Sophia Chen</h4>
+                <p>Member for 1 year</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats-container">
+          <div class="stat-card fade-in">
+            <div class="stat-circle">
+              <svg viewBox="0 0 36 36" class="circular-chart">
+                <path
+                  class="circle-bg"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <path
+                  class="circle blue"
+                  stroke-dasharray="75, 100"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <text x="18" y="20.35" class="percentage">75%</text>
+              </svg>
+            </div>
+            <h3>Reduced Anxiety</h3>
+            <p>Users report after 3 months</p>
+          </div>
+
+          <div class="stat-card fade-in">
+            <div class="stat-circle">
+              <svg viewBox="0 0 36 36" class="circular-chart">
+                <path
+                  class="circle-bg"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <path
+                  class="circle blue"
+                  stroke-dasharray="85, 100"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <text x="18" y="20.35" class="percentage">85%</text>
+              </svg>
+            </div>
+            <h3>Better Sleep</h3>
+            <p>Users report after 2 months</p>
+          </div>
+
+          <div class="stat-card fade-in">
+            <div class="stat-circle">
+              <svg viewBox="0 0 36 36" class="circular-chart">
+                <path
+                  class="circle-bg"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <path
+                  class="circle blue"
+                  stroke-dasharray="80, 100"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <text x="18" y="20.35" class="percentage">80%</text>
+              </svg>
+            </div>
+            <h3>Improved Mood</h3>
+            <p>Users report after 1 month</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="container">
+        <h2 class="section-title fade-in">
+          Begin Your Path to Better Mental Health
+        </h2>
+        <p class="section-description fade-in">
+          Start your journey today with a free 14-day trial. No credit card
+          required.
+        </p>
+
+        <div class="cta-buttons fade-in">
+          <button class="btn-primary">Start Your Free Journey</button>
+          <button class="btn-secondary">Learn More About Our Approach</button>
+        </div>
+
+        <div class="cta-features fade-in">
+          <div class="feature">
+            <i class="fas fa-lock"></i>
+            <span>End-to-end encryption</span>
+          </div>
+          <div class="feature">
+            <i class="fas fa-user-secret"></i>
+            <span>Anonymous usage</span>
+          </div>
+          <div class="feature">
+            <i class="fas fa-certificate"></i>
+            <span>Expert-backed content</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            Logo
+            <p>
+              Your daily companion for mental wellness and emotional balance.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <div class="link-group">
+              <h3>Features</h3>
+              <ul>
+                <li><a href="#">Mood Tracking</a></li>
+                <li><a href="#">Journaling</a></li>
+                <li><a href="#">AI Companion</a></li>
+                <li><a href="#">Mindfulness Exercises</a></li>
+                <li><a href="#">Sleep Support</a></li>
+              </ul>
+            </div>
+
+            <div class="link-group">
+              <h3>Company</h3>
+              <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Team</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+
+            <div class="link-group">
+              <h3>Get Support</h3>
+              <p>Subscribe to our newsletter for tips and updates.</p>
+              <div class="newsletter">
+                <input type="email" placeholder="Your email" />
+                <button class="btn-primary">Subscribe</button>
+              </div>
+              <div class="support-info">
+                <h4>Crisis Support Line:</h4>
+                <p><a href="tel:1-800-273-8255">1-800-273-8255</a></p>
+                <p>Available 24/7 for immediate help</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 Mental Wellness App. All rights reserved.</p>
+          <div class="legal-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

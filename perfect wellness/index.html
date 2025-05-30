@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Serenity - Transformative Wellness Retreats</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <span>Serenity</span>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <nav class="desktop-nav">
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">Retreats</a>
+            <a href="#" class="nav-link">About</a>
+            <a href="#" class="nav-link">Contact</a>
+          </nav>
+
+          <!-- Desktop Actions -->
+          <div class="desktop-actions">
+            <button class="book-now-btn">Book Now</button>
+          </div>
+
+          <!-- Mobile Menu -->
+          <div class="mobile-header-actions">
+            <button class="hamburger-menu" id="hamburgerMenu">
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu-content">
+          <div class="mobile-menu-header">
+            <div class="logo">Serenity</div>
+            <button class="close-menu" id="closeMenu">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+
+          <nav class="mobile-nav">
+            <a href="#" class="mobile-nav-link">Home</a>
+            <a href="#" class="mobile-nav-link">Retreats</a>
+            <a href="#" class="mobile-nav-link">About</a>
+            <a href="#" class="mobile-nav-link">Contact</a>
+          </nav>
+
+          <div class="mobile-menu-actions">
+            <button class="mobile-book-btn">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-background">
+        <img
+          src="image (35).png"
+          alt="Mountain Lake Landscape"
+          class="hero-image"
+        />
+      </div>
+      <!-- <div class="hero-overlay"></div> -->
+      <div class="container">
+        <div class="hero-content">
+          <h1>Find Your Perfect Wellness Journey</h1>
+          <p>
+            Escape the ordinary and embark on a transformative experience.<br />Reconnect
+            with yourself in nature's embrace.
+          </p>
+          <button class="explore-btn">Explore Retreats</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Retreat Experiences -->
+    <section class="retreat-experiences">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Retreat Experiences</h2>
+          <p>
+            Choose from our carefully curated selection of transformative
+            retreats designed to nurture your mind, body, and spirit
+          </p>
+        </div>
+
+        <div class="experiences-grid">
+          <div class="experience-card">
+            <div class="experience-image">
+              <img
+                src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop"
+                alt="Yoga Retreats"
+              />
+            </div>
+            <div class="experience-content">
+              <h3>Yoga Retreats</h3>
+              <p>
+                Immerse yourself in daily yoga practices guided by expert
+                instructors. Reconnect with your body and calm your mind through
+                movement and breath.
+              </p>
+              <a href="#" class="learn-more">Learn More →</a>
+            </div>
+          </div>
+
+          <div class="experience-card">
+            <div class="experience-image">
+              <img
+                src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=300&fit=crop"
+                alt="Detox Retreats"
+              />
+            </div>
+            <div class="experience-content">
+              <h3>Detox Retreats</h3>
+              <p>
+                Cleanse your body and reset your system with our holistic detox
+                programs. Enjoy organic cuisine, juicing, and wellness therapies
+                in nature.
+              </p>
+              <a href="#" class="learn-more">Learn More →</a>
+            </div>
+          </div>
+
+          <div class="experience-card">
+            <div class="experience-image">
+              <img
+                src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&h=300&fit=crop"
+                alt="Adventure Retreats"
+              />
+            </div>
+            <div class="experience-content">
+              <h3>Adventure Retreats</h3>
+              <p>
+                Combine wellness with adventure as you explore breathtaking
+                landscapes. Hiking, forest bathing, and outdoor meditation await
+                you.
+              </p>
+              <a href="#" class="learn-more">Learn More →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upcoming Retreats -->
+    <section class="upcoming-retreats">
+      <div class="container">
+        <div class="section-header">
+          <h2>Upcoming Retreats</h2>
+          <p>
+            Secure your spot for these transformative experiences. Limited
+            spaces available to ensure an intimate setting.
+          </p>
+        </div>
+
+        <div class="filter-section">
+          <div class="filter-left">
+            <span>Filter by:</span>
+            <select class="filter-select">
+              <option>All Retreats</option>
+              <option>Yoga</option>
+              <option>Detox</option>
+              <option>Adventure</option>
+            </select>
+          </div>
+          <div class="filter-right">
+            <span>Show available only</span>
+            <label class="toggle-switch">
+              <input type="checkbox" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="retreats-grid">
+          <div class="retreat-card">
+            <div class="retreat-header">
+              <span class="retreat-type yoga">Yoga</span>
+              <span class="retreat-date">June 15-22, 2025</span>
+              <span class="retreat-duration">7 days</span>
+            </div>
+            <h3>Himalayan Yoga Escape</h3>
+            <p class="retreat-location">📍 Rishikesh, India</p>
+            <p class="retreat-description">
+              Immerse yourself in the birthplace of yoga with daily practices,
+              meditation, and Ayurvedic treatments.
+            </p>
+            <div class="retreat-footer">
+              <span class="price">From $1,899</span>
+              <button class="book-btn">Book Now</button>
+            </div>
+          </div>
+
+          <div class="retreat-card">
+            <div class="retreat-header">
+              <span class="retreat-type detox">Detox</span>
+              <span class="retreat-date">July 3-10, 2025</span>
+              <span class="retreat-duration">7 days</span>
+            </div>
+            <h3>Bali Cleanse Retreat</h3>
+            <p class="retreat-location">📍 Ubud, Bali</p>
+            <p class="retreat-description">
+              Reset your system with organic cuisine, juice cleanses, and
+              holistic treatments in tropical paradise.
+            </p>
+            <div class="retreat-footer">
+              <span class="price">From $2,199</span>
+              <button class="book-btn">Book Now</button>
+            </div>
+          </div>
+
+          <div class="retreat-card">
+            <div class="retreat-header">
+              <span class="retreat-type adventure">Adventure</span>
+              <span class="retreat-date">August 12-19, 2025</span>
+              <span class="retreat-duration">7 days</span>
+            </div>
+            <h3>Costa Rica Jungle Retreat</h3>
+            <p class="retreat-location">📍 Nosara, Costa Rica</p>
+            <p class="retreat-description">
+              Explore rainforests, practice yoga on the beach, and connect with
+              nature through guided adventures.
+            </p>
+            <div class="retreat-footer">
+              <span class="price">From $2,399</span>
+              <button class="book-btn">Book Now</button>
+            </div>
+          </div>
+
+          <div class="retreat-card">
+            <div class="retreat-header">
+              <span class="retreat-type yoga">Yoga</span>
+              <span class="retreat-date">September 5-12, 2025</span>
+              <span class="retreat-duration">7 days</span>
+            </div>
+            <h3>Greek Island Yoga</h3>
+            <p class="retreat-location">📍 Santorini, Greece</p>
+            <p class="retreat-description">
+              Practice yoga overlooking the Aegean Sea, enjoy Mediterranean
+              cuisine, and explore ancient sites.
+            </p>
+            <div class="retreat-footer">
+              <span class="price">From $2,099</span>
+              <button class="book-btn">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <h2>Transformative Experiences</h2>
+          <p>
+            Hear from those who have embarked on their wellness journey with us
+            and discovered a renewed sense of self.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>
+              "The Bali retreat was truly life-changing. I arrived stressed and
+              disconnected, but left with a renewed sense of purpose and calm.
+              The instructors were exceptional and the setting was paradise."
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=60&h=60&fit=crop&crop=face"
+                alt="Emily Richardson"
+              />
+              <div class="author-info">
+                <strong>Emily Richardson</strong>
+                <span>Marketing Director, London</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>
+              "As a busy executive, I was skeptical about taking time off for a
+              retreat. The Costa Rica adventure exceeded all expectations. I
+              returned more focused, energized, and creative than ever."
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face"
+                alt="Michael Thompson"
+              />
+              <div class="author-info">
+                <strong>Michael Thompson</strong>
+                <span>CEO, San Francisco</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>
+              "The Greek Island yoga retreat was the perfect balance of wellness
+              and cultural exploration. The instructors were knowledgeable, and
+              the accommodations were stunning. I've already booked my next
+              retreat!"
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face"
+                alt="Sarah Johnson"
+              />
+              <div class="author-info">
+                <strong>Sarah Johnson</strong>
+                <span>Physician, Toronto</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>
+              "The Himalayan retreat was truly a spiritual awakening. Practicing
+              yoga in the birthplace of this ancient tradition was humbling. The
+              guides were exceptional and the experience was transformative."
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face"
+                alt="David Chen"
+              />
+              <div class="author-info">
+                <strong>David Chen</strong>
+                <span>Software Engineer, Singapore</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="cta-background">
+        <img src="image (36).png" alt="Forest Sunset" class="cta-image" />
+      </div>
+      <div class="cta-overlay"></div>
+      <div class="container">
+        <div class="cta-content">
+          <h2>Begin Your Wellness Journey</h2>
+          <p>
+            Transform your life with our immersive retreat experiences. Limited
+            spaces available to ensure personalized attention.
+          </p>
+          <div class="cta-buttons">
+            <button class="btn-primary">Book Your Retreat</button>
+            <button class="btn-secondary">Contact Us</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <span>Serenity</span>
+            </div>
+            <p>
+              Transformative wellness retreats in the world's most beautiful
+              destinations.
+            </p>
+            <div class="social-icons">
+              <a href="#" class="social-icon">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="social-icon">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="social-icon">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="social-icon">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Our Retreats</a></li>
+              <li><a href="#">Testimonials</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">FAQs</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Contact Us</h4>
+            <div class="contact-info">
+              <p>📍 123 Wellness Way, Serenity Valley, CA 94123</p>
+              <p>📞 +1 (555) 123-4567</p>
+              <p>✉️ info@serenityretreats.com</p>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h4>Newsletter</h4>
+            <p>
+              Subscribe to receive updates on new retreats and wellness tips.
+            </p>
+            <form class="newsletter-form">
+              <input
+                type="email"
+                placeholder="Your email address"
+                class="newsletter-input"
+              />
+              <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+            <p class="privacy-note">
+              We respect your privacy. Unsubscribe at any time.
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 Serenity Retreats. All rights reserved.</p>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

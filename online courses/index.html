@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn UX Design in 30 Days - Transform Your Career</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        --dark-bg: #0f1419;
+        --card-bg: #ffffff;
+        --text-primary: #1a202c;
+        --text-secondary: #718096;
+        --border-color: #e2e8f0;
+        --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, sans-serif;
+        line-height: 1.7;
+        color: var(--text-primary);
+        overflow-x: hidden;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 4px;
+      }
+
+      /* Navigation */
+      .navbar {
+        backdrop-filter: blur(20px);
+        background: rgba(255, 255, 255, 0.95) !important;
+        border-bottom: 1px solid var(--border-color);
+        transition: all 0.3s ease;
+        padding: 1rem 0;
+      }
+
+      .navbar-brand {
+        font-weight: 800;
+        font-size: 1.75rem;
+        background: var(--primary-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: var(--text-primary) !important;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .nav-link:hover {
+        color: #667eea !important;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 50%;
+        background: var(--primary-gradient);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      /* Buttons */
+      .btn-gradient {
+        background: var(--primary-gradient);
+        border: none;
+        color: white;
+        font-weight: 600;
+        padding: 14px 32px;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow-md);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-gradient::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s;
+      }
+
+      .btn-gradient:hover::before {
+        left: 100%;
+      }
+
+      .btn-gradient:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+        color: white;
+      }
+
+      .btn-outline-gradient {
+        background: transparent;
+        border: 2px solid transparent;
+        background-clip: padding-box;
+        color: #667eea;
+        font-weight: 600;
+        padding: 12px 30px;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .btn-outline-gradient::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 50px;
+        padding: 2px;
+        background: var(--primary-gradient);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+        -webkit-mask-composite: xor;
+      }
+
+      .btn-outline-gradient:hover {
+        background: var(--primary-gradient);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+      }
+
+      /* Hero Section */
+      .hero-section {
+        background: linear-gradient(
+          135deg,
+          #f8fafc 0%,
+          #e2e8f0 50%,
+          #f1f5f9 100%
+        );
+        padding: 120px 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 100%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(102, 126, 234, 0.1) 0%,
+          transparent 70%
+        );
+        animation: float 20s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(5deg);
+        }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-title {
+        font-size: 4rem;
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 2rem;
+        background: linear-gradient(135deg, #1a202c 0%, #667eea 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-subtitle {
+        font-size: 1.25rem;
+        color: var(--text-secondary);
+        margin-bottom: 3rem;
+        line-height: 1.8;
+      }
+
+      .hero-image {
+        position: relative;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: var(--shadow-xl);
+        transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+        transition: all 0.3s ease;
+      }
+
+      .hero-image:hover {
+        transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.02);
+      }
+
+      .play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90px;
+        height: 90px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--shadow-lg);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+      }
+
+      .play-button:hover {
+        transform: translate(-50%, -50%) scale(1.1);
+        background: white;
+      }
+
+      .student-avatars {
+        display: flex;
+        margin-right: 20px;
+      }
+
+      .student-avatars img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-right: -15px;
+        border: 4px solid white;
+        box-shadow: var(--shadow-sm);
+        transition: transform 0.3s ease;
+      }
+
+      .student-avatars img:hover {
+        transform: scale(1.1) translateY(-5px);
+        z-index: 10;
+        position: relative;
+      }
+
+      /* Stats Section */
+      .stats-section {
+        background: white;
+        padding: 100px 0;
+        box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.05);
+      }
+
+      .stat-card {
+        text-align: center;
+        padding: 40px 20px;
+        border-radius: 20px;
+        background: white;
+        transition: all 0.3s ease;
+        border: 1px solid var(--border-color);
+      }
+
+      .stat-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-lg);
+        border-color: #667eea;
+      }
+
+      .stat-number {
+        font-size: 3.5rem;
+        font-weight: 800;
+        background: var(--primary-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 15px;
+        display: block;
+      }
+
+      .stat-label {
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      /* Course Cards */
+      .course-card {
+        background: white;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+        transition: all 0.4s ease;
+        margin-bottom: 30px;
+        height: 100%;
+        border: 1px solid var(--border-color);
+      }
+
+      .course-card:hover {
+        transform: translateY(-15px) scale(1.02);
+        box-shadow: var(--shadow-xl);
+        border-color: #667eea;
+      }
+
+      .course-image {
+        position: relative;
+        height: 240px;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+      }
+
+      .course-image::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          45deg,
+          rgba(102, 126, 234, 0.1),
+          rgba(118, 75, 162, 0.1)
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .course-card:hover .course-image::before {
+        opacity: 1;
+      }
+
+      .duration-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 10px 16px;
+        border-radius: 25px;
+        font-size: 14px;
+        font-weight: 600;
+        backdrop-filter: blur(10px);
+      }
+
+      /* Curriculum Section */
+      .curriculum-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 60px;
+        padding: 50px;
+        background: white;
+        border-radius: 24px;
+        transition: all 0.3s ease;
+        border: 1px solid var(--border-color);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .curriculum-item:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-lg);
+        border-color: #667eea;
+      }
+
+      .curriculum-number {
+        width: 80px;
+        height: 80px;
+        background: var(--primary-gradient);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 2rem;
+        margin-right: 40px;
+        flex-shrink: 0;
+        box-shadow: var(--shadow-md);
+      }
+
+      .skill-tag {
+        display: inline-block;
+        background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-size: 14px;
+        margin: 8px 12px 8px 0;
+        color: var(--text-primary);
+        border: 1px solid var(--border-color);
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .skill-tag:hover {
+        background: var(--primary-gradient);
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      /* Testimonial Cards */
+      .testimonial-card {
+        background: white;
+        padding: 50px;
+        border-radius: 24px;
+        box-shadow: var(--shadow-md);
+        height: 100%;
+        transition: all 0.3s ease;
+        border: 1px solid var(--border-color);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .testimonial-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: var(--primary-gradient);
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-xl);
+      }
+
+      .student-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-right: 25px;
+        object-fit: cover;
+        border: 4px solid #f8fafc;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .stars {
+        color: #fbbf24;
+        margin-top: 25px;
+        font-size: 1.3rem;
+      }
+
+      /* Pricing Section */
+      .pricing-section {
+        background: var(--dark-bg);
+        color: white;
+        padding: 120px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .pricing-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+            circle at 30% 20%,
+            rgba(102, 126, 234, 0.3) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 70% 80%,
+            rgba(118, 75, 162, 0.3) 0%,
+            transparent 50%
+          );
+      }
+
+      .pricing-card {
+        background: white;
+        color: var(--text-primary);
+        padding: 60px;
+        border-radius: 32px;
+        max-width: 800px;
+        margin: 0 auto;
+        box-shadow: var(--shadow-xl);
+        position: relative;
+        z-index: 2;
+        border: 1px solid var(--border-color);
+      }
+
+      .price {
+        font-size: 5rem;
+        font-weight: 800;
+        background: var(--primary-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .original-price {
+        text-decoration: line-through;
+        color: #9ca3af;
+        font-size: 2rem;
+        margin-right: 20px;
+        font-weight: 500;
+      }
+
+      .feature-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .feature-list li {
+        padding: 15px 0;
+        position: relative;
+        padding-left: 40px;
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
+
+      .feature-list li:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #10b981;
+        font-weight: 800;
+        font-size: 1.4rem;
+        width: 30px;
+        height: 30px;
+        background: rgba(16, 185, 129, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* FAQ Section */
+      .faq-section {
+        background: var(--dark-bg);
+        color: white;
+        padding: 100px 0;
+      }
+
+      .faq-item {
+        background: rgba(255, 255, 255, 0.05);
+        margin-bottom: 25px;
+        border-radius: 20px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+      }
+
+      .faq-item:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(102, 126, 234, 0.5);
+      }
+
+      .faq-question {
+        padding: 30px;
+        cursor: pointer;
+        font-weight: 600;
+        border: none;
+        background: none;
+        color: white;
+        width: 100%;
+        text-align: left;
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.3s ease;
+      }
+
+      .faq-question:hover {
+        color: #667eea;
+      }
+
+      .faq-answer {
+        padding: 0 30px 30px 30px;
+        display: none;
+        color: #d1d5db;
+        line-height: 1.8;
+        font-size: 1.1rem;
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--dark-bg);
+        color: white;
+        padding: 100px 0 50px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .footer h6 {
+        color: white;
+        margin-bottom: 30px;
+        font-size: 1.3rem;
+        font-weight: 700;
+      }
+
+      .footer a {
+        color: #d1d5db;
+        text-decoration: none;
+        display: block;
+        padding: 10px 0;
+        transition: all 0.3s ease;
+        font-weight: 500;
+      }
+
+      .footer a:hover {
+        color: #667eea;
+        transform: translateX(5px);
+      }
+
+      .social-icons a {
+        display: inline-block;
+        margin-right: 25px;
+        color: #d1d5db;
+        font-size: 1.8rem;
+        transition: all 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        color: #667eea;
+        transform: translateY(-3px);
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+      }
+
+      .animate-on-scroll.animated {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Section Styling */
+      .section-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 25px;
+        line-height: 1.2;
+      }
+
+      .section-subtitle {
+        font-size: 1.3rem;
+        color: var(--text-secondary);
+        margin-bottom: 80px;
+        line-height: 1.7;
+      }
+
+      .preview-section {
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        padding: 120px 0;
+      }
+
+      .curriculum-section {
+        padding: 120px 0;
+        background: white;
+      }
+
+      .testimonials-section {
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        padding: 120px 0;
+      }
+
+      /* For smaller screens (below 768px), make the button smaller */
+      @media (max-width: 767px) {
+        .btn.btn-gradient {
+          font-size: 16px !important; /* smaller font */
+          padding: 12px 16px !important; /* top/bottom, left/right */
+        }
+      }
+
+      /* Optional: Even smaller screens like phones */
+      @media (max-width: 480px) {
+        .btn.btn-gradient {
+          font-size: 15px !important;
+          padding: 10px 14px !important;
+        }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .section-title {
+          font-size: 2.5rem;
+        }
+
+        .stat-number {
+          font-size: 2.5rem;
+        }
+
+        .curriculum-item {
+          padding: 30px;
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .curriculum-number {
+          margin-right: 0;
+          margin-bottom: 30px;
+        }
+
+        .pricing-card {
+          padding: 40px 30px;
+        }
+
+        .price {
+          font-size: 3.5rem;
+        }
+
+        .hero-image {
+          transform: none;
+          margin-top: 50px;
+        }
+      }
+
+      /* Loading Animation */
+      .loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+      }
+
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #667eea;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+      <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">UXMaster</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#preview">Preview</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#curriculum">Curriculum</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonials">Reviews</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pricing">Pricing</a>
+            </li>
+          </ul>
+          <button class="btn btn-gradient">Enroll Now</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 hero-content">
+            <h1 class="hero-title animate-on-scroll">
+              Master UX Design in Just 30 Days
+            </h1>
+            <p class="hero-subtitle animate-on-scroll">
+              Transform your career with our comprehensive, industry-recognized
+              UX design course. Learn from experts, build a stunning portfolio,
+              and land your dream job.
+            </p>
+            <div class="d-flex flex-wrap gap-4 mb-5 animate-on-scroll">
+              <button class="btn btn-gradient btn-lg">
+                Start Learning Today
+              </button>
+              <button class="btn btn-outline-gradient btn-lg">
+                <i class="bi bi-play-circle me-2"></i>Watch Preview
+              </button>
+            </div>
+            <div class="d-flex align-items-center flex-wrap animate-on-scroll">
+              <div class="student-avatars">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
+                  alt="Student 1"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face"
+                  alt="Student 2"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
+                  alt="Student 3"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face"
+                  alt="Student 4"
+                />
+              </div>
+              <div>
+                <div class="fw-bold text-dark">Join 8,500+ professionals</div>
+                <small class="text-muted"
+                  >who transformed their careers with us</small
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-image animate-on-scroll">
+              <img
+                src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&h=600&fit=crop"
+                class="img-fluid"
+                alt="UX Designer at work"
+              />
+              <div class="play-button">
+                <i class="bi bi-play-fill fs-1 text-primary ms-1"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="stat-card animate-on-scroll">
+              <div class="stat-number">30</div>
+              <div class="stat-label">Days to Master UX</div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="stat-card animate-on-scroll">
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Video Lessons</div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="stat-card animate-on-scroll">
+              <div class="stat-number">15</div>
+              <div class="stat-label">Portfolio Projects</div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="stat-card animate-on-scroll">
+              <div class="stat-number">24/7</div>
+              <div class="stat-label">Expert Support</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Preview Section -->
+    <section class="preview-section" id="preview">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title animate-on-scroll">Free Course Preview</h2>
+          <p class="section-subtitle animate-on-scroll">
+            Experience our teaching style with these carefully selected preview
+            lessons
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="course-card animate-on-scroll">
+              <div
+                class="course-image"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&h=250&fit=crop');
+                "
+              >
+                <div class="duration-badge">08:24</div>
+              </div>
+              <div class="p-4">
+                <h6 class="fw-bold mb-3">UX Design Fundamentals</h6>
+                <p class="text-muted small mb-3">
+                  Discover what makes great user experiences and why UX design
+                  matters
+                </p>
+                <a
+                  href="#"
+                  class="text-decoration-none fw-600"
+                  style="color: #667eea"
+                >
+                  Watch Free <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="course-card animate-on-scroll">
+              <div
+                class="course-image"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=250&fit=crop');
+                "
+              >
+                <div class="duration-badge">12:47</div>
+              </div>
+              <div class="p-4">
+                <h6 class="fw-bold mb-3">User Research Methods</h6>
+                <p class="text-muted small mb-3">
+                  Learn proven techniques to understand your users deeply
+                </p>
+                <a
+                  href="#"
+                  class="text-decoration-none fw-600"
+                  style="color: #667eea"
+                >
+                  Watch Free <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="course-card animate-on-scroll">
+              <div
+                class="course-image"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=400&h=250&fit=crop');
+                "
+              >
+                <div class="duration-badge">18:32</div>
+              </div>
+              <div class="p-4">
+                <h6 class="fw-bold mb-3">Wireframing Mastery</h6>
+                <p class="text-muted small mb-3">
+                  Create effective wireframes that communicate your design ideas
+                </p>
+                <a
+                  href="#"
+                  class="text-decoration-none fw-600"
+                  style="color: #667eea"
+                >
+                  Watch Free <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="course-card animate-on-scroll">
+              <div
+                class="course-image"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=250&fit=crop');
+                "
+              >
+                <div class="duration-badge">25:15</div>
+              </div>
+              <div class="p-4">
+                <h6 class="fw-bold mb-3">Figma Prototyping</h6>
+                <p class="text-muted small mb-3">
+                  Build interactive prototypes that bring your designs to life
+                </p>
+                <a
+                  href="#"
+                  class="text-decoration-none fw-600"
+                  style="color: #667eea"
+                >
+                  Watch Free <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section class="curriculum-section" id="curriculum">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title animate-on-scroll">
+            Complete Learning Path
+          </h2>
+          <p class="section-subtitle animate-on-scroll">
+            Our structured curriculum takes you from beginner to job-ready UX
+            designer
+          </p>
+        </div>
+
+        <div class="curriculum-item animate-on-scroll">
+          <div class="curriculum-number">1</div>
+          <div class="flex-grow-1">
+            <h4 class="fw-bold mb-3">UX Design Foundations</h4>
+            <p class="text-muted mb-4">
+              Master the fundamental principles of user experience design and
+              understand the complete UX process
+            </p>
+            <div class="d-flex align-items-center text-muted mb-4">
+              <i class="bi bi-clock me-2"></i>
+              <span class="me-4">6 days • 10 lessons</span>
+              <i class="bi bi-people me-2"></i>
+              <span>Beginner friendly</span>
+            </div>
+            <div>
+              <span class="skill-tag">Design Thinking</span>
+              <span class="skill-tag">UX Principles</span>
+              <span class="skill-tag">User-Centered Design</span>
+              <span class="skill-tag">Design Process</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="curriculum-item animate-on-scroll">
+          <div class="curriculum-number">2</div>
+          <div class="flex-grow-1">
+            <h4 class="fw-bold mb-3">User Research & Analysis</h4>
+            <p class="text-muted mb-4">
+              Learn advanced research methods to gather insights and validate
+              design decisions
+            </p>
+            <div class="d-flex align-items-center text-muted mb-4">
+              <i class="bi bi-clock me-2"></i>
+              <span class="me-4">5 days • 12 lessons</span>
+              <i class="bi bi-graph-up me-2"></i>
+              <span>Hands-on projects</span>
+            </div>
+            <div>
+              <span class="skill-tag">User Interviews</span>
+              <span class="skill-tag">Usability Testing</span>
+              <span class="skill-tag">Personas</span>
+              <span class="skill-tag">Journey Mapping</span>
+              <span class="skill-tag">Analytics</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="curriculum-item animate-on-scroll">
+          <div class="curriculum-number">3</div>
+          <div class="flex-grow-1">
+            <h4 class="fw-bold mb-3">Information Architecture & Wireframing</h4>
+            <p class="text-muted mb-4">
+              Structure information effectively and create wireframes that solve
+              real problems
+            </p>
+            <div class="d-flex align-items-center text-muted mb-4">
+              <i class="bi bi-clock me-2"></i>
+              <span class="me-4">7 days • 14 lessons</span>
+              <i class="bi bi-tools me-2"></i>
+              <span>Tool mastery</span>
+            </div>
+            <div>
+              <span class="skill-tag">Information Architecture</span>
+              <span class="skill-tag">Wireframing</span>
+              <span class="skill-tag">User Flows</span>
+              <span class="skill-tag">Site Maps</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="curriculum-item animate-on-scroll">
+          <div class="curriculum-number">4</div>
+          <div class="flex-grow-1">
+            <h4 class="fw-bold mb-3">Visual Design & Prototyping</h4>
+            <p class="text-muted mb-4">
+              Create beautiful interfaces and interactive prototypes using
+              industry-standard tools
+            </p>
+            <div class="d-flex align-items-center text-muted mb-4">
+              <i class="bi bi-clock me-2"></i>
+              <span class="me-4">8 days • 16 lessons</span>
+              <i class="bi bi-palette me-2"></i>
+              <span>Creative focus</span>
+            </div>
+            <div>
+              <span class="skill-tag">Figma</span>
+              <span class="skill-tag">Visual Design</span>
+              <span class="skill-tag">Prototyping</span>
+              <span class="skill-tag">Design Systems</span>
+              <span class="skill-tag">Accessibility</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="curriculum-item animate-on-scroll">
+          <div class="curriculum-number">5</div>
+          <div class="flex-grow-1">
+            <h4 class="fw-bold mb-3">Portfolio & Career Development</h4>
+            <p class="text-muted mb-4">
+              Build a compelling portfolio and learn how to land your first UX
+              design job
+            </p>
+            <div class="d-flex align-items-center text-muted mb-4">
+              <i class="bi bi-clock me-2"></i>
+              <span class="me-4">4 days • 8 lessons</span>
+              <i class="bi bi-briefcase me-2"></i>
+              <span>Career focused</span>
+            </div>
+            <div>
+              <span class="skill-tag">Portfolio Design</span>
+              <span class="skill-tag">Case Studies</span>
+              <span class="skill-tag">Job Applications</span>
+              <span class="skill-tag">Interview Prep</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title animate-on-scroll">Success Stories</h2>
+          <p class="section-subtitle animate-on-scroll">
+            Real results from real students who transformed their careers
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="testimonial-card animate-on-scroll">
+              <div class="d-flex align-items-center mb-4">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
+                  class="student-avatar"
+                  alt="Michael Chen"
+                />
+                <div>
+                  <h6 class="mb-1 fw-bold">Michael Chen</h6>
+                  <small class="text-muted"
+                    >Senior UX Designer at Spotify</small
+                  >
+                </div>
+              </div>
+              <p class="mb-4">
+                "This course completely changed my career trajectory. The
+                structured approach and real-world projects gave me the
+                confidence to transition from graphic design to UX. Within 3
+                months, I landed my dream job at Spotify with a 60% salary
+                increase!"
+              </p>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="testimonial-card animate-on-scroll">
+              <div class="d-flex align-items-center mb-4">
+                <img
+                  src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face"
+                  class="student-avatar"
+                  alt="Sarah Johnson"
+                />
+                <div>
+                  <h6 class="mb-1 fw-bold">Sarah Johnson</h6>
+                  <small class="text-muted">Lead UX Designer at Adobe</small>
+                </div>
+              </div>
+              <p class="mb-4">
+                "The instructor's expertise and the hands-on approach made
+                complex concepts easy to understand. The portfolio projects were
+                exactly what I needed to showcase my skills. I got promoted to
+                Lead UX Designer just 6 months after completing the course!"
+              </p>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div
+              class="testimonial-card animate-on-scroll"
+              style="
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+              "
+            >
+              <h5 class="fw-bold mb-4 text-white">Course Impact</h5>
+              <div class="mb-4">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-3"
+                >
+                  <span class="fw-600">Student Satisfaction</span>
+                  <span class="fw-bold fs-4">4.9/5</span>
+                </div>
+                <div class="stars text-warning">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+              <h6 class="fw-bold mb-3 text-white">Career Outcomes</h6>
+              <div class="mb-3">
+                <i class="bi bi-check-circle text-warning me-2"></i>
+                <span>94% land UX jobs within 6 months</span>
+              </div>
+              <div class="mb-3">
+                <i class="bi bi-check-circle text-warning me-2"></i>
+                <span>Average 65% salary increase</span>
+              </div>
+              <div class="mb-3">
+                <i class="bi bi-check-circle text-warning me-2"></i>
+                <span>78% get promoted within 1 year</span>
+              </div>
+              <div class="mt-4 pt-3 border-top border-light">
+                <small class="text-light"
+                  >Based on 2,500+ graduate surveys</small
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title text-white animate-on-scroll">
+            Transform Your Career Today
+          </h2>
+          <p class="section-subtitle text-light animate-on-scroll">
+            Join thousands of successful UX designers and unlock your potential
+          </p>
+        </div>
+        <div class="pricing-card animate-on-scroll">
+          <div class="text-center mb-5">
+            <div
+              class="badge fs-6 mb-4 px-4 py-3"
+              style="background: var(--success-gradient); color: white"
+            >
+              🔥 Limited Time: 40% OFF - Only 48 Hours Left!
+            </div>
+            <div class="mb-3">
+              <span class="original-price">$1,299</span>
+              <span class="price">$779</span>
+            </div>
+            <p class="text-muted mb-0">
+              One-time payment • Lifetime access • No subscriptions
+            </p>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <h5 class="fw-bold mb-4">Complete Course Package:</h5>
+              <ul class="feature-list">
+                <li>50+ comprehensive video lessons (40+ hours)</li>
+                <li>15 hands-on portfolio projects</li>
+                <li>Downloadable templates & resources</li>
+                <li>1-on-1 portfolio review session</li>
+                <li>Private student community access</li>
+                <li>Weekly live Q&A sessions</li>
+                <li>Mobile app for learning on-the-go</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <h5 class="fw-bold mb-4">Exclusive Bonuses (Worth $497):</h5>
+              <ul class="feature-list">
+                <li>Complete UX Design Toolkit ($199 value)</li>
+                <li>Job Interview Mastery Guide ($99 value)</li>
+                <li>50+ UX Case Study Templates ($149 value)</li>
+                <li>Salary Negotiation Masterclass ($99 value)</li>
+                <li>Lifetime course updates</li>
+                <li>Industry-recognized certificate</li>
+                <li>30-day money-back guarantee</li>
+              </ul>
+            </div>
+          </div>
+          <div class="text-center mt-5">
+            <button
+              class="btn btn-gradient btn-lg w-100 mb-4 py-4 fs-4 fw-bold"
+            >
+              🚀 Enroll Now - Save $520
+            </button>
+            <div class="row text-center">
+              <div class="col-md-4 mb-3">
+                <div
+                  class="d-flex align-items-center justify-content-center text-muted"
+                >
+                  <i class="bi bi-shield-check me-2 fs-5 text-success"></i>
+                  <span>30-Day Guarantee</span>
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <div
+                  class="d-flex align-items-center justify-content-center text-muted"
+                >
+                  <i class="bi bi-infinity me-2 fs-5 text-primary"></i>
+                  <span>Lifetime Access</span>
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <div
+                  class="d-flex align-items-center justify-content-center text-muted"
+                >
+                  <i class="bi bi-award me-2 fs-5 text-warning"></i>
+                  <span>Certificate Included</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title text-white animate-on-scroll">
+            Frequently Asked Questions
+          </h2>
+          <p class="section-subtitle text-light animate-on-scroll">
+            Everything you need to know about the course
+          </p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="faq-item animate-on-scroll">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                Do I need any prior design experience to start?
+                <i class="bi bi-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                Absolutely not! This course is designed for complete beginners.
+                We start with the very basics and gradually build your skills.
+                Whether you're coming from a different field or just starting
+                your career, you'll have everything you need to succeed.
+              </div>
+            </div>
+            <div class="faq-item animate-on-scroll">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                How much time should I dedicate to complete the course?
+                <i class="bi bi-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                We recommend 2-3 hours per day to complete the course in 30
+                days. However, you have lifetime access, so you can learn at
+                your own pace. Many students complete it faster, while others
+                take their time - both approaches work great!
+              </div>
+            </div>
+            <div class="faq-item animate-on-scroll">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                Will I have a professional portfolio by the end?
+                <i class="bi bi-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                Yes! You'll complete 15 real-world projects throughout the
+                course that will form the foundation of your professional
+                portfolio. We also provide detailed guidance on how to present
+                your work effectively to potential employers.
+              </div>
+            </div>
+            <div class="faq-item animate-on-scroll">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                What if I'm not satisfied with the course?
+                <i class="bi bi-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                We offer a 30-day money-back guarantee. If you're not completely
+                satisfied with the course content, simply contact our support
+                team within 30 days of purchase for a full refund, no questions
+                asked.
+              </div>
+            </div>
+            <div class="faq-item animate-on-scroll">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                Do you provide job placement assistance?
+                <i class="bi bi-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                While we don't guarantee job placement, we provide extensive
+                career support including resume reviews, interview preparation,
+                salary negotiation guidance, and access to our exclusive job
+                board with opportunities from our partner companies.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <h6>UXMaster</h6>
+            <p class="text-white mb-4">
+              Empowering the next generation of UX designers with world-class
+              education, practical skills, and career support. Join our
+              community of successful designers.
+            </p>
+            <div class="social-icons">
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-twitter"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+              <a href="#"><i class="bi bi-youtube"></i></a>
+              <a href="#"><i class="bi bi-discord"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h6>Course</h6>
+            <a href="#">Course Overview</a>
+            <a href="#">Curriculum</a>
+            <a href="#">Free Preview</a>
+            <a href="#">Pricing</a>
+            <a href="#">Testimonials</a>
+            <a href="#">FAQ</a>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h6>Resources</h6>
+            <a href="#">UX Blog</a>
+            <a href="#">Design Templates</a>
+            <a href="#">Career Guide</a>
+            <a href="#">Community</a>
+            <a href="#">Podcast</a>
+            <a href="#">Newsletter</a>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h6>Support</h6>
+            <a href="#">Help Center</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Technical Support</a>
+            <a href="#">Refund Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h6>Company</h6>
+            <a href="#">About Us</a>
+            <a href="#">Our Team</a>
+            <a href="#">Careers</a>
+            <a href="#">Press Kit</a>
+            <a href="#">Partner With Us</a>
+            <a href="#">Affiliate Program</a>
+          </div>
+        </div>
+        <hr class="my-5" style="border-color: rgba(255, 255, 255, 0.1)" />
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="mb-0">
+              © 2025 UXMaster. All rights reserved. Made with ❤️ for aspiring UX
+              designers.
+            </p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <small class="text-muted">
+              <a href="#" class="me-3">Privacy</a>
+              <a href="#" class="me-3">Terms</a>
+              <a href="#" class="">Cookies</a>
+            </small>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Loading animation
+      window.addEventListener("load", function () {
+        setTimeout(() => {
+          document.getElementById("loadingOverlay").style.opacity = "0";
+          setTimeout(() => {
+            document.getElementById("loadingOverlay").style.display = "none";
+          }, 500);
+        }, 1000);
+      });
+
+      // FAQ Toggle Function
+      function toggleFaq(element) {
+        const answer = element.nextElementSibling;
+        const icon = element.querySelector("i");
+        const isOpen = answer.style.display === "block";
+
+        // Close all FAQ answers
+        document.querySelectorAll(".faq-answer").forEach((ans) => {
+          ans.style.display = "none";
+        });
+
+        // Reset all icons
+        document.querySelectorAll(".faq-question i").forEach((i) => {
+          i.className = "bi bi-chevron-down";
+        });
+
+        // Open clicked FAQ if it wasn't already open
+        if (!isOpen) {
+          answer.style.display = "block";
+          icon.className = "bi bi-chevron-up";
+        }
+      }
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Enhanced navbar scroll effect
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.style.background = "rgba(255,255,255,0.95)";
+          navbar.style.backdropFilter = "blur(20px)";
+          navbar.style.boxShadow = "0 8px 32px rgba(0,0,0,0.1)";
+        } else {
+          navbar.style.background = "rgba(255,255,255,0.95)";
+          navbar.style.backdropFilter = "blur(20px)";
+          navbar.style.boxShadow = "0 2px 20px rgba(0,0,0,0.05)";
+        }
+      });
+
+      // Enhanced play button interaction
+      document
+        .querySelector(".play-button")
+        .addEventListener("click", function () {
+          this.style.transform = "translate(-50%, -50%) scale(0.9)";
+          setTimeout(() => {
+            this.style.transform = "translate(-50%, -50%) scale(1.1)";
+            // Here you would typically open a video modal
+            alert("Video player would open here!");
+          }, 150);
+        });
+
+      // Intersection Observer for scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animated");
+          }
+        });
+      }, observerOptions);
+
+      // Observe all elements with animate-on-scroll class
+      document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Add hover effects to cards
+      document
+        .querySelectorAll(".course-card, .testimonial-card, .stat-card")
+        .forEach((card) => {
+          card.addEventListener("mouseenter", function () {
+            this.style.transform = this.style.transform.replace(
+              "scale(1)",
+              "scale(1.02)"
+            );
+          });
+
+          card.addEventListener("mouseleave", function () {
+            this.style.transform = this.style.transform.replace(
+              "scale(1.02)",
+              "scale(1)"
+            );
+          });
+        });
+
+      // Add click tracking for buttons (you can integrate with analytics)
+      document
+        .querySelectorAll(".btn-gradient, .btn-outline-gradient")
+        .forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            // Add ripple effect
+            const ripple = document.createElement("span");
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+
+            ripple.style.width = ripple.style.height = size + "px";
+            ripple.style.left = x + "px";
+            ripple.style.top = y + "px";
+            ripple.classList.add("ripple");
+
+            this.appendChild(ripple);
+
+            setTimeout(() => {
+              ripple.remove();
+            }, 600);
+          });
+        });
+
+      // Add CSS for ripple effect
+      const style = document.createElement("style");
+      style.textContent = `
+        .btn-gradient, .btn-outline-gradient {
+          position: relative;
+          overflow: hidden;
+        }
+        
+        .ripple {
+          position: absolute;
+          border-radius: 50%;
+          background: rgba(255,255,255,0.3);
+          transform: scale(0);
+          animation: ripple-animation 0.6s linear;
+          pointer-events: none;
+        }
+        
+        @keyframes ripple-animation {
+          to {
+            transform: scale(4);
+            opacity: 0;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+
+      // Add parallax effect to hero section
+      window.addEventListener("scroll", function () {
+        const scrolled = window.pageYOffset;
+        const parallax = document.querySelector(".hero-section::before");
+        const speed = scrolled * 0.5;
+
+        if (parallax) {
+          parallax.style.transform = `translateY(${speed}px)`;
+        }
+      });
+
+      // Add typing effect to hero title (optional enhancement)
+      function typeWriter(element, text, speed = 100) {
+        let i = 0;
+        element.innerHTML = "";
+
+        function type() {
+          if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+          }
+        }
+
+        type();
+      }
+
+      // Initialize typing effect when page loads
+      setTimeout(() => {
+        const heroTitle = document.querySelector(".hero-title");
+        const originalText = heroTitle.textContent;
+        typeWriter(heroTitle, originalText, 50);
+      }, 1500);
+    </script>
+  </body>
+</html>

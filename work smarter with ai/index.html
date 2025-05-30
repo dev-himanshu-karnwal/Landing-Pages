@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Productivity Assistant - Work Smarter with AI</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-blue: #4f46e5;
+        --dark-blue: #1e1b4b;
+        --light-blue: #6366f1;
+        --purple: #8b5cf6;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      .hero-section {
+        background: linear-gradient(
+          135deg,
+          #1e1b4b 0%,
+          #312e81 50%,
+          #4338ca 100%
+        );
+        min-height: 85vh; /* Reduced height */
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+      }
+
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%2300d4ff" stop-opacity="0.3"/><stop offset="100%" stop-color="%2300d4ff" stop-opacity="0"/></radialGradient></defs><circle cx="800" cy="200" r="200" fill="url(%23a)"/><circle cx="200" cy="600" r="150" fill="url(%23a)"/></svg>');
+        pointer-events: none;
+      }
+
+      /* Hero image container */
+      .hero-image-container {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hero-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        animation: float 3s ease-in-out infinite;
+      }
+
+      .ai-graphics {
+        position: absolute;
+        right: 10%;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+      }
+
+      .hexagon {
+        width: 80px;
+        height: 80px;
+        background: rgba(99, 102, 241, 0.3);
+        border: 2px solid #6366f1;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px;
+        animation: float 3s ease-in-out infinite;
+        backdrop-filter: blur(10px);
+      }
+
+      .hexagon:nth-child(2) {
+        animation-delay: -1s;
+      }
+
+      .hexagon:nth-child(3) {
+        animation-delay: -2s;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      /* Improved navbar styles */
+      .navbar {
+        padding: 20px 0;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(20px);
+        z-index: 1000;
+      }
+
+      .navbar-brand {
+        font-weight: 800;
+        font-size: 1.8rem;
+        color: white !important;
+        background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .navbar-nav {
+        margin: 0 auto;
+      }
+
+      .navbar-nav .nav-link {
+        color: rgba(255, 255, 255, 0.9) !important;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 12px 24px !important;
+        margin: 0 8px;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .navbar-nav .nav-link:hover {
+        color: white !important;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        transform: translateY(-2px);
+      }
+
+      .navbar-nav .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+        transition: width 0.3s ease;
+      }
+
+      .navbar-nav .nav-link:hover::after {
+        width: 20px;
+      }
+
+      .navbar-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .btn-sign-in {
+        color: rgba(255, 255, 255, 0.9) !important;
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        padding: 10px 24px;
+        font-weight: 600;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        font-size: 0.95rem;
+      }
+
+      .btn-sign-in:hover {
+        color: white !important;
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.4);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+      }
+
+      .btn-try-free {
+        background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+        color: white !important;
+        border: none;
+        padding: 12px 28px;
+        font-weight: 700;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        font-size: 0.95rem;
+        box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-try-free::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.2) 0%,
+          transparent 100%
+        );
+        transition: left 0.5s ease;
+      }
+
+      .btn-try-free:hover::before {
+        left: 100%;
+      }
+
+      .btn-try-free:hover {
+        color: white !important;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(79, 70, 229, 0.6);
+        background: linear-gradient(135deg, #5b21b6 0%, #4f46e5 100%);
+      }
+
+      /* Improved hamburger menu */
+      .navbar-toggler {
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 8px;
+        padding: 8px 12px;
+        position: relative;
+        width: 50px;
+        height: 40px;
+        transition: all 0.3s ease;
+      }
+
+      .navbar-toggler:focus {
+        box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+      }
+
+      .navbar-toggler-icon {
+        background-image: none !important;
+        position: relative;
+        height: 2px;
+        width: 24px;
+        background-color: white;
+        display: inline-block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.3s ease;
+      }
+
+      .navbar-toggler-icon::before,
+      .navbar-toggler-icon::after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 24px;
+        background-color: white;
+        transition: all 0.3s ease;
+      }
+
+      .navbar-toggler-icon::before {
+        top: -8px;
+      }
+
+      .navbar-toggler-icon::after {
+        top: 8px;
+      }
+
+      .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+        background-color: transparent;
+      }
+
+      .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+        transform: rotate(45deg);
+        top: 0;
+      }
+
+      .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+        transform: rotate(-45deg);
+        top: 0;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 991px) {
+        .navbar-collapse {
+          background-color: rgba(30, 27, 75, 0.95);
+          backdrop-filter: blur(10px);
+          border-radius: 12px;
+          padding: 20px;
+          margin-top: 15px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-nav {
+          margin: 20px 0;
+          text-align: center;
+        }
+
+        .navbar-nav .nav-link {
+          margin: 8px 0;
+          padding: 15px 20px !important;
+        }
+
+        .navbar-actions {
+          justify-content: center;
+          margin-top: 20px;
+          flex-direction: row; /* Changed to row for tablet */
+          gap: 15px;
+        }
+
+        .btn-sign-in,
+        .btn-try-free {
+          width: auto; /* Auto width for tablet */
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .navbar-actions {
+          flex-direction: column; /* Column for mobile */
+        }
+
+        .btn-sign-in,
+        .btn-try-free {
+          width: 200px; /* Fixed width for mobile */
+        }
+
+        .hero-title {
+          font-size: 2.5rem !important;
+        }
+
+        .hero-section {
+          min-height: auto;
+          padding: 100px 0 50px;
+        }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        padding-top: 40px; /* Reduced padding */
+        color: white;
+      }
+
+      .hero-title {
+        font-size: 3.5rem; /* Slightly reduced */
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+      }
+
+      .hero-description {
+        font-size: 1.2rem;
+        margin-bottom: 2.5rem;
+        max-width: 500px;
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+
+      .btn-primary-custom {
+        background: var(--primary-blue);
+        border: none;
+        padding: 15px 30px;
+        font-weight: 600;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary-custom:hover {
+        background: var(--light-blue);
+        transform: translateY(-2px);
+      }
+
+      .btn-outline-custom {
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        color: white;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        padding: 15px 30px;
+        font-weight: 600;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .btn-outline-custom:hover {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      .trust-section {
+        background: #f8f9fa;
+        padding: 80px 0;
+      }
+
+      .trust-logos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        flex-wrap: wrap;
+        opacity: 0.6;
+      }
+
+      .trust-logo {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #6b7280;
+      }
+
+      .features-section {
+        padding: 100px 0;
+      }
+
+      .feature-card {
+        text-align: center;
+        padding: 40px 30px;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        height: 100%;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+        background: rgba(79, 70, 229, 0.1);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        font-size: 1.5rem;
+        color: var(--primary-blue);
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      .section-subtitle {
+        text-align: center;
+        color: #6b7280;
+        margin-bottom: 60px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .demo-section {
+        padding: 100px 0;
+        background: #f8f9fa;
+      }
+
+      .chat-interface {
+        background: white;
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .command-list {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 30px;
+        margin-bottom: 30px;
+      }
+
+      .command-item {
+        padding: 10px 0;
+        border-bottom: 1px solid #e5e7eb;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .command-item:last-child {
+        border-bottom: none;
+      }
+
+      .command-item:hover {
+        color: var(--primary-blue);
+      }
+
+      .chat-message {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .chat-avatar {
+        width: 40px;
+        height: 40px;
+        background: var(--primary-blue);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 600;
+      }
+
+      .chat-bubble {
+        background: #f1f5f9;
+        padding: 15px 20px;
+        border-radius: 16px;
+        max-width: 70%;
+      }
+
+      .user-bubble {
+        background: var(--primary-blue);
+        color: white;
+        margin-left: auto;
+      }
+
+      .testimonials-section {
+        padding: 100px 0;
+      }
+
+      .testimonial-card {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        height: 100%;
+        transition: all 0.3s ease;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .stars {
+        color: #fbbf24;
+        margin-bottom: 15px;
+      }
+
+      .pricing-section {
+        padding: 100px 0;
+        background: #f8f9fa;
+      }
+
+      .pricing-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 50px;
+      }
+
+      .pricing-card {
+        background: white;
+        border: 2px solid #e5e7eb;
+        border-radius: 16px;
+        padding: 40px 30px;
+        position: relative;
+        height: 100%;
+        transition: all 0.3s ease;
+      }
+
+      .pricing-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .pricing-card.popular {
+        border-color: var(--primary-blue);
+        transform: scale(1.05);
+      }
+
+      .popular-badge {
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--primary-blue);
+        color: white;
+        padding: 5px 20px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+
+      .price {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #1a1a1a;
+      }
+
+      .feature-comparison {
+        background: white;
+        border-radius: 12px;
+        padding: 40px;
+        margin-top: 50px;
+      }
+
+      .comparison-row {
+        display: flex;
+        align-items: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #f1f5f9;
+      }
+
+      .comparison-row:last-child {
+        border-bottom: none;
+      }
+
+      .comparison-feature {
+        flex: 1;
+        font-weight: 600;
+      }
+
+      .comparison-value {
+        flex: 1;
+        text-align: center;
+        color: #6b7280;
+      }
+
+      .cta-section {
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue) 0%,
+          var(--purple) 100%
+        );
+        color: white;
+        padding: 100px 0;
+      }
+
+      .footer {
+        background: #1f2937;
+        color: white;
+        padding: 60px 0 30px;
+      }
+
+      .footer-links a {
+        color: #9ca3af;
+        text-decoration: none;
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .footer-links a:hover {
+        color: white;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-links a {
+        width: 40px;
+        height: 40px;
+        background: #374151;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+      }
+
+      .payment-methods {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+      }
+
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .trust-logos {
+          gap: 30px;
+        }
+
+        .pricing-card.popular {
+          transform: none;
+        }
+
+        .ai-graphics {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <i class="fas fa-brain me-2"></i>AI Assistant
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#features">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#demo">Demo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pricing">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonials">Testimonials</a>
+            </li>
+          </ul>
+
+          <div class="navbar-actions">
+            <a href="#" class="btn-sign-in">Sign In</a>
+            <a href="#" class="btn-try-free">
+              <i class="fas fa-rocket me-2"></i>Try Free
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="ai-graphics d-none d-lg-block">
+        <div class="hexagon">
+          <i class="fas fa-brain"></i>
+        </div>
+        <div class="hexagon">
+          <i class="fas fa-robot"></i>
+        </div>
+        <div class="hexagon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row align-items-center hero-content">
+          <div class="col-lg-6">
+            <h1 class="hero-title">Work Smarter with AI</h1>
+            <p class="hero-description">
+              Boost your productivity with our AI assistant that manages tasks,
+              schedules meetings, and summarizes emails using natural language.
+              Save up to 10 hours every week.
+            </p>
+            <div class="d-flex gap-3 flex-wrap">
+              <button class="btn btn-primary-custom">Start Free Trial</button>
+              <button class="btn btn-outline-custom">
+                <i class="fas fa-play me-2"></i>
+                Watch Demo
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-6 hero-image-container">
+            <img
+              src="https://via.placeholder.com/600x400/4f46e5/ffffff?text=AI+Productivity+Dashboard"
+              alt="AI Productivity Dashboard"
+              class="hero-image"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+      <div class="container">
+        <p class="text-center text-muted mb-4">
+          Trusted by 10,000+ teams worldwide
+        </p>
+        <div class="trust-logos">
+          <div class="trust-logo">
+            <i class="fab fa-microsoft me-2"></i>Microsoft
+          </div>
+          <div class="trust-logo"><i class="fab fa-google me-2"></i>Google</div>
+          <div class="trust-logo"><i class="fab fa-amazon me-2"></i>Amazon</div>
+          <div class="trust-logo">
+            <i class="fab fa-netflix me-2"></i>Netflix
+          </div>
+          <div class="trust-logo">
+            <i class="fab fa-spotify me-2"></i>Spotify
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+      <div class="container">
+        <h2 class="section-title">Powerful AI Features</h2>
+        <p class="section-subtitle">
+          Our AI assistant helps you manage your work life with intelligent
+          features designed to save you time and reduce stress.
+        </p>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-tasks"></i>
+              </div>
+              <h4>Task Management</h4>
+              <p class="text-muted">
+                Create, organize, and prioritize tasks using natural language.
+                Our AI understands context and helps you stay focused on what
+                matters.
+              </p>
+              <a href="#" class="text-primary fw-semibold"
+                >Learn more <i class="fas fa-arrow-right ms-1"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-calendar-alt"></i>
+              </div>
+              <h4>Smart Calendar</h4>
+              <p class="text-muted">
+                Schedule meetings intelligently with AI that finds the perfect
+                time slots, sends invites, and even prepares meeting agendas
+                automatically.
+              </p>
+              <a href="#" class="text-primary fw-semibold"
+                >Learn more <i class="fas fa-arrow-right ms-1"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <h4>Email Summarizer</h4>
+              <p class="text-muted">
+                Never miss important details with AI that reads your emails and
+                provides concise summaries, action items, and follow-up
+                reminders.
+              </p>
+              <a href="#" class="text-primary fw-semibold"
+                >Learn more <i class="fas fa-arrow-right ms-1"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section class="demo-section" id="demo">
+      <div class="container">
+        <h2 class="section-title">See AI in Action</h2>
+        <p class="section-subtitle">
+          Experience how our AI assistant understands natural language and helps
+          you get things done faster.
+        </p>
+
+        <div class="chat-interface">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="command-list">
+                <h6 class="fw-bold mb-3">Try these commands:</h6>
+                <div
+                  class="command-item"
+                  onclick="sendCommand('Schedule meeting with marketing team')"
+                >
+                  "Schedule meeting with marketing team"
+                </div>
+                <div
+                  class="command-item"
+                  onclick="sendCommand('Summarize latest project emails')"
+                >
+                  "Summarize latest project emails"
+                </div>
+                <div
+                  class="command-item"
+                  onclick="sendCommand('Create task list for website launch')"
+                >
+                  "Create task list for website launch"
+                </div>
+                <div
+                  class="command-item"
+                  onclick="sendCommand('Find available time slots next week')"
+                >
+                  "Find available time slots next week"
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="chat-messages" id="chatMessages">
+                <div class="chat-message">
+                  <div class="chat-avatar">AI</div>
+                  <div class="chat-bubble">
+                    Hi there! I'm your AI productivity assistant. How can I help
+                    you today?
+                  </div>
+                </div>
+              </div>
+              <div class="input-group mt-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Type your command..."
+                  id="chatInput"
+                />
+                <button class="btn btn-primary-custom" onclick="sendMessage()">
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+      <div class="container">
+        <h2 class="section-title">What Our Users Say</h2>
+        <p class="section-subtitle">
+          Thousands of professionals are saving time and boosting productivity
+          with our AI assistant.
+        </p>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="testimonial-card">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="mb-3">
+                "This AI assistant has completely transformed how I manage my
+                workday. The email summarizer alone saves me at least an hour
+                every day, and the meeting scheduler is incredibly intuitive.
+                Worth every penny!"
+              </p>
+              <div class="d-flex align-items-center">
+                <img
+                  src="https://via.placeholder.com/40x40/4f46e5/ffffff?text=JL"
+                  alt="Jennifer Lawson"
+                  class="rounded-circle me-3"
+                />
+                <div>
+                  <h6 class="mb-0">Jennifer Lawson</h6>
+                  <small class="text-muted"
+                    >Marketing Director, Elevate Inc.</small
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="testimonial-card">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="mb-3">
+                "As someone who manages multiple projects simultaneously, this
+                tool has been a game-changer. The natural language understanding
+                is impressive - I can just type what I need and the AI figures
+                it out. Highly recommended for busy professionals."
+              </p>
+              <div class="d-flex align-items-center">
+                <img
+                  src="https://via.placeholder.com/40x40/4f46e5/ffffff?text=DC"
+                  alt="David Chen"
+                  class="rounded-circle me-3"
+                />
+                <div>
+                  <h6 class="mb-0">David Chen</h6>
+                  <small class="text-muted">Product Manager, TechFlow</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="testimonial-card">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="mb-3">
+                "I was skeptical about AI tools, but this one exceeded my
+                expectations. It's like having a personal assistant who
+                understands exactly what I need. The task management feature
+                helps me stay organized and focused on strategic priorities."
+              </p>
+              <div class="d-flex align-items-center">
+                <img
+                  src="https://via.placeholder.com/40x40/4f46e5/ffffff?text=AJ"
+                  alt="Amara Johnson"
+                  class="rounded-circle me-3"
+                />
+                <div>
+                  <h6 class="mb-0">Amara Johnson</h6>
+                  <small class="text-muted">CEO, Bright Solutions</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+      <div class="container">
+        <h2 class="section-title">Simple, Transparent Pricing</h2>
+        <p class="section-subtitle">
+          Choose the plan that fits your needs. All plans include a 14-day free
+          trial.
+        </p>
+
+        <div class="pricing-toggle">
+          <span>Monthly</span>
+          <div class="form-check form-switch">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="pricingToggle"
+            />
+          </div>
+          <span>Yearly</span>
+          <span class="badge bg-success ms-2">Save 20%</span>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="pricing-card">
+              <h4>Starter</h4>
+              <p class="text-muted">Perfect for individuals</p>
+              <div class="price">
+                $9 <small class="text-muted">/month</small>
+              </div>
+              <ul class="list-unstyled my-4">
+                <li class="mb-2">
+                  <i class="fas fa-check text-success me-2"></i>
+                  Basic task management
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check text-success me-2"></i>
+                  5 email summaries per day
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check text-success me-2"></i>
+                  Calendar integration
+                </li>
+                <li class="mb-2 text-muted">
+                  <i class="fas fa-times me-2"></i>
+                  Team collaboration
+                </li>
+                <li class="mb-2 text-muted">
+                  <i class="fas fa-times me-2"></i>
+                  Advanced analytics
+                </li>
+              </ul>
+              <button class="btn btn-outline-primary w-100">
+                Start Free Trial
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="pricing-card popular">
+              <div class="popular-badge">POPULAR</div>
+              <h4>Pro</h4>
+              <p class="text-muted">For professionals and small teams</p>
+              <div class="price">
+                $19 <small class="text-muted">/month</small>
+              </div>
+              <ul class="list-unstyled my-4">
+                <li class="mb-2">
+                  <i class="fas fa-check text-success me-2"></i>
+                  Advanced task management
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check text-success me-2"></i>
+                  Unlimited email summaries
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check text-success me-2"></i>
+                  Smart calendar scheduling
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check text-success me-2"></i>
+                  Team collaboration (up to 5)
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check text-success me-2"></i>
+                  Advanced analytics
+                </li>
+              </ul>
+              <button class="btn btn-primary-custom w-100">
+                Start Free Trial
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="pricing-card">
+              <h4>Enterprise</h4>
+              <p class="text-muted">For larger teams and organizations</p>
+              <div class="price">
+                $49 <small class="text-muted">/month</small>
+              </div>
+              <ul class="list-unstyled my-4">
+                <li class="mb-2">
+                  <i class="fas fa-check text-success me-2"></i>
+                  All Pro features
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check text-success me-2"></i>
+                  Unlimited team members
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check text-success me-2"></i>
+                  Advanced analytics
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check text-success me-2"></i>
+                  Dedicated support
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check text-success me-2"></i>
+                  Custom integrations
+                </li>
+              </ul>
+              <button class="btn btn-outline-primary w-100">
+                Contact Sales
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature Comparison -->
+        <div class="feature-comparison">
+          <h4 class="text-center mb-4">Compare All Features</h4>
+          <div class="comparison-row">
+            <div class="comparison-feature">Feature</div>
+            <div class="comparison-value fw-bold">Starter</div>
+            <div class="comparison-value fw-bold">Pro</div>
+            <div class="comparison-value fw-bold">Enterprise</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-feature">Task Management</div>
+            <div class="comparison-value">Basic</div>
+            <div class="comparison-value">Advanced</div>
+            <div class="comparison-value">Advanced</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-feature">Email Summaries</div>
+            <div class="comparison-value">5 / day</div>
+            <div class="comparison-value">Unlimited</div>
+            <div class="comparison-value">Unlimited</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-feature">Calendar Integration</div>
+            <div class="comparison-value">Basic</div>
+            <div class="comparison-value">Smart</div>
+            <div class="comparison-value">Smart</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-feature">Team Collaboration</div>
+            <div class="comparison-value">-</div>
+            <div class="comparison-value">Up to 5</div>
+            <div class="comparison-value">Unlimited</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-feature">Analytics</div>
+            <div class="comparison-value">-</div>
+            <div class="comparison-value">Basic</div>
+            <div class="comparison-value">Advanced</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-feature">Dedicated Support</div>
+            <div class="comparison-value">-</div>
+            <div class="comparison-value">Email</div>
+            <div class="comparison-value">Priority</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-title text-white">
+            Boost Your Productivity Today
+          </h2>
+          <p class="section-subtitle text-white opacity-75">
+            Join thousands of professionals who save 10+ hours every week with
+            our AI assistant.
+          </p>
+          <button class="btn btn-light btn-lg px-5 py-3">
+            Start Your Free Trial
+          </button>
+          <p class="mt-3 opacity-75">
+            No credit card required. 14-day free trial.
+          </p>
+
+          <div
+            class="d-flex justify-content-center align-items-center gap-4 mt-5 flex-wrap"
+          >
+            <div class="d-flex align-items-center">
+              <i class="fas fa-shield-alt me-2"></i>
+              <span>256-bit SSL Encryption</span>
+            </div>
+            <div class="d-flex align-items-center">
+              <i class="fas fa-check-circle me-2"></i>
+              <span>GDPR Compliant</span>
+            </div>
+            <div class="d-flex align-items-center">
+              <i class="fas fa-lock me-2"></i>
+              <span>Secure Payments</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <h5 class="mb-3"><i class="fas fa-brain me-2"></i>AI Assistant</h5>
+            <p class="text-muted mb-4">
+              AI-powered productivity assistant that helps you work smarter, not
+              harder.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h6 class="mb-3">Product</h6>
+            <div class="footer-links">
+              <a href="#">Features</a>
+              <a href="#">Pricing</a>
+              <a href="#">Integrations</a>
+              <a href="#">Roadmap</a>
+              <a href="#">Release Notes</a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h6 class="mb-3">Resources</h6>
+            <div class="footer-links">
+              <a href="#">Blog</a>
+              <a href="#">Help Center</a>
+              <a href="#">Documentation</a>
+              <a href="#">Community</a>
+              <a href="#">Webinars</a>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <h6 class="mb-3">Stay Updated</h6>
+            <p class="mb-3">
+              Subscribe to our newsletter for tips, updates, and productivity
+              insights.
+            </p>
+            <div class="input-group mb-3">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Your email address"
+              />
+              <button class="btn btn-primary" type="button">Subscribe</button>
+            </div>
+            <p class="small">
+              We respect your privacy. Unsubscribe at any time.
+            </p>
+          </div>
+        </div>
+        <hr class="my-4" />
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="mb-0">© 2023 AI Assistant. All rights reserved.</p>
+          </div>
+          <div class="col-md-6">
+            <div class="d-flex justify-content-md-end gap-3 flex-wrap">
+              <a href="#" class="">Terms of Service</a>
+              <a href="#" class="">Privacy Policy</a>
+              <a href="#" class="">Cookies</a>
+              <a href="#" class="">Security</a>
+            </div>
+            <div
+              class="payment-methods mt-2 d-flex justify-content-md-end flex-wrap"
+            >
+              <span class="me-3">Payment Methods:</span>
+              <i class="fab fa-cc-visa me-2"></i>
+              <i class="fab fa-cc-mastercard me-2"></i>
+              <i class="fab fa-cc-paypal me-2"></i>
+              <i class="fab fa-cc-apple-pay"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Chat functionality
+      function sendCommand(command) {
+        document.getElementById("chatInput").value = command;
+        sendMessage();
+      }
+
+      function sendMessage() {
+        const input = document.getElementById("chatInput");
+        const message = input.value.trim();
+        if (!message) return;
+
+        const chatMessages = document.getElementById("chatMessages");
+
+        // Add user message
+        const userMessage = document.createElement("div");
+        userMessage.className = "chat-message justify-content-end";
+        userMessage.innerHTML = `
+                <div class="chat-bubble user-bubble">
+                    ${message}
+                </div>
+            `;
+        chatMessages.appendChild(userMessage);
+
+        // Clear input
+        input.value = "";
+
+        // Simulate AI response
+        setTimeout(() => {
+          const aiResponse = getAIResponse(message);
+          const aiMessage = document.createElement("div");
+          aiMessage.className = "chat-message";
+          aiMessage.innerHTML = `
+                    <div class="chat-avatar">AI</div>
+                    <div class="chat-bubble">
+                        ${aiResponse}
+                    </div>
+                `;
+          chatMessages.appendChild(aiMessage);
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 1000);
+
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
+      function getAIResponse(message) {
+        const responses = {
+          "schedule meeting with marketing team":
+            "I'll help you schedule a meeting with the marketing team. I found the following team members: Emily, Michael, Sarah, and David.<br><br>Based on everyone's availability, here are some possible time slots:<br>• Tomorrow 2:00 PM - 3:00 PM<br>• Thursday 10:00 AM - 11:00 AM<br>• Friday 3:00 PM - 4:00 PM",
+          "summarize latest project emails":
+            "I've analyzed your recent project emails. Here's a summary:<br><br>• 3 new feature requests from the client<br>• Budget approval needed for Q4<br>• Design review scheduled for next week<br>• 2 urgent bug reports requiring attention",
+          "create task list for website launch":
+            "Here's your website launch task list:<br><br>✓ Finalize design mockups<br>• Set up hosting environment<br>• Configure SSL certificates<br>• Test all forms and functionality<br>• Prepare launch announcement<br>• Schedule social media posts",
+          "find available time slots next week":
+            "Here are your available time slots for next week:<br><br>Monday: 9:00 AM - 11:00 AM, 2:00 PM - 4:00 PM<br>Tuesday: 10:00 AM - 12:00 PM<br>Wednesday: 1:00 PM - 5:00 PM<br>Thursday: 9:00 AM - 10:00 AM, 3:00 PM - 5:00 PM<br>Friday: 11:00 AM - 3:00 PM",
+        };
+
+        const lowerMessage = message.toLowerCase();
+        return (
+          responses[lowerMessage] ||
+          "I understand you want help with that. Let me process your request and provide you with the best solution. How else can I assist you today?"
+        );
+      }
+
+      // Pricing toggle
+      document
+        .getElementById("pricingToggle")
+        .addEventListener("change", function () {
+          const prices = document.querySelectorAll(".price");
+          if (this.checked) {
+            // Yearly pricing
+            prices[0].innerHTML = '$72 <small class="text-muted">/year</small>';
+            prices[1].innerHTML =
+              '$152 <small class="text-muted">/year</small>';
+            prices[2].innerHTML =
+              '$392 <small class="text-muted">/year</small>';
+          } else {
+            // Monthly pricing
+            prices[0].innerHTML = '$9 <small class="text-muted">/month</small>';
+            prices[1].innerHTML =
+              '$19 <small class="text-muted">/month</small>';
+            prices[2].innerHTML =
+              '$49 <small class="text-muted">/month</small>';
+          }
+        });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Navbar background on scroll
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.style.backgroundColor = "rgba(30, 27, 75, 0.95)";
+          navbar.style.backdropFilter = "blur(10px)";
+        } else {
+          navbar.style.backgroundColor = "transparent";
+          navbar.style.backdropFilter = "none";
+        }
+      });
+
+      // Enter key for chat
+      document
+        .getElementById("chatInput")
+        .addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            sendMessage();
+          }
+        });
+    </script>
+  </body>
+</html>

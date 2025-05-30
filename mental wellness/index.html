@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MindfulPath - Your Daily Journey to Mental Wellness</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary-blue: #4f7cff;
+        --light-blue: #e8f0ff;
+        --soft-purple: #f0f4ff;
+        --text-primary: #2d3748;
+        --text-secondary: #718096;
+        --success-green: #48bb78;
+        --warning-orange: #ed8936;
+        --danger-red: #f56565;
+        --neutral-gray: #edf2f7;
+        --white: #ffffff;
+        --gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --soft-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        --medium-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        --large-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, sans-serif;
+        line-height: 1.6;
+        color: var(--text-primary);
+        overflow-x: hidden;
+      }
+
+      /* Navigation */
+      .navbar {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        padding: 1rem 0;
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: var(--primary-blue) !important;
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: var(--text-primary) !important;
+        margin: 0 0.5rem;
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: var(--primary-blue) !important;
+      }
+
+      .btn-primary {
+        background: var(--primary-blue);
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background: #3d6aff;
+        transform: translateY(-2px);
+        box-shadow: var(--medium-shadow);
+      }
+
+      .btn-outline-primary {
+        color: var(--primary-blue);
+        border-color: var(--primary-blue);
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .btn-outline-primary:hover {
+        background: var(--primary-blue);
+        border-color: var(--primary-blue);
+        transform: translateY(-2px);
+      }
+
+      /* Hero Section */
+      .hero-section {
+        background: linear-gradient(
+          135deg,
+          #f8fafc 0%,
+          var(--soft-purple) 50%,
+          #f1f5f9 100%
+        );
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        padding: 120px 0 80px 0;
+      }
+
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 80%;
+        height: 200%;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="botanical" patternUnits="userSpaceOnUse" width="20" height="20"><circle cx="10" cy="10" r="1" fill="%23E8F0FF" opacity="0.5"/><path d="M5,15 Q10,5 15,15" stroke="%23E8F0FF" stroke-width="0.5" fill="none" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23botanical)"/></svg>')
+          repeat;
+        opacity: 0.6;
+        animation: float 20s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(2deg);
+        }
+      }
+
+      .hero-section {
+        background: url("image (40).png") no-repeat center center;
+        background-size: cover;
+        position: relative;
+        z-index: 1;
+        padding: 80px 0;
+        overflow: hidden;
+      }
+
+      /* Optional: Add overlay for better text visibility */
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.8); /* Light overlay */
+        z-index: -1;
+      }
+
+      /* Ensure content sits above background/overlay */
+      .hero-section .container {
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Hero content styling */
+      .hero-title {
+        font-size: 2.8rem;
+        font-weight: bold;
+        color: #2c3e50;
+      }
+
+      .hero-subtitle {
+        font-size: 1.2rem;
+        color: #495057;
+        margin-bottom: 24px;
+      }
+
+      .hero-image img {
+        border-radius: 12px;
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Security badges */
+      .security-badges {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .security-badge {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.95rem;
+        color: #444;
+      }
+
+      /* Button styling already looks good, inherits from Bootstrap */
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        color: var(--text-primary);
+      }
+
+      .hero-subtitle {
+        font-size: 1.25rem;
+        color: var(--text-secondary);
+        margin-bottom: 2.5rem;
+        line-height: 1.7;
+      }
+
+      .hero-image {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--large-shadow);
+      }
+
+      .security-badges {
+        display: flex;
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .security-badge {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      .security-badge i {
+        color: var(--success-green);
+        font-size: 1.1rem;
+      }
+
+      /* Mood Tracking Section */
+      .mood-section {
+        padding: 100px 0;
+        background: white;
+      }
+
+      .mood-tracker-card {
+        background: white;
+        border-radius: 24px;
+        padding: 40px;
+        box-shadow: var(--medium-shadow);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .mood-options {
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 0;
+        gap: 1rem;
+      }
+
+      .mood-option {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        border-radius: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        flex: 1;
+        border: 2px solid transparent;
+      }
+
+      .mood-option:hover {
+        background: var(--light-blue);
+        transform: translateY(-5px);
+      }
+
+      .mood-option.active {
+        border-color: var(--primary-blue);
+        background: var(--light-blue);
+      }
+
+      .mood-options {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding: 20px;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+
+      .mood-option {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100px;
+        padding: 12px;
+        border: 2px solid #ddd;
+        border-radius: 12px;
+        background-color: #f9f9f9;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      }
+
+      .mood-option:hover {
+        background-color: #e0f7fa;
+        border-color: #00acc1;
+        transform: translateY(-3px);
+      }
+
+      .mood-option.active {
+        background-color: #d0f0c0;
+        border-color: #4caf50;
+      }
+
+      .mood-emoji {
+        font-size: 32px;
+        margin-bottom: 8px;
+      }
+
+      .mood-label {
+        font-size: 14px;
+        font-weight: 500;
+        color: #333;
+        text-align: center;
+      }
+
+      /* Responsive Fixes */
+      @media (max-width: 600px) {
+        .mood-option {
+          width: 80px;
+          padding: 10px;
+        }
+
+        .mood-emoji {
+          font-size: 28px;
+        }
+
+        .mood-label {
+          font-size: 13px;
+        }
+      }
+
+      .mood-emoji {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .mood-label {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+      }
+
+      .progress-chart {
+        background: white;
+        border-radius: 24px;
+        padding: 40px;
+        box-shadow: var(--medium-shadow);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .chart-container {
+        position: relative;
+        height: 200px;
+        margin: 30px 0;
+      }
+
+      .chart-line {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100"><path d="M0,80 Q50,60 100,70 T200,40 T300,20" stroke="%234F7CFF" stroke-width="3" fill="none"/><circle cx="50" cy="65" r="4" fill="%234F7CFF"/><circle cx="100" cy="70" r="4" fill="%234F7CFF"/><circle cx="150" cy="55" r="4" fill="%234F7CFF"/><circle cx="200" cy="40" r="4" fill="%234F7CFF"/><circle cx="250" cy="30" r="4" fill="%234F7CFF"/><circle cx="300" cy="20" r="4" fill="%234F7CFF"/></svg>')
+          no-repeat center;
+        background-size: contain;
+      }
+
+      .chart-labels {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+      }
+
+      .stat-highlight {
+        background: var(--light-blue);
+        padding: 15px 20px;
+        border-radius: 12px;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .stat-highlight i {
+        color: var(--primary-blue);
+      }
+
+      /* Features Section */
+      .features-section {
+        padding: 100px 0;
+        background: var(--soft-purple);
+      }
+
+      .feature-card {
+        background: white;
+        border-radius: 20px;
+        padding: 40px 30px;
+        text-align: center;
+        box-shadow: var(--soft-shadow);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        height: 100%;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--large-shadow);
+      }
+
+      .feature-icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 25px auto;
+        font-size: 2rem;
+        color: white;
+      }
+
+      .feature-icon.mindfulness {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .feature-icon.journaling {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      }
+      .feature-icon.ai-companion {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      }
+      .feature-icon.habits {
+        background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+      }
+      .feature-icon.self-care {
+        background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+      }
+
+      .feature-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: var(--text-primary);
+      }
+
+      .feature-description {
+        color: var(--text-secondary);
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+
+      .feature-link {
+        color: var(--primary-blue);
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        transition: all 0.3s ease;
+      }
+
+      .feature-link:hover {
+        color: #3d6aff;
+        transform: translateX(5px);
+      }
+
+      /* AI Companion Section */
+      .ai-section {
+        padding: 100px 0;
+        background: white;
+      }
+
+      .chat-demo {
+        background: white;
+        border-radius: 24px;
+        padding: 30px;
+        box-shadow: var(--medium-shadow);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .chat-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--neutral-gray);
+      }
+
+      .chat-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--gradient-bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+      }
+
+      .chat-info h6 {
+        margin: 0;
+        font-weight: 700;
+        color: var(--text-primary);
+      }
+
+      .chat-info small {
+        color: var(--text-secondary);
+      }
+
+      .chat-message {
+        background: var(--light-blue);
+        padding: 20px;
+        border-radius: 16px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      .chat-message::before {
+        content: "";
+        position: absolute;
+        top: 20px;
+        left: -10px;
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-right: 10px solid var(--light-blue);
+      }
+
+      .user-message {
+        background: var(--neutral-gray);
+        margin-left: 50px;
+        margin-bottom: 15px;
+      }
+
+      .user-message::before {
+        right: -10px;
+        left: auto;
+        border-left: 10px solid var(--neutral-gray);
+        border-right: none;
+      }
+
+      .chat-input {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .chat-input input {
+        flex: 1;
+        padding: 15px;
+        border: 1px solid var(--neutral-gray);
+        border-radius: 12px;
+        font-size: 1rem;
+      }
+
+      .chat-input button {
+        padding: 15px 20px;
+        background: var(--primary-blue);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+      }
+
+      .ai-features {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .ai-feature {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .ai-feature-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: white;
+        flex-shrink: 0;
+      }
+
+      .ai-feature-icon.support {
+        background: var(--primary-blue);
+      }
+      .ai-feature-icon.evidence {
+        background: var(--success-green);
+      }
+      .ai-feature-icon.privacy {
+        background: #9f7aea;
+      }
+
+      /* Testimonials Section */
+      .testimonials-section {
+        padding: 100px 0;
+        background: var(--soft-purple);
+      }
+
+      .testimonial-card {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: var(--soft-shadow);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        height: 100%;
+        position: relative;
+      }
+
+      .testimonial-card::before {
+        content: '"';
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        font-size: 4rem;
+        color: var(--primary-blue);
+        opacity: 0.3;
+        font-family: serif;
+      }
+
+      .testimonial-text {
+        margin: 30px 0;
+        font-style: italic;
+        line-height: 1.7;
+        color: var(--text-primary);
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-top: 30px;
+      }
+
+      .author-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--gradient-bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 700;
+      }
+
+      .author-info h6 {
+        margin: 0;
+        font-weight: 700;
+        color: var(--text-primary);
+      }
+
+      .author-info small {
+        color: var(--text-secondary);
+      }
+
+      /* Stats Section */
+      .stats-section {
+        padding: 80px 0;
+        background: white;
+      }
+
+      .stat-card {
+        text-align: center;
+        padding: 40px 20px;
+      }
+
+      .stat-circle {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px auto;
+        position: relative;
+        background: conic-gradient(
+          var(--primary-blue) 0deg,
+          var(--primary-blue) var(--percentage, 270deg),
+          var(--neutral-gray) var(--percentage, 270deg)
+        );
+      }
+
+      .stat-circle::before {
+        content: "";
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        background: white;
+        border-radius: 50%;
+      }
+
+      .stat-number {
+        position: relative;
+        z-index: 2;
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--primary-blue);
+      }
+
+      .stat-label {
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 10px;
+      }
+
+      .stat-description {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        padding: 100px 0;
+        background: linear-gradient(
+          135deg,
+          var(--light-blue) 0%,
+          var(--soft-purple) 100%
+        );
+        text-align: center;
+      }
+
+      .cta-title {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+        color: var(--text-primary);
+      }
+
+      .cta-subtitle {
+        font-size: 1.2rem;
+        color: var(--text-secondary);
+        margin-bottom: 40px;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-bottom: 50px;
+        flex-wrap: wrap;
+      }
+
+      .trust-indicators {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        flex-wrap: wrap;
+      }
+
+      .trust-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--text-secondary);
+        font-weight: 500;
+      }
+
+      .trust-item i {
+        color: var(--success-green);
+        font-size: 1.2rem;
+      }
+
+      /* Footer */
+      .footer {
+        background: linear-gradient(to right, #f4f7fb, #eef3fa);
+        padding: 60px 0 30px;
+        font-family: "Segoe UI", sans-serif;
+        color: #343a40;
+        font-size: 15px;
+        border-top: 1px solid #dee2e6;
+      }
+
+      .footer h5.footer-brand {
+        font-size: 22px;
+        font-weight: bold;
+        color: #4c72f3;
+        margin-bottom: 12px;
+      }
+
+      .footer h6 {
+        font-weight: 600;
+        color: #2b2b2b;
+        margin-bottom: 14px;
+      }
+
+      .footer-description {
+        font-size: 14px;
+        color: #6c757d;
+        margin-top: 10px;
+      }
+
+      .footer-links {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .footer-links li {
+        margin-bottom: 8px;
+      }
+
+      .footer-links a {
+        color: #495057;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      .footer-links a:hover {
+        color: #4c72f3;
+        font-weight: 500;
+      }
+
+      .social-links a {
+        margin-right: 12px;
+        font-size: 18px;
+        background-color: #dee2e6;
+        color: #495057;
+        padding: 8px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+      }
+
+      .social-links a:hover {
+        background-color: #4c72f3;
+        color: white;
+      }
+
+      .newsletter-form {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .newsletter-form input {
+        flex-grow: 1;
+        padding: 10px 14px;
+        border: 1px solid #ced4da;
+        border-radius: 8px;
+        font-size: 14px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+      }
+
+      .newsletter-form button {
+        padding: 10px 18px;
+        background-color: #4c72f3;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 500;
+        transition: 0.3s;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+      }
+
+      .newsletter-form button:hover {
+        background-color: #3a5de3;
+      }
+
+      .crisis-line a {
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      .crisis-line a:hover {
+        text-decoration: underline;
+      }
+
+      .footer-bottom {
+        font-size: 13px;
+      }
+
+      .footer-legal-links a {
+        margin-left: 15px;
+        color: #6c757d;
+        text-decoration: none;
+      }
+
+      .footer-legal-links a:first-child {
+        margin-left: 0;
+      }
+
+      .footer-legal-links a:hover {
+        color: #4c72f3;
+      }
+
+      /* Mobile tweaks */
+      @media (max-width: 576px) {
+        .newsletter-form {
+          flex-direction: column;
+        }
+
+        .newsletter-form input,
+        .newsletter-form button {
+          width: 100%;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+        }
+      }
+
+      /* Responsive Design - FIXED BUTTON SIZES */
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .mood-options {
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+
+        .mood-option {
+          flex: 1 1 calc(50% - 5px);
+          min-width: 120px;
+        }
+
+        .cta-title {
+          font-size: 2rem;
+        }
+
+        .trust-indicators {
+          gap: 30px;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .security-badges {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .mood-emoji {
+          font-family: "Segoe UI Emoji", "Noto Color Emoji", "Apple Color Emoji",
+            sans-serif;
+        }
+
+        /* FIXED: Smaller buttons on mobile */
+        .btn-primary,
+        .btn-outline-primary {
+          padding: 0.5rem 1rem;
+          font-size: 0.9rem;
+        }
+
+        .btn-lg {
+          padding: 0.6rem 1.2rem !important;
+          font-size: 1rem !important;
+        }
+
+        .cta-buttons .btn {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+
+      /* Animations */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .pulse {
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">MindfulPath</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#features">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#ai-companion">AI Companion</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#community">Community</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About Us</a>
+            </li>
+          </ul>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-primary">Sign In</button>
+            <button class="btn btn-primary">Get Started</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 hero-content">
+            <h1 class="hero-title fade-in">
+              Your Daily Journey to Mental Wellness
+            </h1>
+            <p class="hero-subtitle fade-in">
+              Find peace, track your progress, and grow stronger each day with
+              personalized support that adapts to your unique needs.
+            </p>
+
+            <div class="d-flex gap-3 mb-4 fade-in">
+              <button class="btn btn-primary btn-lg">
+                Start Your Healing Journey
+              </button>
+              <button class="btn btn-outline-primary btn-lg">Learn More</button>
+            </div>
+
+            <div class="security-badges fade-in">
+              <div class="security-badge">
+                <i class="bi bi-shield-check"></i>
+                <span>Private & secure by design</span>
+              </div>
+              <div class="security-badge">
+                <i class="bi bi-lock"></i>
+                <span>End-to-end encryption</span>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-lg-6">
+            <div class="hero-image fade-in">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-quxpJUpkNGBepvn7GaxKWwxuB0NTUE.png"
+                alt="Mental wellness journey illustration"
+                class="img-fluid"
+              />
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Mood Tracking Section -->
+    <section class="mood-section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold fade-in">
+            Track Your Emotional Journey
+          </h2>
+          <p class="lead text-muted fade-in">
+            Simple daily check-ins help you understand your patterns and
+            progress over time.
+          </p>
+        </div>
+
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <div class="mood-tracker-card fade-in">
+              <h4 class="fw-bold mb-4">How are you feeling today?</h4>
+
+              <div class="mood-options">
+                <div class="mood-option" data-mood="stressed">
+                  <div class="mood-emoji">😰</div>
+                  <div class="mood-label">Stressed</div>
+                </div>
+                <div class="mood-option" data-mood="down">
+                  <div class="mood-emoji">😔</div>
+                  <div class="mood-label">Down</div>
+                </div>
+                <div class="mood-option active" data-mood="neutral">
+                  <div class="mood-emoji">😐</div>
+                  <div class="mood-label">Neutral</div>
+                </div>
+                <div class="mood-option" data-mood="good">
+                  <div class="mood-emoji">😊</div>
+                  <div class="mood-label">Good</div>
+                </div>
+                <div class="mood-option" data-mood="great">
+                  <!-- FIXED: Using a more compatible emoji representation -->
+                  <div class="mood-emoji">&#128516;</div>
+                  <div class="mood-label">Great</div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-semibold"
+                  >Add a note (optional)</label
+                >
+                <textarea
+                  class="form-control"
+                  rows="3"
+                  placeholder="What's on your mind today?"
+                ></textarea>
+              </div>
+
+              <button class="btn btn-primary w-100">
+                Save Today's Check-in
+              </button>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="progress-chart fade-in">
+              <h4 class="fw-bold mb-3">Visualize Your Progress</h4>
+              <p class="text-muted mb-4">
+                Watch your emotional patterns emerge over time. Identify
+                triggers and celebrate your growth with our intuitive mood
+                tracking.
+              </p>
+
+              <h6 class="fw-semibold mb-3">Weekly Mood Overview</h6>
+              <div class="chart-container">
+                <div class="chart-line"></div>
+              </div>
+              <div class="chart-labels">
+                <span>Mon</span>
+                <span>Tue</span>
+                <span>Wed</span>
+                <span>Thu</span>
+                <span>Fri</span>
+                <span>Sat</span>
+                <span>Sun</span>
+              </div>
+
+              <div class="stat-highlight">
+                <i class="bi bi-trending-up"></i>
+                <span
+                  ><strong>78% of users</strong> report improved self-awareness
+                  after 2 weeks</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold fade-in">
+            Tools for Your Mental Wellbeing
+          </h2>
+          <p class="lead text-muted fade-in">
+            Discover a comprehensive suite of features designed to support your
+            mental health journey.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card fade-in">
+              <div class="feature-icon mindfulness">
+                <i class="bi bi-heart-pulse"></i>
+              </div>
+              <h5 class="feature-title">Mindfulness Exercises</h5>
+              <p class="feature-description">
+                Guided meditations, breathing techniques, and mindfulness
+                practices tailored to your current emotional state.
+              </p>
+              <a href="#" class="feature-link"
+                >Explore exercises <i class="bi bi-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card fade-in">
+              <div class="feature-icon journaling">
+                <i class="bi bi-journal-text"></i>
+              </div>
+              <h5 class="feature-title">Anonymous Journaling</h5>
+              <p class="feature-description">
+                Express your thoughts freely in a private, secure space. Our AI
+                provides gentle prompts when you need inspiration.
+              </p>
+              <a href="#" class="feature-link"
+                >Start writing <i class="bi bi-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card fade-in">
+              <div class="feature-icon ai-companion">
+                <i class="bi bi-chat-heart"></i>
+              </div>
+              <h5 class="feature-title">AI Mental Health Companion</h5>
+              <p class="feature-description">
+                A supportive AI companion that listens without judgment and
+                offers evidence-based coping strategies.
+              </p>
+              <a href="#" class="feature-link"
+                >Meet your companion <i class="bi bi-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6">
+            <div class="feature-card fade-in">
+              <div class="feature-icon habits">
+                <i class="bi bi-calendar-check"></i>
+              </div>
+              <h5 class="feature-title">Habit Building</h5>
+              <p class="feature-description">
+                Create personalized routines that support your mental health
+                goals. Track your progress and celebrate small wins along the
+                way.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6">
+            <div class="feature-card fade-in">
+              <div class="feature-icon self-care">
+                <i class="bi bi-heart"></i>
+              </div>
+              <h5 class="feature-title">Self-Care Activities</h5>
+              <p class="feature-description">
+                Discover activities tailored to your interests that promote
+                relaxation, joy, and emotional balance in your daily life.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Companion Section -->
+    <section class="ai-section" id="ai-companion">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold fade-in">
+            Your AI Mental Health Companion
+          </h2>
+          <p class="lead text-muted fade-in">
+            A supportive presence available 24/7, designed with input from
+            mental health professionals.
+          </p>
+        </div>
+
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <div class="chat-demo fade-in">
+              <div class="chat-header">
+                <div class="chat-avatar">
+                  <i class="bi bi-heart-pulse"></i>
+                </div>
+                <div class="chat-info">
+                  <h6>Mindful Assistant</h6>
+                  <small>Always here to listen</small>
+                </div>
+              </div>
+
+              <div class="chat-message">
+                Hi there! How are you feeling today? I'm here to listen and
+                support you.
+              </div>
+
+              <div class="chat-message user-message">
+                I've been feeling overwhelmed with work lately and having
+                trouble sleeping.
+              </div>
+
+              <div class="chat-message">
+                I understand how difficult that can be. Would you like to try a
+                quick breathing exercise to help reduce stress, or would you
+                prefer to talk more about what's been keeping you up at night?
+              </div>
+
+              <div class="chat-input">
+                <input
+                  type="text"
+                  placeholder="Type your message..."
+                  class="form-control"
+                />
+                <button class="btn btn-primary">
+                  <i class="bi bi-send"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="ai-features fade-in">
+              <h4 class="fw-bold mb-4">How Our AI Companion Helps</h4>
+
+              <div class="ai-feature">
+                <div class="ai-feature-icon support">
+                  <i class="bi bi-heart"></i>
+                </div>
+                <div>
+                  <h6 class="fw-bold">Emotional Support</h6>
+                  <p class="text-muted mb-0">
+                    A judgment-free space to express your feelings and receive
+                    empathetic responses.
+                  </p>
+                </div>
+              </div>
+
+              <div class="ai-feature">
+                <div class="ai-feature-icon evidence">
+                  <i class="bi bi-check-circle"></i>
+                </div>
+                <div>
+                  <h6 class="fw-bold">Evidence-Based Techniques</h6>
+                  <p class="text-muted mb-0">
+                    Access to CBT, mindfulness, and other proven methods to
+                    manage anxiety and stress.
+                  </p>
+                </div>
+              </div>
+
+              <div class="ai-feature">
+                <div class="ai-feature-icon privacy">
+                  <i class="bi bi-shield-lock"></i>
+                </div>
+                <div>
+                  <h6 class="fw-bold">Privacy Focused</h6>
+                  <p class="text-muted mb-0">
+                    Your conversations are private and secure, with optional
+                    anonymized data to improve your experience.
+                  </p>
+                </div>
+              </div>
+
+              <button class="btn btn-primary btn-lg mt-4">
+                Try a Demo Chat
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="community">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold fade-in">Stories from Our Community</h2>
+          <p class="lead text-muted fade-in">
+            Real experiences from people on their mental wellness journey.
+          </p>
+        </div>
+
+        <div class="row g-4 mb-5">
+          <div class="col-lg-4">
+            <div class="testimonial-card fade-in">
+              <p class="testimonial-text">
+                This app has been a lifeline during my anxiety flare ups. I love
+                the check-ins and notice patterns I never saw before, and the AI
+                companion is there when I need someone to talk to at 3 AM.
+              </p>
+              <div class="testimonial-author">
+                <div class="author-avatar">RT</div>
+                <div class="author-info">
+                  <h6>Rebecca Thompson</h6>
+                  <small>Member for 8 months</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="testimonial-card fade-in">
+              <p class="testimonial-text">
+                As someone who was skeptical about mental health apps, I'm
+                amazed by how much this has helped me. The journaling prompts
+                got me writing when I'm stuck, and the mindfulness exercises
+                actually work for me.
+              </p>
+              <div class="testimonial-author">
+                <div class="author-avatar">MD</div>
+                <div class="author-info">
+                  <h6>Michael Donovan</h6>
+                  <small>Member for 4 months</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="testimonial-card fade-in">
+              <p class="testimonial-text">
+                I appreciate that this app doesn't try to replace therapy but
+                complements it perfectly. My therapist is impressed with the
+                insights I've gained from tracking my moods and journaling
+                between sessions.
+              </p>
+              <div class="testimonial-author">
+                <div class="author-avatar">SC</div>
+                <div class="author-info">
+                  <h6>Sophia Chen</h6>
+                  <small>Member for 1 year</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="stat-card fade-in">
+              <div class="stat-circle" style="--percentage: 270deg">
+                <div class="stat-number">75%</div>
+              </div>
+              <h5 class="stat-label">Reduced Anxiety</h5>
+              <p class="stat-description">Users report after 3 months</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="stat-card fade-in">
+              <div class="stat-circle" style="--percentage: 306deg">
+                <div class="stat-number">85%</div>
+              </div>
+              <h5 class="stat-label">Better Sleep</h5>
+              <p class="stat-description">Users report after 2 months</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="stat-card fade-in">
+              <div class="stat-circle" style="--percentage: 288deg">
+                <div class="stat-number">80%</div>
+              </div>
+              <h5 class="stat-label">Improved Mood</h5>
+              <p class="stat-description">Users report after 1 month</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="cta-title fade-in">
+          Begin Your Path to Better Mental Health
+        </h2>
+        <p class="cta-subtitle fade-in">
+          Start your journey today with a free 14-day trial. No credit card
+          required.
+        </p>
+
+        <div class="cta-buttons fade-in">
+          <button class="btn btn-primary btn-lg px-5 py-3">
+            Start Your Free Journey
+          </button>
+          <button class="btn btn-outline-primary btn-lg px-5 py-3">
+            Learn More About Our Approach
+          </button>
+        </div>
+
+        <div class="trust-indicators fade-in">
+          <div class="trust-item">
+            <i class="bi bi-shield-lock"></i>
+            <span>End-to-end encryption</span>
+          </div>
+          <div class="trust-item">
+            <i class="bi bi-incognito"></i>
+            <span>Anonymous usage</span>
+          </div>
+          <div class="trust-item">
+            <i class="bi bi-award"></i>
+            <span>Expert-backed content</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="about">
+      <div class="container">
+        <div class="row gy-5">
+          <!-- Brand + Social -->
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-brand">🌿 MindfulPath</h5>
+            <p class="footer-description">
+              Your daily companion for mental wellness and emotional balance.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-x"></i></a>
+              <a href="#"><i class="bi bi-facebook"></i></a>
+            </div>
+          </div>
+
+          <!-- Features -->
+          <div class="col-lg-2 col-md-6">
+            <h6>Features</h6>
+            <ul class="footer-links">
+              <li><a href="#">Mood Tracking</a></li>
+              <li><a href="#">Journaling</a></li>
+              <li><a href="#">AI Companion</a></li>
+              <li><a href="#">Mindfulness</a></li>
+              <li><a href="#">Sleep Support</a></li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div class="col-lg-2 col-md-6">
+            <h6>Company</h6>
+            <ul class="footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Our Team</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="col-lg-5 col-md-6">
+            <h6>Get Support</h6>
+            <p class="text-muted">
+              Subscribe to our newsletter for tips and updates.
+            </p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Enter your email" />
+              <button type="submit">Subscribe</button>
+            </form>
+            <div class="crisis-line mt-3">
+              <strong>Crisis Support Line:</strong><br />
+              <a href="tel:1-800-273-8255" class="text-primary"
+                >1-800-273-8255</a
+              ><br />
+              <small class="text-muted"
+                >Available 24/7 for immediate help</small
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div
+          class="footer-bottom mt-5 pt-4 d-flex flex-column flex-md-row justify-content-between align-items-center border-top"
+        >
+          <p class="text-muted mb-2 mb-md-0">
+            © 2025 Mental Health Companion. All rights reserved.
+          </p>
+          <div class="footer-legal-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Intersection Observer for fade-in animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      // Observe all fade-in elements
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Mood selection functionality
+      document.querySelectorAll(".mood-option").forEach((option) => {
+        option.addEventListener("click", function () {
+          // Remove active class from all options
+          document.querySelectorAll(".mood-option").forEach((opt) => {
+            opt.classList.remove("active");
+          });
+
+          // Add active class to clicked option
+          this.classList.add("active");
+
+          // Add pulse animation
+          this.classList.add("pulse");
+          setTimeout(() => {
+            this.classList.remove("pulse");
+          }, 1000);
+        });
+      });
+
+      // Navbar scroll effect
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.style.background = "rgba(255, 255, 255, 0.98)";
+          navbar.style.boxShadow = "0 2px 20px rgba(0,0,0,0.1)";
+        } else {
+          navbar.style.background = "rgba(255, 255, 255, 0.95)";
+          navbar.style.boxShadow = "none";
+        }
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Chat demo functionality
+      const chatInput = document.querySelector(".chat-input input");
+      const chatButton = document.querySelector(".chat-input button");
+      const chatContainer = document.querySelector(".chat-demo");
+
+      function addMessage(message, isUser = false) {
+        const messageDiv = document.createElement("div");
+        messageDiv.className = `chat-message ${isUser ? "user-message" : ""}`;
+        messageDiv.textContent = message;
+
+        const chatInput = document.querySelector(".chat-input");
+        chatContainer.insertBefore(messageDiv, chatInput);
+
+        // Scroll to bottom
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+      }
+
+      chatButton.addEventListener("click", function () {
+        const message = chatInput.value.trim();
+        if (message) {
+          addMessage(message, true);
+          chatInput.value = "";
+
+          // Simulate AI response
+          setTimeout(() => {
+            const responses = [
+              "Thank you for sharing that with me. How can I best support you right now?",
+              "I hear you. Would you like to try a breathing exercise or talk more about what's on your mind?",
+              "That sounds challenging. Let's work through this together. What feels most overwhelming right now?",
+            ];
+            const randomResponse =
+              responses[Math.floor(Math.random() * responses.length)];
+            addMessage(randomResponse);
+          }, 1000);
+        }
+      });
+
+      chatInput.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          chatButton.click();
+        }
+      });
+
+      // Newsletter form
+      document
+        .querySelector(".newsletter-form button")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          const email = document.querySelector(".newsletter-form input").value;
+          if (email) {
+            alert(
+              "Thank you for subscribing! We'll send you helpful mental wellness tips."
+            );
+            document.querySelector(".newsletter-form input").value = "";
+          }
+        });
+
+      // Feature card hover effects
+      document.querySelectorAll(".feature-card").forEach((card) => {
+        card.addEventListener("mouseenter", function () {
+          this.style.transform = "translateY(-10px) scale(1.02)";
+        });
+
+        card.addEventListener("mouseleave", function () {
+          this.style.transform = "translateY(0) scale(1)";
+        });
+      });
+
+      // CTA button interactions
+      document
+        .querySelectorAll(".btn-primary, .btn-outline-primary")
+        .forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            if (
+              this.textContent.includes("Start") ||
+              this.textContent.includes("Try")
+            ) {
+              e.preventDefault();
+              alert(
+                "Welcome to MindfulPath! Your mental wellness journey starts here. 🌱"
+              );
+            }
+          });
+        });
+
+      // Add typing indicator for chat demo
+      function showTypingIndicator() {
+        const typingDiv = document.createElement("div");
+        typingDiv.className = "chat-message typing-indicator";
+        typingDiv.innerHTML = "<span>•</span><span>•</span><span>•</span>";
+
+        const chatInput = document.querySelector(".chat-input");
+        chatContainer.insertBefore(typingDiv, chatInput);
+
+        return typingDiv;
+      }
+
+      // Enhanced chat functionality
+      let isTyping = false;
+
+      chatInput.addEventListener("input", function () {
+        if (!isTyping && this.value.length > 0) {
+          isTyping = true;
+          // Could add typing indicator here
+        } else if (this.value.length === 0) {
+          isTyping = false;
+        }
+      });
+
+      // Add some CSS for typing indicator
+      const style = document.createElement("style");
+      style.textContent = `
+            .typing-indicator span {
+                animation: typing 1.4s infinite;
+                opacity: 0.4;
+            }
+            .typing-indicator span:nth-child(2) {
+                animation-delay: 0.2s;
+            }
+            .typing-indicator span:nth-child(3) {
+                animation-delay: 0.4s;
+            }
+            @keyframes typing {
+                0%, 60%, 100% { opacity: 0.4; }
+                30% { opacity: 1; }
+            }
+        `;
+      document.head.appendChild(style);
+    </script>
+  </body>
+</html>
